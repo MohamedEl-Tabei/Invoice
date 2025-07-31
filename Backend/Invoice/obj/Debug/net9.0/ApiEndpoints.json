@@ -1,0 +1,38 @@
+[
+  {
+    "ContainingType": "Invoice.Controllers.ItemsController",
+    "Method": "Get",
+    "RelativePath": "api/Items",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Invoice.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/User/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTORegister",
+        "Type": "InvoiceBL.DTOs.UserDTORegister",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,12 @@
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.csproj.AssemblyReference.cache
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.AssemblyInfoInputs.cache
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.AssemblyInfo.cs
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.csproj.CoreCompileInputs.cache
+E:\🚀 Projects\Invoice\InvoiceDAL\bin\Debug\net9.0\InvoiceDAL.deps.json
+E:\🚀 Projects\Invoice\InvoiceDAL\bin\Debug\net9.0\InvoiceDAL.dll
+E:\🚀 Projects\Invoice\InvoiceDAL\bin\Debug\net9.0\InvoiceDAL.pdb
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.dll
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\refint\InvoiceDAL.dll
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\InvoiceDAL.pdb
+E:\🚀 Projects\Invoice\InvoiceDAL\obj\Debug\net9.0\ref\InvoiceDAL.dll

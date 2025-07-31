@@ -1,0 +1,15 @@
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.csproj.AssemblyReference.cache
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.GeneratedMSBuildEditorConfig.editorconfig
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.AssemblyInfoInputs.cache
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.AssemblyInfo.cs
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.csproj.CoreCompileInputs.cache
+E:\🚀 Projects\Invoice\InvoiceBL\bin\Debug\net9.0\InvoiceBL.deps.json
+E:\🚀 Projects\Invoice\InvoiceBL\bin\Debug\net9.0\InvoiceBL.dll
+E:\🚀 Projects\Invoice\InvoiceBL\bin\Debug\net9.0\InvoiceBL.pdb
+E:\🚀 Projects\Invoice\InvoiceBL\bin\Debug\net9.0\InvoiceDAL.dll
+E:\🚀 Projects\Invoice\InvoiceBL\bin\Debug\net9.0\InvoiceDAL.pdb
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.csproj.Up2Date
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.dll
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\refint\InvoiceBL.dll
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\InvoiceBL.pdb
+E:\🚀 Projects\Invoice\InvoiceBL\obj\Debug\net9.0\ref\InvoiceBL.dll
