@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Il5UPN4SsmE=",
+  "dgSpecHash": "4q5oDeTD8xA=",
   "success": true,
-  "projectFilePath": "E:\\\uD83D\uDE80 Projects\\Invoice\\InvoiceDAL\\InvoiceDAL.csproj",
+  "projectFilePath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\InvoiceDAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\El-Tabei\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\El-Tabei\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

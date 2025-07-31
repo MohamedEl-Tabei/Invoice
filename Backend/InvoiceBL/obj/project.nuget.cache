@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZlH5nyyjnVI=",
+  "dgSpecHash": "ZXMwxxuF2dI=",
   "success": true,
-  "projectFilePath": "E:\\\uD83D\uDE80 Projects\\Invoice\\InvoiceBL\\InvoiceBL.csproj",
+  "projectFilePath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\InvoiceBL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\El-Tabei\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\El-Tabei\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\El-Tabei\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\El-Tabei\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "C:\\Users\\El-Tabei\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.7\\microsoft.aspnetcore.authentication.jwtbearer.9.0.7.nupkg.sha512",
     "C:\\Users\\El-Tabei\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.7\\microsoft.aspnetcore.cryptography.internal.9.0.7.nupkg.sha512",
     "C:\\Users\\El-Tabei\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.7\\microsoft.aspnetcore.cryptography.keyderivation.9.0.7.nupkg.sha512",
