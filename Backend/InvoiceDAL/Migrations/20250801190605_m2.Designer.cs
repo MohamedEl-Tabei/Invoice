@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceDAL.Migrations
 {
     [DbContext(typeof(InvoiceContext))]
-    [Migration("20250730172910_seedRoles")]
-    partial class seedRoles
+    [Migration("20250801190605_m2")]
+    partial class m2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,7 +123,7 @@ namespace InvoiceDAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
@@ -148,7 +148,58 @@ namespace InvoiceDAL.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique()
+                        .HasFilter("[PhoneNumber] IS NOT NULL");
+
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            Email = "user@invoice.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==",
+                            PhoneNumber = "01020210495",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            TwoFactorEnabled = false,
+                            UserName = "user"
+                        },
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            Email = "shop@invoice.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==",
+                            PhoneNumber = "01020210795",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            TwoFactorEnabled = false,
+                            UserName = "shop"
+                        },
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            Email = "admin@invoice.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==",
+                            PhoneNumber = "01020210595",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -283,6 +334,23 @@ namespace InvoiceDAL.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            RoleId = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84"
+                        },
+                        new
+                        {
+                            UserId = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            RoleId = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86"
+                        },
+                        new
+                        {
+                            UserId = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            RoleId = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe85"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

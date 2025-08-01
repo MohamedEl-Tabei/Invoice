@@ -10,7 +10,7 @@ namespace InvoiceBL
     {
         public T Data { get; set; }
         public bool Successed { get; set; } = false;
-        public List<Error> Errors { get; set; } 
+        public List<Error> Errors { get; set; } = new List<Error>();
 
     }
 }

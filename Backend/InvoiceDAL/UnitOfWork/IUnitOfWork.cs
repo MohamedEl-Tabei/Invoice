@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InvoiceDAL.IRepositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace InvoiceDAL
 {
     public interface IUnitOfWork
     {
+        public IItemRepo _ItemRepo { get; }
+        public IUserRepo _UserRepo { get; }
         public Task SaveChangesAsync();
     }
 }

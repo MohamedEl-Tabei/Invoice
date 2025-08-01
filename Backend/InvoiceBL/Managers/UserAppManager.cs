@@ -2,6 +2,8 @@
 using InvoiceBL.DTOs;
 using InvoiceBL.IManagers;
 using InvoiceBL.Validation;
+using InvoiceDAL;
+using InvoiceDAL.Constants;
 using InvoiceDAL.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -15,36 +17,62 @@ namespace InvoiceBL.Managers
     public class UserAppManager : IUserAppManager
     {
         private readonly UserManager<UserApp> _userManager;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<UserDTORegister> _validatorUserDTORegister;
 
-        public UserAppManager(UserManager<UserApp> userManager,IValidator<UserDTORegister> validatorUserDTORegister)
+        public UserAppManager(UserManager<UserApp> userManager, IValidator<UserDTORegister> validatorUserDTORegister, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
-            _validatorUserDTORegister= validatorUserDTORegister;
+            _unitOfWork = unitOfWork;
+            _validatorUserDTORegister = validatorUserDTORegister;
         }
         public async Task<Result<string>> RegisterAsync(UserDTORegister userDTORegister)
         {
             var result = new Result<string>();
-            var validatorResult=_validatorUserDTORegister.Validate(userDTORegister);
+            #region Check Email, UserName and Phone Are Unique
+            var isUniqueUserName = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.UserName == userDTORegister.UserName);
+            var isUniquePhoneNumber = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.PhoneNumber == userDTORegister.PhoneNumber);
+            var isUniqueEmail = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.Email == userDTORegister.Email);
+
+            if (!isUniqueEmail) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.Email, userDTORegister.Email));
+            if (!isUniquePhoneNumber) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.PhoneNumber, userDTORegister.PhoneNumber));
+            if (!isUniqueUserName) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.UserName, userDTORegister.UserName));
+            if (result.Errors.Count > 0)
+                return result;
+            #endregion
+            #region Validate User Data
+            var validatorResult = _validatorUserDTORegister.Validate(userDTORegister);
             if (!validatorResult.IsValid)
             {
-                result.Errors = validatorResult.ToErrorList();
+                result.Errors.AddRange(validatorResult.ToErrorList());
                 return result;
             }
+            #endregion
+            #region Create User If Data Is Valid
             var user = new UserApp()
             {
                 Email = userDTORegister.Email,
-                UserName = userDTORegister.Email,
+                UserName = userDTORegister.UserName,
                 PhoneNumber = userDTORegister.PhoneNumber,
             };
             var userResult = await _userManager.CreateAsync(user, userDTORegister.Password);
             if (!userResult.Succeeded)
             {
-                result.Errors = userResult.ToErrorList();
+                result.Errors.AddRange(userResult.ToErrorList());
                 return result;
             }
+            #endregion
+            #region Add Role If User Created
+            var RoleResult = await _userManager.AddToRoleAsync(user, userDTORegister.Role);
+            if (!RoleResult.Succeeded)
+            {
+                result.Errors.AddRange(RoleResult.ToErrorList());
+                return result;
+            }
+
+            #endregion
             result.Successed = true;
-            result.Data = user.Id;
+            result.Data = "Success";
             return result;
         }
     }

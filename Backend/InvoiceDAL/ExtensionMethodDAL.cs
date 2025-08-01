@@ -47,6 +47,7 @@ namespace InvoiceDAL
                 };
             });
             services.AddScoped<IItemRepo, ItemRepo>();
+            services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

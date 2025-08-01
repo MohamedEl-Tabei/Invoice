@@ -11,13 +11,15 @@ namespace InvoiceDAL
     public class UnitOfWork : IUnitOfWork
     {
         private readonly InvoiceContext _context;
-        public readonly IItemRepo _ItemRepo;
+        public IItemRepo _ItemRepo { get; }
+        public IUserRepo _UserRepo { get; }
 
-        public UnitOfWork(InvoiceContext context,IItemRepo itemRepo)
+        public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo)
         {
 
-            _context=context;
+            _context = context;
             _ItemRepo = itemRepo;
+            _UserRepo = userRepo;
         }
         public async Task SaveChangesAsync()
         {
