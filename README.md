@@ -1,10 +1,13 @@
 # Invoice Application
 
 **Invoice** is a full-stack web application built with **.NET** (backend) and **Angular** (frontend), designed to simplify shopping and budgeting.  
+
 The backend exposes a secure and well-documented RESTful API, documented using **Scalar**, enabling developers to explore endpoints, test requests, and integrate quickly and efficiently.
 
 
-The app helps users **estimate their total expenses before going out to buy products**, and allows stores to list their items and prices—making it easier for users to find what they need at the best price, and helping shops attract more customers.
+The app helps users **estimate their total expenses before going out to buy products**, and allows stores to list their items and prices, and restaurants to share their menus, so users can find what they need at the best price, and both can attract more customers.
+
+
 
 * * *
 
