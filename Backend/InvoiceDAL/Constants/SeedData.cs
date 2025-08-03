@@ -15,10 +15,12 @@ namespace InvoiceDAL.Constants
         #region Ids
         private static string AdminRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84";
         private static string ShopRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe85";
-        private static string UserRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86";
+        private static string CustomerRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86";
+        private static string RestaurantRole = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
         private static string AdminAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84";
         private static string ShopAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85";
-        private static string UserAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86";
+        private static string CustomerAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86";
+        private static string RestaurantAppUser = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
         #endregion
         public static HashSet<IdentityRole> Roles { get; } = new HashSet<IdentityRole>() {
            new()
@@ -35,21 +37,26 @@ namespace InvoiceDAL.Constants
            },
            new()
            {
-               Name=AppRoles.User,
-               NormalizedName=AppRoles.User.ToUpper(),
-               Id = UserRole
+               Name=AppRoles.Customer,
+               NormalizedName=AppRoles.Customer.ToUpper(),
+               Id = CustomerRole
+           },
+           new(){
+               Name=AppRoles.Restaurant,
+               NormalizedName=AppRoles.Restaurant.ToUpper(),
+               Id = RestaurantRole
            },
         };
         public static HashSet<UserApp> Users { get; } = new HashSet<UserApp>()
         {
             new()
             {
-               Id=UserAppUser,
-               SecurityStamp=UserAppUser,
-               ConcurrencyStamp=UserAppUser,
-               Email="user@invoice.com",
+               Id=CustomerAppUser,
+               SecurityStamp=CustomerAppUser,
+               ConcurrencyStamp=CustomerAppUser,
+               Email="customer@invoice.com",
                PasswordHash=Password,
-               UserName="user",
+               UserName="customer",
                PhoneNumber="01020210495"
             },new()
             {
@@ -69,7 +76,17 @@ namespace InvoiceDAL.Constants
                PasswordHash=Password,
                UserName="admin",
                PhoneNumber="01020210595"
-            }
+            },new()
+            {
+               Id=RestaurantAppUser,
+               SecurityStamp=RestaurantAppUser,
+               ConcurrencyStamp=RestaurantAppUser,
+               Email="restaurant@invoice.com",
+               PasswordHash=Password,
+               UserName="restaurant",
+               PhoneNumber="01020211595"
+            },
+
         };
         public static HashSet<IdentityUserRole<string>> UserRoles { get; } = new HashSet<IdentityUserRole<string>>(){
             new()
@@ -79,15 +96,19 @@ namespace InvoiceDAL.Constants
             },
             new()
             {
-                RoleId=UserRole,
-                UserId=UserAppUser,
+                RoleId=CustomerRole,
+                UserId=CustomerAppUser,
             },
             new()
             {
                 RoleId=ShopRole,
                 UserId=ShopAppUser,
             },
-
+              new()
+            {
+                RoleId=RestaurantRole,
+                UserId=RestaurantAppUser,
+            },
         };
 
     }

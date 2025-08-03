@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\managers\\userappmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\managers\\userappmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\result\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\result\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\validation\\validatoruserdtoregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\validation\\validatoruserdtoregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Result.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Result\\Result.cs",
-              "RelativeDocumentMoniker": "InvoiceBL\\Result\\Result.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Result\\Result.cs",
-              "RelativeToolTip": "InvoiceBL\\Result\\Result.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T20:28:42.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserAppManager.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\UserAppManager.cs",
-              "RelativeDocumentMoniker": "InvoiceBL\\Managers\\UserAppManager.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\UserAppManager.cs",
-              "RelativeToolTip": "InvoiceBL\\Managers\\UserAppManager.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAYwEAAAAAMAAAAAAAAAA==",
+              "Title": "ValidatorUserDTORegister.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
+              "RelativeToolTip": "InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T19:59:20.656Z",
+              "WhenOpened": "2025-08-03T18:04:54.23Z",
               "EditorCaption": ""
             }
           ]

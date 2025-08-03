@@ -16,19 +16,21 @@ namespace InvoiceBL.Managers
 {
     public class UserAppManager : IUserAppManager
     {
+        private readonly ITokenManger _tokenManager;
         private readonly UserManager<UserApp> _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<UserDTORegister> _validatorUserDTORegister;
 
-        public UserAppManager(UserManager<UserApp> userManager, IValidator<UserDTORegister> validatorUserDTORegister, IUnitOfWork unitOfWork)
+        public UserAppManager(ITokenManger tokenManger, UserManager<UserApp> userManager, IValidator<UserDTORegister> validatorUserDTORegister, IUnitOfWork unitOfWork)
         {
+            _tokenManager = tokenManger;
             _userManager = userManager;
             _unitOfWork = unitOfWork;
             _validatorUserDTORegister = validatorUserDTORegister;
         }
-        public async Task<Result<string>> RegisterAsync(UserDTORegister userDTORegister)
+        public async Task<Result<UserDTOAuthenticated>> RegisterAsync(UserDTORegister userDTORegister)
         {
-            var result = new Result<string>();
+            var result = new Result<UserDTOAuthenticated>();
             #region Check Email, UserName and Phone Are Unique
             var isUniqueUserName = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.UserName == userDTORegister.UserName);
             var isUniquePhoneNumber = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.PhoneNumber == userDTORegister.PhoneNumber);
@@ -72,7 +74,21 @@ namespace InvoiceBL.Managers
 
             #endregion
             result.Successed = true;
-            result.Data = "Success";
+            #region Create Token
+            var tokenConfig = new TokenDTOConfigurations()
+            {
+                Email = userDTORegister.Email,
+                RememberMe = false,
+                Role = userDTORegister.Role,
+                UserId = user.Id
+            };
+            var token = _tokenManager.CreateToken(tokenConfig);
+            #endregion
+            result.Data = new UserDTOAuthenticated()
+            {
+                Token = token,
+                UserName = user.UserName
+            };
             return result;
         }
     }

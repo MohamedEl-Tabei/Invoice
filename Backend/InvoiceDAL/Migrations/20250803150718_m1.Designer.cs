@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceDAL.Migrations
 {
     [DbContext(typeof(InvoiceContext))]
-    [Migration("20250801190605_m2")]
-    partial class m2
+    [Migration("20250803150718_m1")]
+    partial class m1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,7 +160,7 @@ namespace InvoiceDAL.Migrations
                             Id = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
-                            Email = "user@invoice.com",
+                            Email = "customer@invoice.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==",
@@ -168,7 +168,7 @@ namespace InvoiceDAL.Migrations
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86",
                             TwoFactorEnabled = false,
-                            UserName = "user"
+                            UserName = "customer"
                         },
                         new
                         {
@@ -199,6 +199,21 @@ namespace InvoiceDAL.Migrations
                             SecurityStamp = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84",
                             TwoFactorEnabled = false,
                             UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86",
+                            Email = "restaurant@invoice.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==",
+                            PhoneNumber = "01020211595",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86",
+                            TwoFactorEnabled = false,
+                            UserName = "restaurant"
                         });
                 });
 
@@ -244,8 +259,14 @@ namespace InvoiceDAL.Migrations
                         new
                         {
                             Id = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86",
-                            Name = "User",
-                            NormalizedName = "USER"
+                            Name = "Customer",
+                            NormalizedName = "CUSTOMER"
+                        },
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86",
+                            Name = "Restaurant",
+                            NormalizedName = "RESTAURANT"
                         });
                 });
 
@@ -350,6 +371,11 @@ namespace InvoiceDAL.Migrations
                         {
                             UserId = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85",
                             RoleId = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe85"
+                        },
+                        new
+                        {
+                            UserId = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86",
+                            RoleId = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86"
                         });
                 });
 

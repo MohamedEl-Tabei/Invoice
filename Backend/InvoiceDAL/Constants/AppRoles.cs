@@ -8,14 +8,17 @@ namespace InvoiceDAL.Constants
 {
     public static class AppRoles
     {
-        public static string Admin { get; } = "Admin";
-        public static string User { get; } = "User";
-        public static string Shop { get; } = "Shop";
-        public static List<string> Roles { get; }= new List<string>()
+        public const string Admin = "Admin";
+        public const string Customer = "Customer";
+        public const string Shop = "Shop";
+        public const string Restaurant = "Restaurant";
+        public const string StringRoles = $"{Admin}, {Customer}, {Shop}, {Restaurant}";
+        public static List<string> Roles = new List<string>()
         {
             Admin.ToUpper(),
-            User.ToUpper(),
+            Customer.ToUpper(),
             Shop.ToUpper(),
+            Restaurant.ToUpper(),
         };
     }
 }

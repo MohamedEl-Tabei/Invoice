@@ -1,4 +1,5 @@
 ﻿using InvoiceBL.DTOs;
+using InvoiceDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace InvoiceBL.IManagers
 {
-    public interface IUserAppManager
+    public interface ITokenManger
     {
-        Task<Result<UserDTOAuthenticated>> RegisterAsync(UserDTORegister userDTORegister);
+        public string CreateToken(TokenDTOConfigurations tokenDTOConfigurations);
     }
 }

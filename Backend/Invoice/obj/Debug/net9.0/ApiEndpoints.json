@@ -33,6 +33,27 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[InvoiceBL.DTOs.UserDTOAuthenticated, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Description": "This endpoint allows new users to register by providing a username, email, password, phone number, and role.\r\n",
+    "Summary": "Register"
   }
 ]

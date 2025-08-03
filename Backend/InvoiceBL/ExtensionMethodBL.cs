@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using InvoiceBL.DTOs;
 using InvoiceBL.IManagers;
 using InvoiceBL.Managers;
 using InvoiceBL.Validation;
@@ -22,6 +23,7 @@ namespace InvoiceBL
         {
             services.AddValidatorsFromAssembly(typeof(ValidatorUserDTORegister).Assembly);
             services.AddScoped<IUserAppManager, UserAppManager>();
+            services.AddScoped<ITokenManger, TokenManager>();
         }
         public static List<Error> ToErrorList(this ValidationResult validationResult)
         {
