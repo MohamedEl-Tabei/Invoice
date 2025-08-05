@@ -27,7 +27,11 @@
             "styles": [
               "src/styles.css"
             ]
+            ,"scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
+          
           "configurations": {
             "production": {
               "budgets": [
@@ -55,6 +59,7 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
+          
             "production": {
               "buildTarget": "Frontend:build:production"
             },

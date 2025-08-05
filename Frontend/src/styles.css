@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap";
+@import "bootstrap-icons";
+@import "tailwindcss";
+
+:root {
+--color-1: #006A65;
+--color-2: #003A6A;
+--color-3: #00056A;
+
+}
+
+.page{
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-1,.btn-2,.btn-x {
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.btn-1 ,.btn-1:hover,.btn-1:active{
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-1) !important ;
+}
+.btn-2,.btn-2:hover,.btn-2:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-2) !important;
+}
+.btn-x,.btn-x:hover,.btn-x:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--bs-secondary) !important;
+}
+.btn-1:hover,.btn-2:hover,.btn-x:hover {
+    color: var(--bs-body-bg);
+    opacity: 1;
+}

@@ -1,0 +1,9 @@
+.collapse{
+    visibility: visible;
+}
+.collapse:not(.show) {
+    visibility: visible;
+}
+.btn-nav{
+    width: 90px;
+}
