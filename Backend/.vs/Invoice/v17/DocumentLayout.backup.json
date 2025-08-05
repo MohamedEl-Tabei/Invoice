@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\validation\\validatoruserdtoregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\validation\\validatoruserdtoregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Migrations\\20250804185837_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:InvoiceDAL\\Migrations\\20250804185837_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicedal\\constants\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|solutionrelative:invoicedal\\constants\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ValidatorUserDTORegister.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
-              "RelativeDocumentMoniker": "InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
-              "RelativeToolTip": "InvoiceBL\\Validation\\ValidatorUserDTORegister.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAQAAAAAAAAAA==",
+              "Title": "20250804185837_m.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Migrations\\20250804185837_m.cs",
+              "RelativeDocumentMoniker": "InvoiceDAL\\Migrations\\20250804185837_m.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Migrations\\20250804185837_m.cs",
+              "RelativeToolTip": "InvoiceDAL\\Migrations\\20250804185837_m.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T18:04:54.23Z",
+              "WhenOpened": "2025-08-04T18:58:37.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Constants\\SeedData.cs",
+              "RelativeDocumentMoniker": "InvoiceDAL\\Constants\\SeedData.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Constants\\SeedData.cs",
+              "RelativeToolTip": "InvoiceDAL\\Constants\\SeedData.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAUwDcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T18:35:10.238Z",
               "EditorCaption": ""
             }
           ]

@@ -12,7 +12,7 @@ namespace InvoiceDAL.Constants
         public const string Customer = "Customer";
         public const string Shop = "Shop";
         public const string Restaurant = "Restaurant";
-        public const string StringRoles = $"{Admin}, {Customer}, {Shop}, {Restaurant}";
+        public const string StringRoles = $" `{Admin}` `{Customer}` `{Shop}` `{Restaurant}`";
         public static List<string> Roles = new List<string>()
         {
             Admin.ToUpper(),

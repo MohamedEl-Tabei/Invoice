@@ -21,6 +21,117 @@
   },
   {
     "ContainingType": "Invoice.Controllers.UserController",
+    "Method": "LoginWithEmail",
+    "RelativePath": "api/User/login/email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTOLoginEmail",
+        "Type": "InvoiceBL.DTOs.UserDTOLoginEmail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[InvoiceBL.DTOs.UserDTOAuthenticated, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Description": "This endpoint allows users to log in using their email and password.\r\n",
+    "Summary": "Login By Email"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.UserController",
+    "Method": "LoginWithPhoneNumber",
+    "RelativePath": "api/User/login/phone",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTOLoginPhoneNumber",
+        "Type": "InvoiceBL.DTOs.UserDTOLoginPhoneNumber",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[InvoiceBL.DTOs.UserDTOAuthenticated, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Description": "This endpoint allows users to log in using their phone number and password.\r\n",
+    "Summary": "Login By Phone Number"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.UserController",
+    "Method": "LoginWithUserName",
+    "RelativePath": "api/User/login/username",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTOLoginUserName",
+        "Type": "InvoiceBL.DTOs.UserDTOLoginUserName",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[InvoiceBL.DTOs.UserDTOAuthenticated, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Description": "This endpoint allows users to log in using their username and password.\r\n",
+    "Summary": "Login By UserName"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "api/User/register",
     "HttpMethod": "POST",

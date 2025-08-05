@@ -14,7 +14,7 @@ namespace InvoiceDAL.Models.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
         {
-            builder.HasData(SeedData.UserRoles);
+            builder.HasData(SeedData.GetUserRoles());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace InvoiceDAL.Models.Configurations
         public void Configure(EntityTypeBuilder<UserApp> builder)
         {
             builder.HasIndex(x => x.PhoneNumber).IsUnique();
-            builder.HasData(SeedData.Users);
+            builder.HasData(SeedData.GetUsers());
         }
     }
 }

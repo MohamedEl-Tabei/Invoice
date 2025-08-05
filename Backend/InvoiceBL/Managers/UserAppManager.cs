@@ -28,6 +28,145 @@ namespace InvoiceBL.Managers
             _unitOfWork = unitOfWork;
             _validatorUserDTORegister = validatorUserDTORegister;
         }
+
+        public async Task<Result<UserDTOAuthenticated>> LoginWithEmailAsync(UserDTOLoginEmail userDTOLoginEmail)
+        {
+            var result = new Result<UserDTOAuthenticated>();
+            var error = new Error()
+            {
+                Code = "InvalidLogin",
+                Message = "Invalid Email or Password",
+                PropertyName = "Email or Password"
+            };
+            #region Find User By Email
+            var user = await _userManager.FindByEmailAsync(userDTOLoginEmail.Email);
+            if (user == null)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Check Password
+            var isPasswordValid = await _userManager.CheckPasswordAsync(user, userDTOLoginEmail.Password);
+            if (!isPasswordValid)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Create Token
+            var roles = await _userManager.GetRolesAsync(user);
+            var tokenConfig = new TokenDTOConfigurations()
+            {
+                Email = userDTOLoginEmail.Email,
+                RememberMe = userDTOLoginEmail.RememberMe,
+                Role = roles.FirstOrDefault(),
+                UserId = user.Id
+            };
+            var token = _tokenManager.CreateToken(tokenConfig);
+            #endregion
+            result.Data = new UserDTOAuthenticated()
+            {
+                Token = token,
+                UserName = user.UserName,
+                Role = roles.FirstOrDefault()
+            };
+            result.Successed = true;
+            return result;
+        }
+
+        public async Task<Result<UserDTOAuthenticated>> LoginWithPhoneNumberAsync(UserDTOLoginPhoneNumber userDTOLoginPhoneNumber)
+        {
+            var result = new Result<UserDTOAuthenticated>();
+            var error = new Error()
+            {
+                Code = "InvalidLogin",
+                Message = "Invalid Phone Number or Password",
+                PropertyName = "Phone Number or Password"
+            };
+            #region Find User By Phone Number
+            var user = await _unitOfWork._UserRepo.FindByPhoneNumberAsync(userDTOLoginPhoneNumber.PhoneNumber);
+            if (user == null)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Check Password
+            var isPasswordValid = await _userManager.CheckPasswordAsync(user, userDTOLoginPhoneNumber.Password);
+            if (!isPasswordValid)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Create Token
+            var roles = await _userManager.GetRolesAsync(user);
+            var tokenConfig = new TokenDTOConfigurations()
+            {
+                Email = user.Email,
+                RememberMe = userDTOLoginPhoneNumber.RememberMe,
+                Role = roles.FirstOrDefault(),
+                UserId = user.Id
+            };
+            var token = _tokenManager.CreateToken(tokenConfig);
+            #endregion
+            result.Data = new UserDTOAuthenticated()
+            {
+                Token = token,
+                UserName = user.UserName,
+                Role= roles.FirstOrDefault()
+            };
+            result.Successed = true;
+            return result;
+        }
+
+        public async Task<Result<UserDTOAuthenticated>> LoginWithUserNameAsync(UserDTOLoginUserName userDTOLoginUserName)
+        {
+            var result = new Result<UserDTOAuthenticated>();
+            var error = new Error()
+            {
+                Code = "InvalidLogin",
+                Message = "Invalid UserName or Password",
+                PropertyName = "UserName or Password"
+            };
+            #region Find User By UserName
+            var user = await _userManager.FindByNameAsync(userDTOLoginUserName.UserName);
+            if (user == null)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Check Password
+            var isPasswordValid = await _userManager.CheckPasswordAsync(user, userDTOLoginUserName.Password);
+            if (!isPasswordValid)
+            {
+                result.Errors.Add(error);
+                return result;
+            }
+            #endregion
+            #region Create Token
+            var roles = await _userManager.GetRolesAsync(user);
+            var tokenConfig = new TokenDTOConfigurations()
+            {
+                Email = user.Email,
+                RememberMe = userDTOLoginUserName.RememberMe,
+                Role = roles.FirstOrDefault(),
+                UserId = user.Id
+            };
+            var token = _tokenManager.CreateToken(tokenConfig);
+            #endregion
+            result.Data = new UserDTOAuthenticated()
+            {
+                Token = token,
+                UserName = user.UserName,
+                Role = roles.FirstOrDefault()
+            };
+            result.Successed = true;
+            return result;
+        }
+
         public async Task<Result<UserDTOAuthenticated>> RegisterAsync(UserDTORegister userDTORegister)
         {
             var result = new Result<UserDTOAuthenticated>();
@@ -73,7 +212,6 @@ namespace InvoiceBL.Managers
             }
 
             #endregion
-            result.Successed = true;
             #region Create Token
             var tokenConfig = new TokenDTOConfigurations()
             {
@@ -84,10 +222,12 @@ namespace InvoiceBL.Managers
             };
             var token = _tokenManager.CreateToken(tokenConfig);
             #endregion
+            result.Successed = true;
             result.Data = new UserDTOAuthenticated()
             {
                 Token = token,
-                UserName = user.UserName
+                UserName = user.UserName,
+                Role = userDTORegister.Role
             };
             return result;
         }

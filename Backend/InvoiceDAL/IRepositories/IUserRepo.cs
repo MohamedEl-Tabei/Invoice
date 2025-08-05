@@ -9,6 +9,7 @@ namespace InvoiceDAL.IRepositories
 {
     public interface IUserRepo :IRepository<UserApp>
     {
+        public Task<UserApp> FindByPhoneNumberAsync(string phoneNumber);
 
     }
 }

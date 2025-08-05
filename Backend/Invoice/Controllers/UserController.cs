@@ -32,5 +32,44 @@ namespace Invoice.Controllers
             return result.Successed ? Ok(result) : BadRequest(result);
         }
         #endregion
+
+        #region Login By Email
+        [HttpPost("login/email")]
+        [ProducesResponseType(typeof(Result<UserDTOAuthenticated>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [EndpointDescription("This endpoint allows users to log in using their email and password.\r\n")]
+        [EndpointSummary("Login By Email")]
+        public async Task<ActionResult> LoginWithEmail([FromBody] UserDTOLoginEmail userDTOLoginEmail)
+        {
+            var result = await _userManager.LoginWithEmailAsync(userDTOLoginEmail);
+            return result.Successed ? Ok(result) : BadRequest(result);
+        }
+        #endregion 
+        #region Login By UserName
+        [HttpPost("login/username")]
+        [ProducesResponseType(typeof(Result<UserDTOAuthenticated>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [EndpointDescription("This endpoint allows users to log in using their username and password.\r\n")]
+        [EndpointSummary("Login By UserName")]
+        public async Task<ActionResult> LoginWithUserName([FromBody] UserDTOLoginUserName userDTOLoginUserName)
+        {
+            var result = await _userManager.LoginWithUserNameAsync(userDTOLoginUserName);
+            return result.Successed ? Ok(result) : BadRequest(result);
+        }
+        #endregion
+        #region Login By Phone Number
+        [HttpPost("login/phone")]
+        [ProducesResponseType(typeof(Result<UserDTOAuthenticated>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [EndpointDescription("This endpoint allows users to log in using their phone number and password.\r\n")]
+        [EndpointSummary("Login By Phone Number")]
+        public async Task<ActionResult> LoginWithPhoneNumber([FromBody] UserDTOLoginPhoneNumber userDTOLoginPhoneNumber)
+        {
+            var result = await _userManager.LoginWithPhoneNumberAsync(userDTOLoginPhoneNumber);
+            return result.Successed ? Ok(result) : BadRequest(result);
+        }
+        #endregion
+
+
     }
 }

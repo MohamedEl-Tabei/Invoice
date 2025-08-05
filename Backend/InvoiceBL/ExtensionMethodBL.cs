@@ -37,7 +37,7 @@ namespace InvoiceBL
         {
             return new List<string>()
             {
-                "Passwodrd","Email","UserName","PhoneNumber"
+                "Password","Email","UserName","PhoneNumber"
             }.FirstOrDefault(x => identityError.Code.Contains(x));
 
         }

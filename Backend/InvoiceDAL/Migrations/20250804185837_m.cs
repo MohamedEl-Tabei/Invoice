@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InvoiceDAL.Migrations
 {
     /// <inheritdoc />
-    public partial class m1 : Migration
+    public partial class m : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -220,10 +220,10 @@ namespace InvoiceDAL.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe84", 0, "28b21eb8-d6dc-4acf-9ab8-91bf746efe84", "admin@invoice.com", false, false, null, null, null, "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==", "01020210595", false, "28b21eb8-d6dc-4acf-9ab8-91bf746efe84", false, "admin" },
-                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe85", 0, "28b21eb8-d6dc-4acf-9ab8-91bf746efe85", "shop@invoice.com", false, false, null, null, null, "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==", "01020210795", false, "28b21eb8-d6dc-4acf-9ab8-91bf746efe85", false, "shop" },
-                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe86", 0, "28b21eb8-d6dc-4acf-9ab8-91bf746efe86", "customer@invoice.com", false, false, null, null, null, "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==", "01020210495", false, "28b21eb8-d6dc-4acf-9ab8-91bf746efe86", false, "customer" },
-                    { "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86", 0, "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86", "restaurant@invoice.com", false, false, null, null, null, "AQAAAAIAAYagAAAAEAI/ZvB0RzSNoEXTwA9r3oUiruneEEqYgP909s7aXBGUW/Sb7IcYItjn3NOjB8qJqA==", "01020211595", false, "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86", false, "restaurant" }
+                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe84", 0, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", "admin@invoice.com", false, false, null, "ADMIN@INVOICE.COM", null, "AQAAAAIAAYagAAAAEKPr74T9wKgN2Rckq/lrBX/SBjQmOeXJxxeikNvCivCUe3THuR7c/fmcvzMMhkppuA==", "01020210595", false, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", false, "admin" },
+                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe85", 0, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", "shop@invoice.com", false, false, null, "SHOP@INVOICE.COM", null, "AQAAAAIAAYagAAAAEIK9uTYXCvIWty97KaIFFZD3WEtTOnLwhEEd8Rmeh8pVc2CT6Nz4SaZ29Q/gcAPsmQ==", "01020210795", false, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", false, "shop" },
+                    { "28b21eb8-d6dc-4acf-9ab8-91bf746efe86", 0, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", "customer@invoice.com", false, false, null, "CUSTOMER@INVOICE.COM", null, "AQAAAAIAAYagAAAAEL7WjDMwY3woFxTEb0W7TPm2KCYv32cjIiqIycV9hbLbAQPGcBdVTUD6J0zqwNtEzQ==", "01020210495", false, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", false, "customer" },
+                    { "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86", 0, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", "restaurant@invoice.com", false, false, null, "RESTAURANT@INVOICE.COM", null, "AQAAAAIAAYagAAAAEGdbCxXrHMnHDB8zj2UlxfY4/BPnIhBuTiykMG6xIwwGZXqwRZdtJBzu6bRIM98HQw==", "01020211595", false, "d0b1c8f2-3e4a-4c5b-8f6d-7e8f9a0b1c2d", false, "restaurant" }
                 });
 
             migrationBuilder.InsertData(
