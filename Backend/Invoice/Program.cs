@@ -13,6 +13,13 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDALServices(builder.Configuration);
 builder.Services.AddBLServices();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFront",
+        builder => builder.WithOrigins("http://localhost:4200")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowFront");
 app.UseAuthorization();
 
 app.MapControllers();
