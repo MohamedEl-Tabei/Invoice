@@ -1,52 +1,65 @@
 <div class="h-100  d-flex align-items-center">
     <div class="w-full max-w-md p-4  rounded-lg shadow-lg m-auto ">
-        <h2 class="text-2xl font-bold text-center mb-6"><app-logo-component /></h2>
+        <h2 class="text-2xl font-bold text-center mb-6 text-x"><app-logo-component /></h2>
 
-        <form (submit)="loginByEmail($event)">
+        <div class="position-relative">
+            @if (isLoading) {
+            <div class="position-absolute d-flex justify-content-center align-items-center top-0 start-0 w-100 h-100">
+                <div appSpinner colorNumber="2"></div>
+            </div>
+            }
+            <form [formGroup]="loginForm" (submit)="login($event)" [class.invisible]="isLoading">
 
-            <div class="mb-3">
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <label [for]="selectedLoginType.id" appLabel>
-                            {{selectedLoginType.by}}
-                        </label>
-                    </button>
+                <div class="mb-3">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle text-2" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <label [for]="selectedUserUniqueInputData.id" appLabel>
+                                {{selectedUserUniqueInputData.label}}
+                            </label>
+                        </button>
 
-                    <ul class="dropdown-menu">
-                        @for (item of loginTypes; track $index) {
-                        @if (item.id!==selectedLoginType.id) {
-                        <li (click)="setSelectedLoginType(item)" class="text-center dropdown-item cursor-pointer">
-                            {{item.by}}</li>
-                        }
+                        <ul class="dropdown-menu">
+                            @for (item of userUniqueInputData; track $index) {
+                            @if (item.id!==selectedUserUniqueInputData.id) {
+                            <li (click)="setSelectedUserUniqueInputData(item)"
+                                class="text-center dropdown-item cursor-pointer">
+                                {{item.label}}</li>
+                            }
 
-                        }
-                    </ul>
+                            }
+                        </ul>
+                    </div>
+                    <input [type]="selectedUserUniqueInputData.inputType" appInput colorNumber="2"
+                        [id]="selectedUserUniqueInputData.id" [placeholder]="selectedUserUniqueInputData.placeholder"
+                        formControlName="uniqueInput" />
                 </div>
-                <input [type]="selectedLoginType.inputType" appInput colorNumber="2" [id]="selectedLoginType.id"
-                    [placeholder]="selectedLoginType.placeholder" required />
-            </div>
 
-            <div class="mb-3">
-                <label for="password" appLabel>Password</label>
-                <input type="password" appInput colorNumber="2"  id="password" placeholder="Password"
-                    required />
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="form-check">
-                    <input  appInput colorNumber="2"  type="checkbox" id="rememberMe">
-                    <label class="form-check-label text-sm text-gray-600 dark:text-gray-500"   for="rememberMe">Remember me</label>
+                <div class="mb-3">
+                    <label for="password" appLabel>Password</label>
+                    <input type="password" appInput colorNumber="2" id="password" placeholder="Password" required
+                        formControlName="password" />
                 </div>
-            </div>
-            <small class="text-red-500 mb-3 d-block text-center">
-                {{dataError}}
-            </small>
-            <button type="submit" class="btn btn-2 w-100 mb-3">Login</button>
-            <div>
-                <small class="text-gray-600 dark:text-gray-500 text-center d-block">
-                    Already have an account? <a routerLink="/signUp" class="text-1 hover:underline">Sign Up</a>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input appInput colorNumber="2" type="checkbox" id="rememberMe" formControlName="rememberMe">
+                        <label class="form-check-label text-sm text-gray-600 dark:text-gray-500"
+                            for="rememberMe">Remember
+                            me</label>
+                    </div>
+                </div>
+                <small class="text-red-500 mb-3 d-block text-center" [style]="{height: '20px'}">
+                    {{dataError}}
                 </small>
-            </div>
-        </form>
+                <button type="submit" class="btn btn-2 w-100 mb-3">Login</button>
+                <div>
+                    <small class="text-gray-600 dark:text-gray-500 text-center d-block">
+                        Already have an account? <a routerLink="/signUp" class="text-1 hover:underline">Sign Up</a>
+                    </small>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>

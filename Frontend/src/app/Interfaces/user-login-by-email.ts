@@ -1,5 +1,6 @@
-export interface UserLoginByEmail {
+import { UserLoginBase } from "./user-login-base";
+
+export interface UserLoginByEmail extends UserLoginBase {
     email: string;
-    password: string;
-    rememberMe: boolean;
+    
 }
