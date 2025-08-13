@@ -1,4 +1,5 @@
 import { UserUniqueInputData } from "../Interfaces/user-unique-input-data";
+import { TRole } from "../Types/TRole";
 import { TTheme } from "../Types/TTheme";
 import { AppValidators } from "../Validators";
 
@@ -12,5 +13,12 @@ export class Constants {
   public static readonly Theme: { light: TTheme, dark: TTheme } = {
     light: "light",
     dark: "dark",
+  }
+  public static readonly Roles: { Customer: TRole, Admin: TRole, Shop: TRole, Restaurant: TRole, List: TRole[] } = {
+    Customer: "Customer",
+    Admin: "Admin",
+    Shop: "Shop",
+    Restaurant: "Restaurant",
+    List: ["Customer"]
   }
 }

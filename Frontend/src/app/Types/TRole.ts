@@ -1,0 +1,1 @@
+export type TRole = "Customer" | "Admin" | "Shop" | "Restaurant"

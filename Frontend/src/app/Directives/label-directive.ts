@@ -7,7 +7,7 @@ export class LabelDirective {
 
   constructor(private label: ElementRef) { }
   ngOnInit() {
-    this.label.nativeElement.classList.add('form-label', 'text-gray-700', 'font-medium', 'dark:text-gray-500');
+    this.label.nativeElement.classList.add('form-label', 'text-gray-700', 'font-medium', 'dark:text-gray-500','text-capitalize');
   }
 
 

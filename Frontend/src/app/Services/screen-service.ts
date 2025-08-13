@@ -7,7 +7,7 @@ import { Constants } from '../Constants';
   providedIn: 'root'
 })
 export class ScreenService {
-  public selectTheme$: BehaviorSubject<TTheme> = new BehaviorSubject<TTheme>(Constants.Theme.light);
+  public selectTheme$: BehaviorSubject<TTheme> = new BehaviorSubject<TTheme>(localStorage.getItem('theme') as TTheme || Constants.Theme.light);
   public hideNavbar$:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 }

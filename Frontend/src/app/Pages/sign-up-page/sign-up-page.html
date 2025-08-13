@@ -1,1 +1,66 @@
-<p>sign-up-page works!</p>
+<div class="h-100  d-flex align-items-center">
+    <div class="w-full max-w-md p-4  rounded-lg shadow-lg m-auto ">
+        <h2 class="text-2xl font-bold text-center mb-6 text-x"><app-logo-component /></h2>
+
+        <div class="position-relative">
+            @if (isLoading) {
+            <div class="position-absolute d-flex justify-content-center align-items-center top-0 start-0 w-100 h-100">
+                <div appSpinner colorNumber="2"></div>
+            </div>
+            }
+            <form [formGroup]="SignUpForm" (submit)="signUp($event)" [class.invisible]="isLoading">
+                <div class="mb-3">
+                    <label for="userName" appLabel>Name</label>
+                    <input type="text" appInput colorNumber="1" id="userName" placeholder="User123" required
+                        formControlName="userName" />
+                </div>
+                <div class="mb-3">
+                    <label for="email" appLabel>email</label>
+                    <input type="text" appInput colorNumber="1" id="email" placeholder="user@invoice.com" required
+                        formControlName="email" />
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="phoneNumber" appLabel>phone</label>
+                            <input type="tel" appInput colorNumber="1" id="phoneNumber" placeholder="01020210495"
+                                required formControlName="phoneNumber" />
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="role" appLabel>type of account</label>
+                            <select class="form-select" appInput colorNumber="1" formControlName="role" >
+                                @for (role of roles; track $index) {
+
+                                     <option value="{{role}}">{{role}}</option>
+                                }
+                               
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" appLabel appPasswordError
+                        [passwordControl]='SignUpForm.get("password")'>Password</label>
+                    <input type="password" appInput colorNumber="1" id="password" placeholder="Password" required
+                        formControlName="password" />
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" appLabel>confirm Password</label>
+                    <input type="password" appInput colorNumber="1" id="confirmPassword" placeholder="Password" required
+                        formControlName="confirmPassword" />
+                </div>
+                <button type="submit" class="btn btn-1 w-100 mb-3">Sign Up</button>
+                <div>
+                    <small class="text-gray-600 dark:text-gray-500 text-center d-block">
+                        Already have an account? <a routerLink="/login" class="text-2 hover:underline">Login</a>
+                    </small>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
