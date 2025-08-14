@@ -37,8 +37,14 @@
 
                 <div class="mb-3">
                     <label for="password" appLabel>Password</label>
-                    <input type="password" appInput colorNumber="2" id="password" placeholder="Password" required
-                        formControlName="password" />
+                    <div class="position-relative ">
+                        <input [type]="showPassword?'text':'password'" appInput colorNumber="2" id="password" placeholder="Password" required
+                            formControlName="password" />
+                        <div class="eye" (click)="showPassword=!showPassword">
+                            @if (showPassword) {<i class="bi bi-eye-fill"></i>}
+                            @else {<i class="bi bi-eye-slash-fill"></i>}
+                        </div>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -52,7 +58,7 @@
                 <small class="text-red-500 mb-3 d-block text-center" [style]="{height: '20px'}">
                     {{dataError}}
                 </small>
-                <button type="submit" class="btn btn-2 w-100 mb-3">Login</button>
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-2 w-100 mb-3">Login</button>
                 <div>
                     <small class="text-gray-600 dark:text-gray-500 text-center d-block">
                         Don't have an account? <a routerLink="/signUp" class="text-1 hover:underline">Sign Up</a>

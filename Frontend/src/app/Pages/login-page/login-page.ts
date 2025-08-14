@@ -24,6 +24,7 @@ export class LoginPage {
 
   //#region Properties
   isLoading: boolean = false;
+  showPassword:boolean=false
   dataError: string = '';
   userUniqueInputData: UserUniqueInputData[] = Constants.UserUniqueInputData;
   selectedUserUniqueInputData: UserUniqueInputData = { label: this.userUniqueInputData[0].label, inputType: this.userUniqueInputData[0].inputType, placeholder: this.userUniqueInputData[0].placeholder, id: this.userUniqueInputData[0].id };

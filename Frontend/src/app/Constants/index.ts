@@ -21,4 +21,8 @@ export class Constants {
     Restaurant: "Restaurant",
     List: ["Customer"]
   }
+  public static readonly ValidationClass={
+    valid:['dark:text-gray-500', 'text-gray-700'],
+    invalid:['text-red-500']
+  }
 }

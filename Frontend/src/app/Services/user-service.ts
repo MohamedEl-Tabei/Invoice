@@ -7,19 +7,23 @@ import { UserAuthenticated } from '../Interfaces/user-authenticated';
 import { Constants } from '../Constants';
 import { UserLoginByName } from '../Interfaces/user-login-by-name';
 import { UserLoginByPhone } from '../Interfaces/user-login-by-phone';
+import { UserSignup } from '../Interfaces/user-signup';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
-  loginByEmail(data:UserLoginByEmail):Observable<ApiResponse<UserAuthenticated>>{
+  constructor(private http: HttpClient) { }
+  signUp(data: UserSignup): Observable<ApiResponse<UserAuthenticated>> {
+    return this.http.post<ApiResponse<UserAuthenticated>>(`${Constants.API_URL}User/register`, data)
+  }
+  loginByEmail(data: UserLoginByEmail): Observable<ApiResponse<UserAuthenticated>> {
     return this.http.post<ApiResponse<UserAuthenticated>>(`${Constants.API_URL}User/login/email`, data);
   }
-  loginByPhone(data:UserLoginByPhone):Observable<ApiResponse<UserAuthenticated>>{
+  loginByPhone(data: UserLoginByPhone): Observable<ApiResponse<UserAuthenticated>> {
     return this.http.post<ApiResponse<UserAuthenticated>>(`${Constants.API_URL}User/login/phone`, data);
   }
-  loginByUsername(data:UserLoginByName):Observable<ApiResponse<UserAuthenticated>>{
+  loginByUsername(data: UserLoginByName): Observable<ApiResponse<UserAuthenticated>> {
     return this.http.post<ApiResponse<UserAuthenticated>>(`${Constants.API_URL}User/login/username`, data);
   }
 }
