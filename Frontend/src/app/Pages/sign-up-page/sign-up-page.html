@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="confirmPassword" appLabel>confirm Password</label>
+                    <label for="confirmPassword" appLabel appConfirmPasswordError [confirmPasswordControl]="SignUpForm.get('confirmPassword')" [passwordControl]="SignUpForm.get('password')">confirm Password</label>
                     <div class="position-relative ">
                         <input [type]="!showConfirmPassword?'password':'text'" appInput appInputPassword colorNumber="1"
                             id="confirmPassword" placeholder="Password" required formControlName="confirmPassword" />

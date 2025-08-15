@@ -1,31 +1,33 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { Constants } from '../Constants';
+import { Util } from '../util';
+import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appUserNameErrore]'
 })
 export class UserNameErrorDirective {
   @Input({ required: true }) userNameControl!: AbstractControl | null
+  private subStatus?: Subscription
   constructor(private ref: ElementRef) { }
   ngOnInit() {
-    this.userNameControl?.valueChanges.subscribe(() => this.updateMessage())
+    this.subStatus = this.userNameControl?.statusChanges.subscribe(() => this.updateMessage())
   }
   updateMessage() {
     const errors = this.userNameControl?.errors;
-    const userName = this.userNameControl?.value
+    let message = ""
     if (errors) {
-      this.ref.nativeElement.classList.remove(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.invalid);
-      if (errors['required']) this.ref.nativeElement.innerText = "Name is required"
-      else if (errors['minlength']) this.ref.nativeElement.innerText = "Name must be 3 or more characters"
-      else if (errors['pattern']) this.ref.nativeElement.innerText = "Name must start with letter"
+      if (errors['required']) message = "Name is required"
+      else if (errors['minlength']) message = "Name must be 3 or more characters"
+      else if (errors['pattern']) message = "Name must start with letter"
+      else if (errors['apiError']) message = errors['apiError'];
+      Util.setInvalid(message, this.ref)
     }
-    else {
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.innerText = "name"
-    }
+    else Util.setValid("name", this.ref)
   }
-
+  ngOnDestroy() {
+    this.subStatus?.unsubscribe()
+  }
 
 }

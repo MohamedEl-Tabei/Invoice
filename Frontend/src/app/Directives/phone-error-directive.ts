@@ -1,6 +1,8 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { Constants } from '../Constants';
+import { Util } from '../util';
+import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appPhoneError]'
@@ -8,31 +10,28 @@ import { Constants } from '../Constants';
 export class PhoneErrorDirective {
   @Input({ required: true }) phoneControl!: AbstractControl | null;
   changedValue: string = ""
+  subStutas?: Subscription
+  subValue?: Subscription
   constructor(private ref: ElementRef) { }
   ngOnInit() {
-    this.phoneControl?.valueChanges.subscribe((value) => {
-      if (isFinite(value)) {
-        this.changedValue = value;
-        this.updateMessage()
-      }
-      else {
-        this.phoneControl?.setValue(this.changedValue)
-      }
-
+    this.subValue = this.phoneControl?.valueChanges.subscribe((value) => {
+      if (isFinite(value)) this.changedValue = value;
+      else this.phoneControl?.setValue(this.changedValue)
     })
+    this.subStutas = this.phoneControl?.statusChanges.subscribe(() => this.updateMessage())
   }
   updateMessage() {
     const errors = this.phoneControl?.errors;
-    const phone = this.phoneControl?.value
+    let message = ""
     if (errors) {
-      this.ref.nativeElement.classList.remove(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.invalid);
-      if (errors['required']) this.ref.nativeElement.innerText = "phone is required"
-      else if (errors['pattern']) this.ref.nativeElement.innerText = "phone is invalid"
-    } else {
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.innerText = "phone"
-    }
+      if (errors['required']) message = "phone is required"
+      else if (errors['pattern']) message = "phone is invalid"
+      else if (errors['apiError']) message = errors['apiError'];
+      Util.setInvalid(message, this.ref)
+    } else Util.setValid("phone", this.ref)
   }
-
+  ngOnDestroy() {
+    this.subStutas?.unsubscribe()
+    this.subValue?.unsubscribe()
+  }
 }

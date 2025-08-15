@@ -1,28 +1,33 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { Constants } from '../Constants';
+import { Util } from '../util';
+import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appEmailError]'
 })
 export class EmailErrorDirective {
   @Input({ required: true }) emailControl!: AbstractControl | null
+  private subStatus?: Subscription
   constructor(private ref: ElementRef) { }
   ngOnInit() {
-    this.emailControl?.valueChanges.subscribe(() => this.updateMessage())
+    this.subStatus = this.emailControl?.statusChanges.subscribe(() => this.updateMessage())
   }
   updateMessage() {
     const errors = this.emailControl?.errors;
-    const email = this.emailControl?.value;
+    let message = ""
     if (errors) {
-      this.ref.nativeElement.classList.remove(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.invalid);
-      if (errors['required']) this.ref.nativeElement.innerText = "Email is required"
-      else if (errors['pattern']) this.ref.nativeElement.innerText = "Email is invalid"
+      if (errors['required']) message = "Email is required"
+      else if (errors['pattern']) message = "Email is invalid"
+      else if (errors['apiError']) message = errors['apiError'];
+
+      Util.setInvalid(message, this.ref)
     }
-    else {
-      this.ref.nativeElement.classList.add(...Constants.ValidationClass.valid)
-      this.ref.nativeElement.innerText = "email"
-    }
+    else Util.setValid("email", this.ref)
   }
+  ngOnDestroy() {
+    this.subStatus?.unsubscribe()
+  }
+
 }

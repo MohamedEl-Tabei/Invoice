@@ -8,8 +8,8 @@ namespace InvoiceDAL.Constants
 {
     public static class UniqueProperties
     {
-        public static string Email { get; } = "Email";
-        public static string PhoneNumber { get; } = "PhoneNumber";
-        public static string UserName { get; } = "UserName";
+        public static string Email { get; } = "email";
+        public static string PhoneNumber { get; } = "phoneNumber";
+        public static string UserName { get; } = "userName";
     }
 }

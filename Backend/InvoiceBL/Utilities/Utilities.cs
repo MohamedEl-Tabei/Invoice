@@ -14,7 +14,7 @@ namespace InvoiceBL
             return new Error()
             {
                 Code = $"Duplicate{propertyName}",
-                Message = $"{propertyName} '{data}' is already taken.",
+                Message = $"This {propertyName} is already in use",
                 PropertyName = propertyName
             };
         }
