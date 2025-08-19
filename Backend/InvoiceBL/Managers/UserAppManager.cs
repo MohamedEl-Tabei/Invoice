@@ -58,7 +58,7 @@ namespace InvoiceBL.Managers
             var roles = await _userManager.GetRolesAsync(user);
             var tokenConfig = new TokenDTOConfigurations()
             {
-                Email = userDTOLoginEmail.Email,
+                UserName = user.UserName,
                 RememberMe = userDTOLoginEmail.RememberMe,
                 Role = roles.FirstOrDefault(),
                 UserId = user.Id
@@ -104,7 +104,7 @@ namespace InvoiceBL.Managers
             var roles = await _userManager.GetRolesAsync(user);
             var tokenConfig = new TokenDTOConfigurations()
             {
-                Email = user.Email,
+                UserName = user.UserName,
                 RememberMe = userDTOLoginPhoneNumber.RememberMe,
                 Role = roles.FirstOrDefault(),
                 UserId = user.Id
@@ -115,7 +115,7 @@ namespace InvoiceBL.Managers
             {
                 Token = token,
                 UserName = user.UserName,
-                Role= roles.FirstOrDefault()
+                Role = roles.FirstOrDefault()
             };
             result.Successed = true;
             return result;
@@ -150,7 +150,7 @@ namespace InvoiceBL.Managers
             var roles = await _userManager.GetRolesAsync(user);
             var tokenConfig = new TokenDTOConfigurations()
             {
-                Email = user.Email,
+                UserName = user.UserName,
                 RememberMe = userDTOLoginUserName.RememberMe,
                 Role = roles.FirstOrDefault(),
                 UserId = user.Id
@@ -215,7 +215,7 @@ namespace InvoiceBL.Managers
             #region Create Token
             var tokenConfig = new TokenDTOConfigurations()
             {
-                Email = userDTORegister.Email,
+                UserName = user.UserName,
                 RememberMe = false,
                 Role = userDTORegister.Role,
                 UserId = user.Id

@@ -4,7 +4,7 @@ import { Constants } from '../../Constants';
 import { LogoComponent } from "../../Components/logo-component/logo-component";
 import { InputDirective } from '../../Directives/input-directive';
 import { LabelDirective } from '../../Directives/label-directive';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserUniqueInputData } from '../../Interfaces/user-unique-input-data';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AppValidators } from '../../Validators';
@@ -20,11 +20,11 @@ import { ScreenService } from '../../Services/screen-service';
   styleUrl: './login-page.css'
 })
 export class LoginPage {
-  constructor(private userService: UserService,private screenService:ScreenService) { }
+  constructor(private userService: UserService, private screenService: ScreenService, private router: Router) { }
 
   //#region Properties
   isLoading: boolean = false;
-  showPassword:boolean=false
+  showPassword: boolean = false
   dataError: string = '';
   userUniqueInputData: UserUniqueInputData[] = Constants.UserUniqueInputData;
   selectedUserUniqueInputData: UserUniqueInputData = { label: this.userUniqueInputData[0].label, inputType: this.userUniqueInputData[0].inputType, placeholder: this.userUniqueInputData[0].placeholder, id: this.userUniqueInputData[0].id };
@@ -48,7 +48,8 @@ export class LoginPage {
   }
   handleLoginSuccess(response: ApiResponse<UserAuthenticated>) {
     this.isLoading = false;
-    console.log(response);
+    this.router.navigateByUrl("/")
+
   }
   //#endregion
   //#region Login Method
@@ -107,7 +108,7 @@ export class LoginPage {
     this.screenService.hideNavbar$.next(false);
   }
   ngAfterViewChecked() {
-    this.dataError="";
+    this.dataError = "";
   }
   //#endregion
 }

@@ -77,3 +77,10 @@
     color: var(--bs-body-color);
     cursor: pointer;
 }
+.dropdown-item,.nav-link{
+    cursor: pointer;
+
+}
+.dropdown-item:active{
+    background-color: var(--color-1);
+}

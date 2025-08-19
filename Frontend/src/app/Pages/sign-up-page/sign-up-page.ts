@@ -4,7 +4,7 @@ import { InputDirective } from '../../Directives/input-directive';
 import { LabelDirective } from '../../Directives/label-directive';
 import { SpinnerDirective } from '../../Directives/spinner-directive';
 import { LogoComponent } from '../../Components/logo-component/logo-component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TRole } from '../../Types/TRole';
 import { PasswordErrorDirective } from '../../Directives/password-error-directive';
 import { AppValidators } from '../../Validators';
@@ -24,7 +24,7 @@ import { ApiError } from '../../Interfaces/api-error';
   styleUrl: './sign-up-page.css'
 })
 export class SignUpPage {
-  constructor(private screenServices: ScreenService, private userService: UserService) { }
+  constructor(private screenServices: ScreenService, private userService: UserService, private router: Router) { }
   //#region Properties
   SignUpForm: FormGroup = new FormGroup({
     userName: new FormControl<string>("", AppValidators.name),
@@ -55,6 +55,7 @@ export class SignUpPage {
         {
           next: response => {
             this.isLoading = false;
+            this.router.navigateByUrl("/")
           },
           error: response => {
             this.isLoading = false

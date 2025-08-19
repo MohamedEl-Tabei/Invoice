@@ -26,7 +26,7 @@ namespace InvoiceBL.Managers
         {
             List<Claim> claims = new List<Claim>()
             {
-                new(ClaimTypes.Email,tokenDTOConfigurations.Email),
+                new(ClaimTypes.Name,tokenDTOConfigurations.UserName),
                 new(ClaimTypes.Role,tokenDTOConfigurations.Role),
                 new(ClaimTypes.NameIdentifier,tokenDTOConfigurations.UserId)
             };
