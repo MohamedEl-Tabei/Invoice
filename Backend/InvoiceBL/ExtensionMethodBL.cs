@@ -24,6 +24,7 @@ namespace InvoiceBL
             services.AddValidatorsFromAssembly(typeof(ValidatorUserDTORegister).Assembly);
             services.AddScoped<IUserAppManager, UserAppManager>();
             services.AddScoped<ITokenManger, TokenManager>();
+            services.AddScoped<ICategoryManager, CategoryManager>();
         }
         public static List<Error> ToErrorList(this ValidationResult validationResult)
         {

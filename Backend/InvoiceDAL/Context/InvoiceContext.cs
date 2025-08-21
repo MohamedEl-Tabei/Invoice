@@ -14,6 +14,7 @@ namespace InvoiceDAL.Context
     {
         public DbSet<Item> Items { get; set; }
         public DbSet<Price> Prices { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public InvoiceContext(DbContextOptions<InvoiceContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
