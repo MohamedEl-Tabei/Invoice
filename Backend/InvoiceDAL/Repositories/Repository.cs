@@ -22,6 +22,12 @@ namespace InvoiceDAL.Repositories
         {
             await _context.AddAsync(entity);
         }
+
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+
         public async Task<bool> IsUniqueAsync(Expression<Func<T, bool>> predicate)
         {
             var result = await _context.Set<T>().AnyAsync<T>(predicate);

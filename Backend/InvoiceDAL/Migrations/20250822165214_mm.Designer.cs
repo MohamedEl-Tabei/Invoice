@@ -4,6 +4,7 @@ using InvoiceDAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceDAL.Migrations
 {
     [DbContext(typeof(InvoiceContext))]
-    partial class InvoiceContextModelSnapshot : ModelSnapshot
+    [Migration("20250822165214_mm")]
+    partial class mm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,62 +45,6 @@ namespace InvoiceDAL.Migrations
                         .IsUnique();
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
-                            Name = "Clothes"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
-                            Name = "Education"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
-                            Name = "Electronics"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
-                            Name = "Entertainment"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
-                            Name = "Food"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
-                            Name = "Furniture"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
-                            Name = "Transportation"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
-                            Name = "Health"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
-                            ConcurrencyStamp = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
-                            Name = "Services"
-                        });
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.Item", b =>

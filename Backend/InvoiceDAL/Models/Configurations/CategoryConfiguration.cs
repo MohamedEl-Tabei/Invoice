@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using InvoiceDAL.Constants;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -16,6 +17,7 @@ namespace InvoiceDAL.Models.Configurations
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.Name).IsUnique();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(150);
+            builder.HasData(SeedData.GetCategories());
 
         }
     }

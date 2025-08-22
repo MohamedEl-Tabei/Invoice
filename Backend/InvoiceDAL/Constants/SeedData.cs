@@ -11,15 +11,26 @@ namespace InvoiceDAL.Constants
     internal static class SeedData
     {
         #region Ids
-        private static string AdminRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84";
-        private static string ShopRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe85";
-        private static string CustomerRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86";
-        private static string RestaurantRole = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
-        private static string AdminAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84";
-        private static string ShopAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85";
-        private static string CustomerAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86";
-        private static string RestaurantAppUser = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
+        private static readonly string AdminRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84";
+        private static readonly string ShopRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe85";
+        private static readonly string CustomerRole = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe86";
+        private static readonly string RestaurantRole = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
+        private static readonly string AdminAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe84";
+        private static readonly string ShopAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe85";
+        private static readonly string CustomerAppUser = "28b21eb8-d6dc-4acf-9ab8-91bf746efe86";
+        private static readonly string RestaurantAppUser = "28b21eb8-d6dc-4dcf-9ab8-91bf886efe86";
+        private static readonly string FoodCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81";
+        private static readonly string ElectronicsCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82";
+        private static readonly string ClothesCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83";
+        private static readonly string FurnitureCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84";
+        private static readonly string EducationCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85";
+        private static readonly string TransportationCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86";
+        private static readonly string HealthCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87";
+        private static readonly string ServicesCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88";
+        private static readonly string EntertainmentCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89";
+
         #endregion
+        #region Roles
         public static HashSet<IdentityRole> GetRoles()
         {
             return new HashSet<IdentityRole>(){
@@ -49,6 +60,8 @@ namespace InvoiceDAL.Constants
                 },
             };
         }
+        #endregion
+        #region Users
         public static HashSet<UserApp> GetUsers()
         {
             //Invoice123+
@@ -102,6 +115,8 @@ namespace InvoiceDAL.Constants
             };
 
         }
+        #endregion
+        #region User Roles
         public static HashSet<IdentityUserRole<string>> GetUserRoles()
         {
             return new HashSet<IdentityUserRole<string>>(){
@@ -123,6 +138,69 @@ namespace InvoiceDAL.Constants
                 },
             };
         }
+        #endregion
+        #region Categories
+        public static HashSet<Category> GetCategories()
+        {
+            return new HashSet<Category>
+            {
+                new()
+                {
+                    Id=ClothesCategory,
+                    ConcurrencyStamp=ClothesCategory,
+                    Name="Clothes"
+                },
+                new()
+                {
+                    Id=EducationCategory,
+                    ConcurrencyStamp=EducationCategory,
+                    Name="Education"
+                },
+                new()
+                {
+                    Id=ElectronicsCategory,
+                    ConcurrencyStamp=ElectronicsCategory,
+                    Name="Electronics"
+                },
+                new()
+                {
+                    Id=EntertainmentCategory,
+                    ConcurrencyStamp=EntertainmentCategory,
+                    Name="Entertainment"
+                },
+                new()
+                {
+                    Id=FoodCategory,
+                    ConcurrencyStamp=FoodCategory,
+                    Name="Food"
+                },
+                new()
+                {
+                    Id=FurnitureCategory,
+                    ConcurrencyStamp=FurnitureCategory,
+                    Name = "Furniture"
+                },
+                new()
+                {
+                    Id=TransportationCategory,
+                    ConcurrencyStamp=TransportationCategory,
+                    Name="Transportation",
+                },
+                new()
+                {
+                    Id=HealthCategory,
+                    ConcurrencyStamp=HealthCategory,
+                    Name="Health"
+                },
+                new()
+                {
+                    Id=ServicesCategory,
+                    ConcurrencyStamp=ServicesCategory,
+                    Name="Services"
+                }
 
+            };
+        }
+        #endregion
     }
 }

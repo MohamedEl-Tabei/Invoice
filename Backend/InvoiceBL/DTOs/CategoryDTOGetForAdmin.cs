@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace InvoiceBL.DTOs
 {
-    public class CategoryDTOGet
+    public class CategoryDTOGetForAdmin
     {
         public string Id { get; set; }
+        public string ConcurrencyStamp { get; set; }
         public string Name { get; set; }
     }
 }

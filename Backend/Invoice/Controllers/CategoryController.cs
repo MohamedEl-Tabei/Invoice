@@ -1,8 +1,11 @@
 ﻿using InvoiceBL;
 using InvoiceBL.DTOs;
 using InvoiceBL.IManagers;
+using InvoiceDAL.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
 namespace Invoice.Controllers
 {
@@ -17,11 +20,13 @@ namespace Invoice.Controllers
             _categoryManager = categoryManager;
         }
         #region Create
+        [Authorize(Policy = AppRoles.Admin)]
         [HttpPost("create")]
         [ProducesResponseType(typeof(Result<CategoryDTOGet>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(Result<string>),StatusCodes.Status400BadRequest)]
-        [EndpointDescription("Admin only create Category")]
-        [EndpointSummary("Create")]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [EndpointSummary("Create (Admin only)")]
+        [EndpointDescription("Allows only Admins to create a new category. Returns the created category on success.")]
+
         public async Task<ActionResult> Create(CategoryDTOCreate categoryDTOCreate)
         {
             var result = await _categoryManager.CreateAsync(categoryDTOCreate);
@@ -29,5 +34,20 @@ namespace Invoice.Controllers
 
         }
         #endregion
+        #region Get All For Admin
+        [Authorize(Policy = AppRoles.Admin)]
+        [HttpGet("admin/getAll")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(Result<List<CategoryDTOGetForAdmin>>),StatusCodes.Status200OK)]
+        [EndpointSummary("Get all (Admin only)")]
+        [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.")]
+        public async Task<ActionResult> GetAllForAdmin()
+        {
+            var result = await _categoryManager.GetAllAsync();
+            return result.Successed ? Ok(result) : NoContent();
+        }
+
+        #endregion
+        
     }
 }

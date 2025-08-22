@@ -1,6 +1,33 @@
 [
   {
     "ContainingType": "Invoice.Controllers.CategoryController",
+    "Method": "GetAllForAdmin",
+    "RelativePath": "api/Category/admin/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.CategoryDTOGetForAdmin, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Description": "This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.",
+    "Summary": "Get all (Admin only)"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.CategoryController",
     "Method": "Create",
     "RelativePath": "api/Category/create",
     "HttpMethod": "POST",
@@ -33,8 +60,8 @@
         "StatusCode": 400
       }
     ],
-    "Description": "Admin only create Category",
-    "Summary": "Create"
+    "Description": "Allows only Admins to create a new category. Returns the created category on success.",
+    "Summary": "Create (Admin only)"
   },
   {
     "ContainingType": "Invoice.Controllers.ItemsController",

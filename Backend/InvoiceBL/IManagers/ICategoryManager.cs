@@ -9,6 +9,7 @@ namespace InvoiceBL.IManagers
 {
     public interface ICategoryManager
     {
-        public Task<Result<CategoryDTOGet>> CreateAsync(CategoryDTOCreate categoryDTOCreate);
+        public Task<Result<CategoryDTOGetForAdmin>> CreateAsync(CategoryDTOCreate categoryDTOCreate);
+        public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllAsync();
     }
 }

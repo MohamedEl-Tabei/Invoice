@@ -1,4 +1,5 @@
-﻿using InvoiceDAL.Context;
+﻿using InvoiceDAL.Constants;
+using InvoiceDAL.Context;
 using InvoiceDAL.IRepositories;
 using InvoiceDAL.Models;
 using InvoiceDAL.Repositories;
@@ -11,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,21 +33,29 @@ namespace InvoiceDAL
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<InvoiceContext>();
             services
-            .AddAuthentication(options => {
-                options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
+            .AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(options => {
+            .AddJwtBearer(options =>
+            {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = true,
                     ValidateIssuer = true,
                     ValidAudience = configuration.GetValue<string>("JWT:Audience"),
-                    ValidIssuer= configuration.GetValue<string>("JWT:Issuer"),
+                    ValidIssuer = configuration.GetValue<string>("JWT:Issuer"),
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue<string>("JWT:SigningKey"))),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue<string>("JWT:SigningKey"))),
                 };
             });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(AppRoles.Admin, builder => builder.RequireClaim(ClaimTypes.Role, AppRoles.Admin));
+                options.AddPolicy(AppRoles.Customer, builder=> builder.RequireClaim(ClaimTypes.Role,AppRoles.Customer));
+            });
+
             services.AddScoped<IItemRepo, ItemRepo>();
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<ICategoryRepo, CategoryRepo>();
