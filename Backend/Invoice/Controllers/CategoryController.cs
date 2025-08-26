@@ -19,7 +19,7 @@ namespace Invoice.Controllers
         {
             _categoryManager = categoryManager;
         }
-        #region Create
+        #region Create  For Admin
         [Authorize(Policy = AppRoles.Admin)]
         [HttpPost("create")]
         [ProducesResponseType(typeof(Result<CategoryDTOGet>), StatusCodes.Status200OK)]
@@ -43,11 +43,11 @@ namespace Invoice.Controllers
         [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.")]
         public async Task<ActionResult> GetAllForAdmin()
         {
-            var result = await _categoryManager.GetAllAsync();
+            var result = await _categoryManager.GetAllForAdminAsync();
             return result.Successed ? Ok(result) : NoContent();
         }
 
         #endregion
-        
+          
     }
 }

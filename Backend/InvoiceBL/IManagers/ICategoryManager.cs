@@ -10,6 +10,6 @@ namespace InvoiceBL.IManagers
     public interface ICategoryManager
     {
         public Task<Result<CategoryDTOGetForAdmin>> CreateAsync(CategoryDTOCreate categoryDTOCreate);
-        public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllAsync();
+        public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync();
     }
 }

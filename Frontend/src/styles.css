@@ -84,3 +84,6 @@
 .dropdown-item:active{
     background-color: var(--color-1);
 }
+.active{
+    border-bottom: solid 1px var(--color-1);
+}

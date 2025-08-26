@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from "../logo-component/logo-component";
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TTheme } from '../../Types/TTheme';
 import { ScreenService } from '../../Services/screen-service';
 import { Constants } from '../../Constants';
 import { UserService } from '../../Services/user-service';
 import { UserAuthenticated } from '../../Interfaces/user-authenticated';
+import { LinkApp } from '../../Interfaces/link-app';
 
 @Component({
   selector: 'app-nav-bar-component',
-  imports: [LogoComponent, RouterLink],
+  imports: [LogoComponent, RouterLink, RouterLinkActive],
   templateUrl: './nav-bar-component.html',
   styleUrl: './nav-bar-component.css'
 })
@@ -17,6 +18,7 @@ export class NavBarComponent {
   public theme: TTheme = Constants.Theme.light;
   public Constants = Constants;
   public isHidden = false;
+  public links:LinkApp[] = [{ href: "", text: "Home" }, { href: "admin/categories", text: "Categories" }]
   public authenticatedUser: false | UserAuthenticated = false;
   constructor(private screenService: ScreenService, private userService: UserService) { }
   ngOnInit() {

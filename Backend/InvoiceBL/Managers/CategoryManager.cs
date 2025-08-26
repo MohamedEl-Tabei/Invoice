@@ -57,7 +57,7 @@ namespace InvoiceBL.Managers
         }
         #endregion
         #region Get All
-        public async Task<Result<List<CategoryDTOGetForAdmin>>> GetAllAsync()
+        public async Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync()
         {
             var result = new Result<List<CategoryDTOGetForAdmin>>();
 
