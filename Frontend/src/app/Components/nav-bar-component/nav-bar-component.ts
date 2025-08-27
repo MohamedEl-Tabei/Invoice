@@ -38,4 +38,5 @@ export class NavBarComponent {
     sessionStorage.removeItem(Constants.localStorageKey.token)
     this.userService.athenticatedUser$.next(false)
   }
+  
 }

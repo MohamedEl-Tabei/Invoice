@@ -86,4 +86,13 @@
 }
 .active{
     border-bottom: solid 1px var(--color-1);
+
+}
+.bg-1{
+    background-color: var(--color-1);
+    color:var(--bs-body-bg);
+}
+.bg-2{
+    color:var(--bs-body-bg);
+    background-color: var(--color-2);
 }

@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "InvoiceDAL\\Constants\\SeedData.cs",
               "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Constants\\SeedData.cs",
               "RelativeToolTip": "InvoiceDAL\\Constants\\SeedData.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwEIAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-26T16:43:08.532Z",
               "EditorCaption": ""
@@ -36,15 +36,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InvoiceDAL",
+              "Title": "InvoiceDAL.csproj",
               "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\InvoiceDAL.csproj",
               "RelativeDocumentMoniker": "InvoiceDAL\\InvoiceDAL.csproj",
               "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\InvoiceDAL.csproj",
               "RelativeToolTip": "InvoiceDAL\\InvoiceDAL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-26T16:43:04.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T16:43:04.463Z"
             }
           ]
         }

@@ -1,5 +1,22 @@
-@for (category of categories; track $index) {
-    <h1>
-        {{category.name}}
-    </h1>
-}
+<div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <form class="d-flex my-4">
+        <input type="text" appInput colorNumber="2" id="category" placeholder="Category" required />
+        <button type="submit" [disabled]="true" class="btn btn-2 px-4 ms-4 ">Add</button>
+
+    </form>
+    <hr>
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        @for (category of (categories$|async)?.data; track $index) {
+        <div class="group relative shadow-md bg-1  hover:scale-105 hover:shadow-lg hover:opacity-25 cursor-pointer ">
+            <div class="my-4 flex justify-center">
+                <div>
+                    <h3 class="text-sm ">
+                        {{category.name}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>
