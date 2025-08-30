@@ -22,10 +22,10 @@ namespace Invoice.Controllers
         #region Create  For Admin
         [Authorize(Policy = AppRoles.Admin)]
         [HttpPost("create")]
-        [ProducesResponseType(typeof(Result<CategoryDTOGet>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<List<CategoryDTOGetForAdmin>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
         [EndpointSummary("Create (Admin only)")]
-        [EndpointDescription("Allows only Admins to create a new category. Returns the created category on success.")]
+        [EndpointDescription("Allows only Admins to create a new category. Returns all categories on success.")]
 
         public async Task<ActionResult> Create(CategoryDTOCreate categoryDTOCreate)
         {

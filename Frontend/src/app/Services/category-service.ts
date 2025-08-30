@@ -11,12 +11,6 @@ import { CategoryForAdmin } from '../Interfaces/category-for-admin';
 export class CategoryService {
   constructor(private httpClient: HttpClient) { }
   getAllForAdmin(): Observable<ApiResponse<CategoryForAdmin[]>> {
-    var token = localStorage.getItem(Constants.localStorageKey.token) || null
-    if (!token) token = sessionStorage.getItem(Constants.localStorageKey.token)
-    return this.httpClient.get<ApiResponse<CategoryForAdmin[]>>(`${Constants.API_URL}category/admin/getAll`, {
-      headers: {
-        authorization: `Bearer ${token}`
-      }
-    })
+    return this.httpClient.get<ApiResponse<CategoryForAdmin[]>>(`${Constants.API_URL}category/admin/getAll`)
   }
 }

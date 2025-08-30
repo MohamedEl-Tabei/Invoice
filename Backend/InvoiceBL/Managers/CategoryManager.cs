@@ -24,9 +24,9 @@ namespace InvoiceBL.Managers
 
         }
         #region Create
-        public async Task<Result<CategoryDTOGetForAdmin>> CreateAsync(CategoryDTOCreate categoryDTOCreate)
+        public async Task<Result<List<CategoryDTOGetForAdmin>>> CreateAsync(CategoryDTOCreate categoryDTOCreate)
         {
-            var result = new Result<CategoryDTOGetForAdmin>();
+            var result = new Result<List<CategoryDTOGetForAdmin>>();
             #region Check category is valid
             var validatorResult = _validatorCategoryDTOCreate.Validate(categoryDTOCreate);
             if (!validatorResult.IsValid)
@@ -46,12 +46,8 @@ namespace InvoiceBL.Managers
             var newCategory = new Category() { Name = categoryDTOCreate.Name };
             await _unitOfWork._CategoryRepo.CreateAsync(newCategory);
             await _unitOfWork.SaveChangesAsync();
-            result.Data = new CategoryDTOGetForAdmin()
-            {
-                Name = categoryDTOCreate.Name,
-                Id = newCategory.Id,
-                ConcurrencyStamp = newCategory.ConcurrencyStamp,
-            };
+            var allCategories = await _unitOfWork._CategoryRepo.GetAllAsync();
+            result.Data = allCategories.Select(c => new CategoryDTOGetForAdmin { ConcurrencyStamp = c.ConcurrencyStamp, Id = c.Id, Name = c.Name }).ToList();
             result.Successed = true;
             return result;
         }

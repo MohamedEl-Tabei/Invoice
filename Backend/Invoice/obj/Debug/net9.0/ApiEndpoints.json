@@ -42,7 +42,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "InvoiceBL.Result\u00601[[InvoiceBL.DTOs.CategoryDTOGet, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.CategoryDTOGetForAdmin, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -60,7 +60,7 @@
         "StatusCode": 400
       }
     ],
-    "Description": "Allows only Admins to create a new category. Returns the created category on success.",
+    "Description": "Allows only Admins to create a new category. Returns all categories on success.",
     "Summary": "Create (Admin only)"
   },
   {

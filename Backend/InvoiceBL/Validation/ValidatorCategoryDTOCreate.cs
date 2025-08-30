@@ -14,6 +14,7 @@ namespace InvoiceBL.Validation
         {
 
             RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+            RuleFor(x => x.Name).Matches("^[a-z A-Z]+$").WithMessage("Name can only include letters and spaces.");
         }
     }
 }
