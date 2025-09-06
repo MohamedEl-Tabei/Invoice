@@ -22,6 +22,33 @@ namespace InvoiceDAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("InvoiceDAL.Models.AuditLog", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AdminId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Endpoint")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Method")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.ToTable("AuditLogs");
+                });
+
             modelBuilder.Entity("InvoiceDAL.Models.Category", b =>
                 {
                     b.Property<string>("Id")
@@ -105,6 +132,10 @@ namespace InvoiceDAL.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<decimal>("CurrentPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
@@ -126,7 +157,29 @@ namespace InvoiceDAL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            CurrentPrice = 500m,
+                            Description = "Transportation by bus",
+                            Quantity = 1m,
+                            Unit = "trip"
+                        },
+                        new
+                        {
+                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            CurrentPrice = 500m,
+                            Description = "Transportation by taxi",
+                            Quantity = 1m,
+                            Unit = "trip"
+                        });
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.Price", b =>
@@ -462,10 +515,32 @@ namespace InvoiceDAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("InvoiceDAL.Models.AuditLog", b =>
+                {
+                    b.HasOne("InvoiceDAL.Models.UserApp", "Admin")
+                        .WithMany("AuditLogs")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+                });
+
+            modelBuilder.Entity("InvoiceDAL.Models.Item", b =>
+                {
+                    b.HasOne("InvoiceDAL.Models.Category", "Category")
+                        .WithMany("Items")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("InvoiceDAL.Models.Price", b =>
                 {
                     b.HasOne("InvoiceDAL.Models.Item", "Item")
-                        .WithMany("Prices")
+                        .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -524,9 +599,14 @@ namespace InvoiceDAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("InvoiceDAL.Models.Item", b =>
+            modelBuilder.Entity("InvoiceDAL.Models.Category", b =>
                 {
-                    b.Navigation("Prices");
+                    b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("InvoiceDAL.Models.UserApp", b =>
+                {
+                    b.Navigation("AuditLogs");
                 });
 #pragma warning restore 612, 618
         }

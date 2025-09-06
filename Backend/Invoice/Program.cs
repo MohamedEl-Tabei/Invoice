@@ -1,3 +1,4 @@
+using Invoice.Middlewares;
 using InvoiceBL;
 using InvoiceDAL;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddTransient<AdminLoggingMiddleware>();
 builder.Services.AddDALServices(builder.Configuration);
 builder.Services.AddBLServices();
 builder.Services.AddCors(options =>
@@ -32,7 +34,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowFront");
 app.UseAuthorization();
-
+app.UseMiddleware<AdminLoggingMiddleware>();
 app.MapControllers();
 
 app.Run();

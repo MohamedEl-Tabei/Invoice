@@ -64,16 +64,16 @@
     "Summary": "Create (Admin only)"
   },
   {
-    "ContainingType": "Invoice.Controllers.ItemsController",
+    "ContainingType": "Invoice.Controllers.TestController",
     "Method": "Get",
-    "RelativePath": "api/Items",
+    "RelativePath": "api/Test",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

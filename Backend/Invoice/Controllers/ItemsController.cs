@@ -7,10 +7,6 @@ namespace Invoice.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<string> Get() {
-            return "Hi";
         
-        }
     }
 }

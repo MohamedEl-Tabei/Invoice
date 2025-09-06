@@ -60,6 +60,7 @@ namespace InvoiceDAL
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<ICategoryRepo, CategoryRepo>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAuditLogRepo, AuditLogRepo>();
         }
     }
 }

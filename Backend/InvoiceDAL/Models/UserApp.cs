@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace InvoiceDAL.Models
 {
-    public class UserApp:IdentityUser
+    public class UserApp : IdentityUser
     {
+        public HashSet<AuditLog> AuditLogs { get; set; }
     }
 }

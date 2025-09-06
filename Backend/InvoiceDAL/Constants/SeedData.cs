@@ -29,6 +29,9 @@ namespace InvoiceDAL.Constants
         private static readonly string ServicesCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88";
         private static readonly string EntertainmentCategory = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89";
 
+        private static readonly string BusItem = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87";
+        private static readonly string TaxiItem = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88";
+
         #endregion
         #region Roles
         public static HashSet<IdentityRole> GetRoles()
@@ -199,6 +202,32 @@ namespace InvoiceDAL.Constants
                     Name="Services"
                 }
 
+            };
+        }
+        #endregion
+        #region Items
+        public static HashSet<Item> GetItems()
+        {
+            return new HashSet<Item>
+            {
+                new Item()
+                {
+                    Id=BusItem,
+                    CategoryId=TransportationCategory,
+                    CurrentPrice=500,
+                    Description="Transportation by bus",
+                    Quantity=1,
+                    Unit="trip"
+                },
+                new Item()
+                {
+                    Id=TaxiItem,
+                    CategoryId=TransportationCategory,
+                    CurrentPrice=500,
+                    Description="Transportation by taxi",
+                    Quantity=1,
+                    Unit="trip"
+                }
             };
         }
         #endregion

@@ -66,7 +66,7 @@ namespace InvoiceBL.Managers
                     Id = c.Id,
                     ConcurrencyStamp = c.ConcurrencyStamp,
                     Name = c.Name
-                }).ToList();
+                }).OrderBy(c=>c.Name).ToList();
                 result.Successed = true;
                 return result;
             }

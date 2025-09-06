@@ -25,6 +25,7 @@ namespace InvoiceBL
             services.AddScoped<IUserAppManager, UserAppManager>();
             services.AddScoped<ITokenManger, TokenManager>();
             services.AddScoped<ICategoryManager, CategoryManager>();
+            services.AddScoped<IAuditLogManager, AuditLogManager>();
         }
         public static List<Error> ToErrorList(this ValidationResult validationResult)
         {

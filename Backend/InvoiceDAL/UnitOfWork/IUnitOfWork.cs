@@ -12,6 +12,7 @@ namespace InvoiceDAL
         public IItemRepo _ItemRepo { get; }
         public IUserRepo _UserRepo { get; }
         public ICategoryRepo _CategoryRepo { get; }
+        public IAuditLogRepo _AuditLogRepo { get; }
         public Task SaveChangesAsync();
     }
 }

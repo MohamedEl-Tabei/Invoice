@@ -15,12 +15,15 @@ namespace InvoiceDAL
         public IUserRepo _UserRepo { get; }
         public ICategoryRepo _CategoryRepo { get; }
 
-        public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo, ICategoryRepo categoryRepo)
+        public IAuditLogRepo _AuditLogRepo { get; }
+
+        public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo, ICategoryRepo categoryRepo, IAuditLogRepo auditLogRepo)
         {
             _context = context;
             _ItemRepo = itemRepo;
             _UserRepo = userRepo;
             _CategoryRepo = categoryRepo;
+            _AuditLogRepo = auditLogRepo;
         }
         public async Task SaveChangesAsync()
         {
