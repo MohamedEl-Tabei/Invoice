@@ -18,7 +18,7 @@ export class NavBarComponent {
   public theme: TTheme = Constants.Theme.light;
   public Constants = Constants;
   public isHidden = false;
-  public links:LinkApp[] = [{ href: "", text: "Home" }, { href: "admin/categories", text: "Categories" }]
+  public links:LinkApp[] = [{ href: "", text: "Home" }, { href: "admin/categories", text: "Categories" }, { href: "admin/history", text: "History" }]
   public authenticatedUser: false | UserAuthenticated = false;
   constructor(private screenService: ScreenService, private userService: UserService) { }
   ngOnInit() {

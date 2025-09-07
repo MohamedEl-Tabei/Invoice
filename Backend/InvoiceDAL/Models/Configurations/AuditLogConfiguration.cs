@@ -15,9 +15,9 @@ namespace InvoiceDAL.Models.Configurations
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.AdminId);
             builder.Property(x => x.Timestamp).IsRequired();
-            builder.Property(x => x.Method).IsRequired();
+            builder.Property(x => x.Action).IsRequired();
             builder.Property(x => x.AdminId).IsRequired();
-            builder.Property(x => x.Endpoint).IsRequired();
+            builder.Property(x => x.Entity).IsRequired();
         }
     }
 }

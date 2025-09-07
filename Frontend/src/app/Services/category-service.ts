@@ -13,4 +13,7 @@ export class CategoryService {
   getAllForAdmin(): Observable<ApiResponse<CategoryForAdmin[]>> {
     return this.httpClient.get<ApiResponse<CategoryForAdmin[]>>(`${Constants.API_URL}category/admin/getAll`)
   }
+  addNewCategory(name: string): Observable<ApiResponse<string>> {
+    return this.httpClient.post<ApiResponse<string>>(`${Constants.API_URL}category/create`, { name })
+  }
 }

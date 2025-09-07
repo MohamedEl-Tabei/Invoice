@@ -17,14 +17,40 @@ import { LoaderComponent } from "../../Components/loader-component/loader-compon
 })
 export class CategoriesAdminPage {
   categories$!: Observable<ApiResponse<CategoryForAdmin[]>>
-  isLoading$!:Observable<boolean>
-  newCategoryName:string=""
-  constructor(private categoryService: CategoryService,public loaderService:LoaderService) { }
+  isLoading$!: Observable<boolean>
+  newCategoryName: string = ""
+  serverMessage: string = ""
+  alertClass: string = "alert"
+  
+  constructor(private categoryService: CategoryService, public loaderService: LoaderService) { }
   ngOnInit() {
     this.categories$ = this.categoryService.getAllForAdmin()
-    this.isLoading$ =this.loaderService.isLoading$
+    this.isLoading$ = this.loaderService.isLoading$
   }
-  add(event:Event){
+  create(event: Event) {
+    event.preventDefault();
+    if (this.newCategoryName.trim().length != 0)
+      this.categoryService.addNewCategory(this.newCategoryName).subscribe(
+        {
+          next: (res) => {
+            this.categories$ = this.categoryService.getAllForAdmin()
+            this.serverMessage = res.data
+            this.alertClass = "alert alert-success"
+          },
+          error: (err) => {
+            this.serverMessage = err.error.errors[0].message;
+            this.alertClass = "alert alert-danger"
+          }
+        });
+    this.newCategoryName = ""
+  }
+  clearAlert() {
+    this.alertClass = "alert"
+    this.serverMessage = ""
+    if (this.newCategoryName.length && !/^[a-z A-Z]+$/.test(this.newCategoryName)) {
+      this.alertClass = "alert alert-danger"
+      this.serverMessage = "Category name can only contain letters and spaces"
+    }
+  }
 
-  }
 }

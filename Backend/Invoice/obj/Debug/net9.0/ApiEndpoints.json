@@ -1,5 +1,38 @@
 [
   {
+    "ContainingType": "Invoice.Controllers.AuditLogController",
+    "Method": "GetHistoryPageAsync",
+    "RelativePath": "api/AuditLog/page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.AuditLogDTOGet, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Description": "This endpoint can only be accessed by Admins. It retrieves a specific page of audit logs.",
+    "Summary": "Get by Page Number (Admin only)\u200B"
+  },
+  {
     "ContainingType": "Invoice.Controllers.CategoryController",
     "Method": "GetAllForAdmin",
     "RelativePath": "api/Category/admin/getAll",
@@ -42,7 +75,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.CategoryDTOGetForAdmin, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -60,7 +93,7 @@
         "StatusCode": 400
       }
     ],
-    "Description": "Allows only Admins to create a new category. Returns all categories on success.",
+    "Description": "Allows only Admins to create a new category.",
     "Summary": "Create (Admin only)"
   },
   {

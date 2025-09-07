@@ -27,15 +27,15 @@ namespace InvoiceDAL.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("AdminId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Endpoint")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Method")
+                    b.Property<string>("Entity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

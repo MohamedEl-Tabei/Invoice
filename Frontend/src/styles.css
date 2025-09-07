@@ -4,16 +4,22 @@
 @import "tailwindcss";
 
 :root {
---color-1: #006A65;
---color-2: #003A6A;
---shadow-1: 0 0 0 0.25rem #006a6530 ;
---shadow-2: 0 0 0 0.25rem #003a6a30 ;
+--color-1: #6e869e;
+--color-2: #85838e;
+--color-3: #d5cfd1;
+--color-4: #d5cfd130;
+--shadow-1: 0 0 0 0.25rem #6e869e30 ;
+--shadow-2: 0 0 0 0.25rem #85838e30 ;
+--shadow-3: 0 0 0 0.25rem #d5cfd130 ;
 
 }
 
 .page{
     height: 100vh;
     background-color: var(--bs-body-bg);
+    overflow-y: scroll;
+    scrollbar-color: var(--color-2)  var(--color-4);
+    
 }
 * {
     box-sizing: border-box;

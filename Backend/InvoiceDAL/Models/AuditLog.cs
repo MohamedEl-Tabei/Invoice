@@ -10,8 +10,8 @@ namespace InvoiceDAL.Models
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string AdminId { get; set; } 
-        public string Method { get; set; } 
-        public string Endpoint { get; set; }
+        public string Action { get; set; } 
+        public string Entity { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;
         public UserApp Admin { get; set; }
 
