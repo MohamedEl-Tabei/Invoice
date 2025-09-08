@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "bootstrap-icons";
 @import "tailwindcss";
+@import 'ngx-toastr/toastr';
 
 :root {
 --color-1: #6e869e;
@@ -101,4 +102,17 @@
 .bg-2{
     color:var(--bs-body-bg);
     background-color: var(--color-2);
+}
+.card{
+    background-color: var(--color-4);
+    color: var(--color-1);
+    box-shadow: var(--shadow-2);
+    border: 5px solid var(--bs-body-bg);
+    cursor: pointer;
+    
+}
+.card:hover{
+    box-shadow: var(--shadow-1);
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }

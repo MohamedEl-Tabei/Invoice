@@ -38,8 +38,7 @@
               "RelativeToolTip": "Invoice\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwBgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T16:43:59.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T16:43:59.392Z"
             },
             {
               "$type": "Document",
@@ -49,7 +48,7 @@
               "RelativeDocumentMoniker": "InvoiceBL\\Managers\\CategoryManager.cs",
               "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\CategoryManager.cs",
               "RelativeToolTip": "InvoiceBL\\Managers\\CategoryManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwBkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T16:42:12.321Z",
               "EditorCaption": ""
@@ -64,8 +63,7 @@
               "RelativeToolTip": "InvoiceDAL\\Repositories\\Repository.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T16:41:56.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T16:41:56.497Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Invoice\\Controllers\\AuditLogController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T16:17:27.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T16:17:27.6Z"
             }
           ]
         }
