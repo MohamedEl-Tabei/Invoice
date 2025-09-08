@@ -8,6 +8,8 @@ import { ApiResponse } from '../../Interfaces/api-response';
 import { FormsModule } from "@angular/forms";
 import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
+import { ToastrService } from "ngx-toastr"
+import { Constants } from '../../Constants';
 
 @Component({
   selector: 'app-categories-admin-page',
@@ -19,37 +21,37 @@ export class CategoriesAdminPage {
   categories$!: Observable<ApiResponse<CategoryForAdmin[]>>
   isLoading$!: Observable<boolean>
   newCategoryName: string = ""
-  serverMessage: string = ""
-  alertClass: string = "alert"
-  
-  constructor(private categoryService: CategoryService, public loaderService: LoaderService) { }
+  disabled: boolean = true
+  constructor(private categoryService: CategoryService, public loaderService: LoaderService, private toastrService: ToastrService) { }
   ngOnInit() {
     this.categories$ = this.categoryService.getAllForAdmin()
     this.isLoading$ = this.loaderService.isLoading$
   }
   create(event: Event) {
+    let name = this.newCategoryName.trim();
     event.preventDefault();
     if (this.newCategoryName.trim().length != 0)
       this.categoryService.addNewCategory(this.newCategoryName).subscribe(
         {
           next: (res) => {
             this.categories$ = this.categoryService.getAllForAdmin()
-            this.serverMessage = res.data
-            this.alertClass = "alert alert-success"
+            this.toastrService.success(`${name} created successfully`, '', Constants.toastrConfig)
           },
           error: (err) => {
-            this.serverMessage = err.error.errors[0].message;
-            this.alertClass = "alert alert-danger"
+            this.toastrService.error(err.error.errors[0].message, '', Constants.toastrConfig)
           }
         });
     this.newCategoryName = ""
+    this.disabled = true
+
   }
-  clearAlert() {
-    this.alertClass = "alert"
-    this.serverMessage = ""
+  checkCategoryName() {
     if (this.newCategoryName.length && !/^[a-z A-Z]+$/.test(this.newCategoryName)) {
-      this.alertClass = "alert alert-danger"
-      this.serverMessage = "Category name can only contain letters and spaces"
+      this.toastrService.error("Category name can only contain letters and spaces", '', Constants.toastrConfig);
+      this.disabled = true
+    }
+    else {
+      this.disabled = false
     }
   }
 

@@ -1,8 +1,8 @@
 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <form class="d-flex my-4" (submit)="create($event)">
-        <input type="text" appInput colorNumber="2" [(ngModel)]="newCategoryName" (input)="clearAlert()" name="category"
-            id="category" placeholder="Category" required />
-        <button type="submit" [disabled]="!newCategoryName.trim().length" class="btn btn-2 px-4 ms-4 ">Create</button>
+        <input type="text" appInput colorNumber="2" [(ngModel)]="newCategoryName" (input)="checkCategoryName()"
+            name="category" id="category" placeholder="Category" required />
+        <button type="submit" [disabled]="disabled" class="btn btn-2 px-4 ms-4 ">Create</button>
     </form>
     <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
@@ -12,14 +12,13 @@
             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
-    <div class="{{alertClass}}">{{serverMessage}}</div>
     <hr>
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 relative">
         @if ((isLoading$|async)) {
-        <app-loader-component></app-loader-component>
+        <app-loader-component type="card"></app-loader-component>
         }
         @for (category of (categories$|async)?.data; track $index) {
-        <div class="card ">
+        <div class="card " [title]="category.name">
             <div class="my-4 flex justify-center">
                 <div>
                     <h3 class="text-sm ">

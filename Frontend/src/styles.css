@@ -5,76 +5,101 @@
 @import 'ngx-toastr/toastr';
 
 :root {
---color-1: #6e869e;
---color-2: #85838e;
---color-3: #d5cfd1;
---color-4: #d5cfd130;
---shadow-1: 0 0 0 0.25rem #6e869e30 ;
---shadow-2: 0 0 0 0.25rem #85838e30 ;
---shadow-3: 0 0 0 0.25rem #d5cfd130 ;
+    --color-1: #6e869e;
+    --color-2: #85838e;
+    --color-3: #d5cfd1;
+    --color-4: #d5cfd130;
+    --shadow-1: 0 0 0 0.25rem #6e869e30;
+    --shadow-2: 0 0 0 0.25rem #85838e30;
+    --shadow-3: 0 0 0 0.25rem #d5cfd130;
 
 }
 
-.page{
+.page {
     height: 100vh;
     background-color: var(--bs-body-bg);
     overflow-y: scroll;
-    scrollbar-color: var(--color-2)  var(--color-4);
-    
+    scrollbar-color: var(--color-2) var(--color-4);
+    padding-bottom: 40px;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.btn-1,.btn-2,.btn-x {
+.btn-1,
+.btn-2,
+.btn-x {
     border: none;
     cursor: pointer;
     opacity: 0.9;
 }
-.btn-1 ,.btn-1:hover,.btn-1:active{
+
+.btn-1,
+.btn-1:hover,
+.btn-1:active {
     color: var(--bs-body-bg) !important;
-    background-color: var(--color-1) !important ;
+    background-color: var(--color-1) !important;
 }
-.btn-2,.btn-2:hover,.btn-2:active {
+
+.btn-2,
+.btn-2:hover,
+.btn-2:active {
     color: var(--bs-body-bg) !important;
     background-color: var(--color-2) !important;
 }
-.btn-x,.btn-x:hover,.btn-x:active {
+
+.btn-x,
+.btn-x:hover,
+.btn-x:active {
     color: var(--bs-body-bg) !important;
     background-color: var(--bs-secondary) !important;
 }
-.btn-1:hover,.btn-2:hover,.btn-x:hover {
+
+.btn-1:hover,
+.btn-2:hover,
+.btn-x:hover {
     color: var(--bs-body-bg);
     opacity: 1;
 }
+
 .form-check-input-2:checked {
     background-color: var(--color-2);
     border-color: var(--color-2);
 }
+
 .form-check-input-1:checked {
     background-color: var(--color-1);
     border-color: var(--color-1);
 }
-.form-control-1:focus,.form-check-input-2:focus {
+
+.form-control-1:focus,
+.form-check-input-2:focus {
     border-color: var(--color-1);
     box-shadow: var(--shadow-1);
 }
-.form-control-2:focus,.form-check-input-2:focus {
+
+.form-control-2:focus,
+.form-check-input-2:focus {
     border-color: var(--color-2);
     box-shadow: var(--shadow-2);
 }
+
 .text-1 {
     color: var(--color-1);
 }
+
 .text-2 {
     color: var(--color-2);
 }
+
 .text-x {
     color: var(--bs-body-color);
 }
-.eye{
+
+.eye {
     position: absolute;
     top: 0;
     display: flex;
@@ -84,35 +109,58 @@
     color: var(--bs-body-color);
     cursor: pointer;
 }
-.dropdown-item,.nav-link{
+
+.dropdown-item,
+.nav-link {
     cursor: pointer;
 
 }
-.dropdown-item:active{
+
+.dropdown-item:active {
     background-color: var(--color-1);
 }
-.active{
+
+.active {
     border-bottom: solid 1px var(--color-1);
 
 }
-.bg-1{
+
+.bg-1 {
     background-color: var(--color-1);
-    color:var(--bs-body-bg);
+    color: var(--bs-body-bg);
 }
-.bg-2{
-    color:var(--bs-body-bg);
+
+.bg-2 {
+    color: var(--bs-body-bg);
     background-color: var(--color-2);
 }
-.card{
+
+.bg {
+    background-color: var(--bs-body-bg);
+}
+
+.card {
     background-color: var(--color-4);
     color: var(--color-1);
-    box-shadow: var(--shadow-2);
-    border: 5px solid var(--bs-body-bg);
+    border: none;
     cursor: pointer;
     
 }
-.card:hover{
+.card h3{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    text-align: center;
+    text-overflow: ellipsis !important;
+}
+
+.card:hover {
     box-shadow: var(--shadow-1);
     transform: scale(1.03);
     transition: all 0.3s ease-in-out;
+}
+
+.toast-container .ngx-toastr {
+    width: max-content !important;
+    min-width: 200px !important;
 }

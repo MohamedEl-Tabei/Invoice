@@ -1,0 +1,20 @@
+.card {
+  color: var(--color-2);
+  background-color: var(--color-2);
+  animation: changeColor 2s infinite alternate;
+  cursor: not-allowed;
+
+}
+
+
+@keyframes changeColor {
+  from {
+    background-color: var(--color-2);
+    color: var(--color-2);
+  }
+
+  to {
+    background-color: var(--color-4);
+    color: var(--color-4);
+  }
+}

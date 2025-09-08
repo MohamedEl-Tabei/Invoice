@@ -6,9 +6,10 @@ import { CategoriesAdminPage } from './Pages/categories-admin-page/categories-ad
 import { HistoryAdminPage } from './Pages/history-admin-page/history-admin-page';
 
 export const routes: Routes = [
-    { path: '', component: HomePage ,title: 'Home', },
-    { path: 'login', component: LoginPage ,title: 'Login' },
+    { path: '', component: HomePage, title: 'Home', },
+    { path: 'login', component: LoginPage, title: 'Login' },
     { path: 'signUp', component: SignUpPage, title: 'Sign Up' },
-    {path:'admin/categories',component:CategoriesAdminPage,title:"Categories"},
-    {path:'admin/history',component:HistoryAdminPage,title:"History"}
+    { path: 'admin/categories', component: CategoriesAdminPage, title: "Categories" },
+    { path: 'admin/history', component: HistoryAdminPage, title: "History" }
+
 ];

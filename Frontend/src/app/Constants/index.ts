@@ -40,4 +40,11 @@ export class Constants {
     token: "token", theme: "theme"
   }
   //#endregion
+  //#region toastr config
+  public static readonly toastrConfig = {
+    timeOut: 3000,
+    positionClass: 'toast-bottom-left',
+    progressBar: true,
+  }
+  //#endregion
 }
