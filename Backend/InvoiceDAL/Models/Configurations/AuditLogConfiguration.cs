@@ -18,6 +18,7 @@ namespace InvoiceDAL.Models.Configurations
             builder.Property(x => x.Action).IsRequired();
             builder.Property(x => x.AdminId).IsRequired();
             builder.Property(x => x.Entity).IsRequired();
+            builder.Property(x => x.Data).IsRequired();
         }
     }
 }

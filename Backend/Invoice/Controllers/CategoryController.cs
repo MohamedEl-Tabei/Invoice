@@ -29,6 +29,7 @@ namespace Invoice.Controllers
 
         public async Task<ActionResult> Create(CategoryDTOCreate categoryDTOCreate)
         {
+            this.HttpContext.Items["NewData"] = categoryDTOCreate.Name;
             var result = await _categoryManager.CreateAsync(categoryDTOCreate);
             return result.Successed ? Ok(result) : BadRequest(result);
 

@@ -23,10 +23,9 @@ namespace InvoiceDAL.Repositories
             await _context.AuditLogs.AddAsync(auditLog);
         }
 
-        public async Task<List<AuditLog>> GetPageAsyncWithAdmin(int pageNumber)
+        public async Task<List<AuditLog>> GetByDateAsyncWithAdmin(DateOnly date)
         {
-            var history = await _context.AuditLogs.Skip((pageNumber - 1) * 10).Take(10).Include(x => x.Admin).ToListAsync();
-
+            var history = await _context.AuditLogs.Where(x => date == DateOnly.FromDateTime(x.Timestamp)).Include(x => x.Admin).ToListAsync();
             return history;
         }
     }

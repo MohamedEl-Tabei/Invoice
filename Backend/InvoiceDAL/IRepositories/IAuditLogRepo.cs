@@ -10,6 +10,6 @@ namespace InvoiceDAL.IRepositories
     public interface IAuditLogRepo
     {
         Task AddAsync(AuditLog auditLog);
-        Task<List<AuditLog>> GetPageAsyncWithAdmin(int pageNumber);
+        Task<List<AuditLog>> GetByDateAsyncWithAdmin(DateOnly date);
     }
 }

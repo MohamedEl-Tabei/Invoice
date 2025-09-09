@@ -2,14 +2,14 @@
   {
     "ContainingType": "Invoice.Controllers.AuditLogController",
     "Method": "GetHistoryPageAsync",
-    "RelativePath": "api/AuditLog/page",
+    "RelativePath": "api/AuditLog/date",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pageNumber",
-        "Type": "System.Int32",
+        "Name": "date",
+        "Type": "System.DateOnly",
         "IsRequired": false
       }
     ],
@@ -20,7 +20,7 @@
         "StatusCode": 204
       },
       {
-        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.AuditLogDTOGet, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.AuditLogDTOGetByDate, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

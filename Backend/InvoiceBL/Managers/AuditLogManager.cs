@@ -23,18 +23,15 @@ namespace InvoiceBL.Managers
             _unitOfWork = unitOfWork;
         }
         #region Get Page of Audit Logs
-        public async Task<Result<List<AuditLogDTOGet>>> GetPageAsync(int pageNumber)
+        public async Task<Result<List<AuditLogDTOGetByDate>>> GetByDateAsync(DateOnly date)
         {
-            var history = await _unitOfWork._AuditLogRepo.GetPageAsyncWithAdmin(pageNumber);
-            var result = new Result<List<AuditLogDTOGet>>();
+            var history = await _unitOfWork._AuditLogRepo.GetByDateAsyncWithAdmin(date);
+            var result = new Result<List<AuditLogDTOGetByDate>>();
             if (history != null && history.Count != 0)
             {
-                result.Data = history.Select(x => new AuditLogDTOGet
+                result.Data = history.Select(x => new AuditLogDTOGetByDate
                 {
-                    Action = x.Action,
-                    AdminUserName = x.Admin.UserName,
-                    Entity = x.Entity,
-                    Date = DateOnly.FromDateTime(x.Timestamp),
+                    Details = $"{x.Admin.UserName} {x.Action.ToLower()} {x.Entity.ToLower()} '{x.Data}'",
                     Time = TimeOnly.FromDateTime(x.Timestamp),
                 }).ToList();
                 result.Successed = true;
@@ -59,6 +56,7 @@ namespace InvoiceBL.Managers
                     AdminId = adminIdClaim.Value,
                     Action = action,
                     Entity = entity,
+                    Data = httpContext.Items["NewData"]?.ToString()
                 };
                 await _unitOfWork._AuditLogRepo.AddAsync(auditLog);
                 await _unitOfWork.SaveChangesAsync();

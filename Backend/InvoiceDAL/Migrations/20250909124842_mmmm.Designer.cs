@@ -4,6 +4,7 @@ using InvoiceDAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceDAL.Migrations
 {
     [DbContext(typeof(InvoiceContext))]
-    partial class InvoiceContextModelSnapshot : ModelSnapshot
+    [Migration("20250909124842_mmmm")]
+    partial class mmmm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,12 +38,11 @@ namespace InvoiceDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Data")
+                    b.Property<string>("Entity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Entity")
-                        .IsRequired()
+                    b.Property<string>("NewData")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Timestamp")

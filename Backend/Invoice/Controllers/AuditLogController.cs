@@ -20,16 +20,16 @@ namespace Invoice.Controllers
 
             _auditLogManager = auditLogManager;
         }
-        #region Get Page of Audit Logs
-        [Authorize(Policy = AppRoles.Admin)]
-        [HttpGet("page")]
+        #region Get Audit Logs By Date
+        //[Authorize(Policy = AppRoles.Admin)]
+        [HttpGet("date")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(Result<List<AuditLogDTOGet>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<List<AuditLogDTOGetByDate>>), StatusCodes.Status200OK)]
         [EndpointSummary("Get by Page Number (Admin only)​")]
         [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves a specific page of audit logs.")]
-        public async Task<ActionResult> GetHistoryPageAsync([FromQuery] int pageNumber)
+        public async Task<ActionResult> GetHistoryPageAsync([FromQuery] DateOnly date)
         {
-            var result = await _auditLogManager.GetPageAsync(pageNumber);
+            var result = await _auditLogManager.GetByDateAsync(date);
             if (result.Successed)
                 return Ok(result);
             else

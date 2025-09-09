@@ -9,9 +9,10 @@ namespace InvoiceDAL.Models
     public class AuditLog
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
-        public string AdminId { get; set; } 
-        public string Action { get; set; } 
+        public string AdminId { get; set; }
+        public string Action { get; set; }
         public string Entity { get; set; }
+        public string? Data { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;
         public UserApp Admin { get; set; }
 

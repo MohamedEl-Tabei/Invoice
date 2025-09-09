@@ -11,6 +11,6 @@ namespace InvoiceBL.IManagers
     public interface IAuditLogManager
     {
         Task LogAdminActionAsync(HttpContext httpContext);
-        Task<Result<List<AuditLogDTOGet>>> GetPageAsync(int pageNumber);
+        Task<Result<List<AuditLogDTOGetByDate>>> GetByDateAsync(DateOnly date);
     }
 }

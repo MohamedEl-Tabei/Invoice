@@ -15,12 +15,13 @@ namespace Invoice.Middlewares
         }
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
+            await next(context);
+            var isSucess = context.Response.StatusCode >= 200 && context.Response.StatusCode < 300;
             var isAdmin = context.User.IsInRole(AppRoles.Admin);
-            if (isAdmin)
+            if (isAdmin && isSucess)
             {
                 await _auditLogManager.LogAdminActionAsync(context);
             }
-            await next(context);
         }
     }
 }
