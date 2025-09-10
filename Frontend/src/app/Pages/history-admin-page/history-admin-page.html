@@ -1,1 +1,20 @@
-<p>history-admin-page works!</p>
+<div class="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <div class="mb-3  ">
+        <input type="date" [(ngModel)]="dateString" (change)="onDateChange()" appInput colorNumber="2" id="date" />
+    </div>
+    <div class="md:shadow-xl  p-2 p-md-4">
+        <h5 class="mb-2">{{dateString|date:"EEEE dd MMMM yyyy"}}</h5>
+        <hr>
+        @if (isLoading$|async) {
+        <app-loader-component type="container"></app-loader-component>
+        }
+        @for (item of (auditLogs$|async)?.data; track $index) {
+        <div class="grid grid-cols-6 py-2">
+            <small class="col-span-1">{{ item.date |date:'hh:mm a' }}</small>
+            <small class="col-span-6 md:col-span-5">{{ item.details }}</small>
+
+        </div>
+        }
+    </div>
+
+</div>

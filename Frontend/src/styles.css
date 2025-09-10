@@ -26,6 +26,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    color: var(--bs-body-color);
     padding: 0;
 }
 
@@ -141,7 +142,6 @@
 
 .card {
     background-color: var(--color-4);
-    color: var(--color-1);
     border: none;
     cursor: pointer;
     
@@ -163,4 +163,7 @@
 .toast-container .ngx-toastr {
     width: max-content !important;
     min-width: 200px !important;
+}
+hr{
+    border-color: var(--color-2);
 }

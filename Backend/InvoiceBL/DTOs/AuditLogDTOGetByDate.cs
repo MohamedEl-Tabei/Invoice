@@ -8,7 +8,7 @@ namespace InvoiceBL.DTOs
 {
     public class AuditLogDTOGetByDate
     {
-        public TimeOnly Time { get; set; }
+        public DateTime Date { get; set; }
 
         public string Details { get; set; }
     }

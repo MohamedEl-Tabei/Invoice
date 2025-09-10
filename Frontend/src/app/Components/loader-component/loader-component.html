@@ -1,5 +1,6 @@
+@if (type==='card') {
 <div class="bg absolute w-full h-full  z-100">
-     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 relative">
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 relative">
         @for (card of [1,2,3,4,5,6,7]; track $index) {
         <div class="card ">
             <div class="my-4 flex justify-center">
@@ -11,7 +12,10 @@
             </div>
         </div>
         }
-
-
     </div>
 </div>
+} @else if (type==='container') {
+<div class="bg  w-full h-full  z-100 flex justify-center items-center">
+    <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
+</div>
+}

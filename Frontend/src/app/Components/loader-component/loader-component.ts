@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class LoaderComponent {
   @Input({required:true})
-  type:"card" = "card";
+  type:"card"|"container" = "card";
 }

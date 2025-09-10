@@ -32,7 +32,7 @@ namespace InvoiceBL.Managers
                 result.Data = history.Select(x => new AuditLogDTOGetByDate
                 {
                     Details = $"{x.Admin.UserName} {x.Action.ToLower()} {x.Entity.ToLower()} '{x.Data}'",
-                    Time = TimeOnly.FromDateTime(x.Timestamp),
+                    Date = x.Timestamp,
                 }).ToList();
                 result.Successed = true;
             }

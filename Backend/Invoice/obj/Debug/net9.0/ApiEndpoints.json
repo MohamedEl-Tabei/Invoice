@@ -2,7 +2,7 @@
   {
     "ContainingType": "Invoice.Controllers.AuditLogController",
     "Method": "GetHistoryPageAsync",
-    "RelativePath": "api/AuditLog/date",
+    "RelativePath": "api/AuditLog",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -29,8 +29,8 @@
         "StatusCode": 200
       }
     ],
-    "Description": "This endpoint can only be accessed by Admins. It retrieves a specific page of audit logs.",
-    "Summary": "Get by Page Number (Admin only)\u200B"
+    "Description": "This endpoint can only be accessed by Admins. It retrieves audit logs by date.",
+    "Summary": "Get by Date (Admin only)\u200B"
   },
   {
     "ContainingType": "Invoice.Controllers.CategoryController",
