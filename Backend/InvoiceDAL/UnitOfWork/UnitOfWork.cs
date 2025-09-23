@@ -1,5 +1,7 @@
 ﻿using InvoiceDAL.Context;
 using InvoiceDAL.IRepositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,8 @@ namespace InvoiceDAL
 
         public IAuditLogRepo _AuditLogRepo { get; }
 
+        public IDbContextTransaction _Transaction { get; set; }
+
         public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo, ICategoryRepo categoryRepo, IAuditLogRepo auditLogRepo)
         {
             _context = context;
@@ -27,7 +31,28 @@ namespace InvoiceDAL
         }
         public async Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+                if (_Transaction != null) await _Transaction.CommitAsync();
+            }
+            catch
+            {
+
+                if (_Transaction != null) await _Transaction.RollbackAsync();
+                throw;
+            }
+        }
+
+        public async Task startTransactionAsync()
+        {
+            _Transaction = await _context.Database.BeginTransactionAsync();
+        }
+
+        public void Dispose()
+        {
+            _Transaction?.Dispose();
+            _context.Dispose();
         }
     }
 }

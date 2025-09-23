@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicedal\\repositories\\auditlogrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|solutionrelative:invoicedal\\repositories\\auditlogrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicedal\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|solutionrelative:invoicedal\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\managers\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\managers\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\managers\\userappmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\managers\\userappmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoice\\middlewares\\adminloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|solutionrelative:invoice\\middlewares\\adminloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuditLogRepo.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Repositories\\AuditLogRepo.cs",
-              "RelativeDocumentMoniker": "InvoiceDAL\\Repositories\\AuditLogRepo.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Repositories\\AuditLogRepo.cs",
-              "RelativeToolTip": "InvoiceDAL\\Repositories\\AuditLogRepo.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAACRAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AdminLoggingMiddleware.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Middlewares\\AdminLoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "Invoice\\Middlewares\\AdminLoggingMiddleware.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Middlewares\\AdminLoggingMiddleware.cs",
+              "RelativeToolTip": "Invoice\\Middlewares\\AdminLoggingMiddleware.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T13:25:38.754Z",
+              "WhenOpened": "2025-09-23T16:52:32.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryManager.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\CategoryManager.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\Managers\\CategoryManager.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\CategoryManager.cs",
+              "RelativeToolTip": "InvoiceBL\\Managers\\CategoryManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwDEAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:42:52.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserAppManager.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\UserAppManager.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\Managers\\UserAppManager.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\UserAppManager.cs",
+              "RelativeToolTip": "InvoiceBL\\Managers\\UserAppManager.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAkwOEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:41:07.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "InvoiceDAL\\UnitOfWork\\UnitOfWork.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\UnitOfWork\\UnitOfWork.cs*",
+              "RelativeToolTip": "InvoiceDAL\\UnitOfWork\\UnitOfWork.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowCQAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:31:00.193Z",
               "EditorCaption": ""
             }
           ]

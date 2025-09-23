@@ -46,7 +46,8 @@ namespace InvoiceBL.Managers
             #endregion
             var newCategory = new Category() { Name = categoryDTOCreate.Name };
             await _unitOfWork._CategoryRepo.CreateAsync(newCategory);
-            await _unitOfWork.SaveChangesAsync();
+            //await _unitOfWork.SaveChangesAsync(); Changes will be saved by middleware AdminLoggingMiddleware
+            await _unitOfWork.startTransactionAsync();
             result.Data = $"'{categoryDTOCreate.Name}' created successfully";
             result.Successed = true;
             return result;
