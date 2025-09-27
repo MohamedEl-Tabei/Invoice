@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InvoiceDAL.IRepositories
 {
-    public interface ICategoryRepo:IRepository<Category>
+    public interface ICategoryRepo : IRepository<Category>
     {
     }
 }

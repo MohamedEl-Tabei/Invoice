@@ -5,8 +5,8 @@ import { finalize } from 'rxjs';
 
 export const loadInterceptor: HttpInterceptorFn = (req, next) => {
   const loaderService = inject(LoaderService)
-  loaderService.isLoading$.next(true)
+  loaderService.show();
   return next(req).pipe(
-    finalize(() => loaderService.isLoading$.next(false))
+    finalize(() => loaderService.hide())
   );
 };

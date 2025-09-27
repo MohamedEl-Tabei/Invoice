@@ -1,4 +1,5 @@
 ﻿using InvoiceBL.DTOs;
+using InvoiceDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

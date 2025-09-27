@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddTransient<AdminLoggingMiddleware>();
+builder.Services.AddTransient<ErrorHandlerMiddlware>();
 builder.Services.AddDALServices(builder.Configuration);
 builder.Services.AddBLServices();
 builder.Services.AddCors(options =>
@@ -35,6 +36,7 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFront");
 app.UseAuthorization();
 app.UseMiddleware<AdminLoggingMiddleware>();
+app.UseMiddleware<ErrorHandlerMiddlware>();
 app.MapControllers();
 
 app.Run();

@@ -10,6 +10,7 @@ import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
 import { ToastrService } from "ngx-toastr"
 import { Constants } from '../../Constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories-admin-page',
@@ -19,13 +20,11 @@ import { Constants } from '../../Constants';
 })
 export class CategoriesAdminPage {
   categories$!: Observable<ApiResponse<CategoryForAdmin[]>>
-  isLoading$!: Observable<boolean>
   newCategoryName: string = ""
   disabled: boolean = true
-  constructor(private categoryService: CategoryService, public loaderService: LoaderService, private toastrService: ToastrService) { }
+  constructor(private categoryService: CategoryService, public router: Router, public loaderService: LoaderService, private toastrService: ToastrService) { }
   ngOnInit() {
     this.categories$ = this.categoryService.getAllForAdmin()
-    this.isLoading$ = this.loaderService.isLoading$
   }
   create(event: Event) {
     let name = this.newCategoryName.trim();
@@ -53,6 +52,9 @@ export class CategoriesAdminPage {
     else {
       this.disabled = false
     }
+  }
+  toCategoryDetails(category: CategoryForAdmin) {
+    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id, name: category.name, concurrencyStamp: category.concurrencyStamp } })
   }
 
 }

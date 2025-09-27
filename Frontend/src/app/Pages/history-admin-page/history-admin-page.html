@@ -5,7 +5,7 @@
     <div class="md:shadow-xl  p-2 p-md-4">
         <h5 class="mb-2">{{dateString|date:"EEEE dd MMMM yyyy"}}</h5>
         <hr>
-        @if (isLoading$|async) {
+        @if (loaderService.isLoading()) {
         <app-loader-component type="container"></app-loader-component>
         }
         @for (item of (auditLogs$|async)?.data; track $index) {
