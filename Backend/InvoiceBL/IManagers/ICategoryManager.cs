@@ -12,5 +12,6 @@ namespace InvoiceBL.IManagers
     {
         public Task<Result<string>> CreateAsync(CategoryDTOCreate categoryDTOCreate);
         public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync();
+        public Task<Result<string>> UpdateAsync(CategoryDTOUpdate categoryDTOUpdate);
     }
 }

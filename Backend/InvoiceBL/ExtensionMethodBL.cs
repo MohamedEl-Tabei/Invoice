@@ -4,6 +4,7 @@ using InvoiceBL.DTOs;
 using InvoiceBL.IManagers;
 using InvoiceBL.Managers;
 using InvoiceBL.Validation;
+using InvoiceDAL.Constants;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,7 +30,7 @@ namespace InvoiceBL
         }
         public static List<Error> ToErrorList(this ValidationResult validationResult)
         {
-            return validationResult.Errors.Select(x => new Error() { Message = x.ErrorMessage, Code = x.ErrorCode, PropertyName = x.PropertyName }).ToList();
+            return validationResult.Errors.Select(x => new Error() { Message = x.ErrorMessage, Code = ErrorCodes.BadRequest, PropertyName = x.PropertyName }).ToList();
         }
         public static List<Error> ToErrorList(this IdentityResult identityResult)
         {

@@ -28,10 +28,15 @@ namespace InvoiceDAL.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<bool> IsUniqueAsync(Expression<Func<T, bool>> predicate)
+        public async Task<T?> GetByIdAsync(string id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
+
+        public async Task<bool> IsUsedAsync(Expression<Func<T, bool>> predicate)
         {
             var result = await _context.Set<T>().AnyAsync<T>(predicate);
-            return !result;
+            return result;
         }
     }
 }

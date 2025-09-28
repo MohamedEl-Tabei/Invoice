@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicedal\\irepositories\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|solutionrelative:invoicedal\\irepositories\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\dtos\\categorydtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\dtos\\categorydtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicedal\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2033586-0D10-4299-97AC-40FA1655A6BC}|InvoiceDAL\\InvoiceDAL.csproj|solutionrelative:invoicedal\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\dtos\\categorydtocreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\dtos\\categorydtocreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ICategoryRepo.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\IRepositories\\ICategoryRepo.cs",
-              "RelativeDocumentMoniker": "InvoiceDAL\\IRepositories\\ICategoryRepo.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\IRepositories\\ICategoryRepo.cs",
-              "RelativeToolTip": "InvoiceDAL\\IRepositories\\ICategoryRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Title": "CategoryDTOUpdate.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\DTOs\\CategoryDTOUpdate.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\DTOs\\CategoryDTOUpdate.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\DTOs\\CategoryDTOUpdate.cs",
+              "RelativeToolTip": "InvoiceBL\\DTOs\\CategoryDTOUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T17:05:01.452Z",
+              "WhenOpened": "2025-09-28T19:11:28.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoryRepo.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Repositories\\CategoryRepo.cs",
-              "RelativeDocumentMoniker": "InvoiceDAL\\Repositories\\CategoryRepo.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceDAL\\Repositories\\CategoryRepo.cs",
-              "RelativeToolTip": "InvoiceDAL\\Repositories\\CategoryRepo.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Title": "CategoryDTOCreate.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\DTOs\\CategoryDTOCreate.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\DTOs\\CategoryDTOCreate.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\DTOs\\CategoryDTOCreate.cs",
+              "RelativeToolTip": "InvoiceBL\\DTOs\\CategoryDTOCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T17:04:40.09Z"
+              "WhenOpened": "2025-09-28T19:11:24.91Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -171,13 +171,13 @@ namespace InvoiceBL.Managers
         {
             var result = new Result<UserDTOAuthenticated>();
             #region Check Email, UserName and Phone Are Unique
-            var isUniqueUserName = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.UserName == userDTORegister.UserName);
-            var isUniquePhoneNumber = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.PhoneNumber == userDTORegister.PhoneNumber);
-            var isUniqueEmail = await _unitOfWork._UserRepo.IsUniqueAsync(x => x.Email == userDTORegister.Email);
+            var isUsedUserName = await _unitOfWork._UserRepo.IsUsedAsync(x => x.UserName == userDTORegister.UserName);
+            var isUsedPhoneNumber = await _unitOfWork._UserRepo.IsUsedAsync(x => x.PhoneNumber == userDTORegister.PhoneNumber);
+            var isUsedEmail = await _unitOfWork._UserRepo.IsUsedAsync(x => x.Email == userDTORegister.Email);
 
-            if (!isUniqueEmail) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.Email, userDTORegister.Email));
-            if (!isUniquePhoneNumber) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.PhoneNumber, userDTORegister.PhoneNumber));
-            if (!isUniqueUserName) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.UserName, userDTORegister.UserName));
+            if (isUsedEmail) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.Email, userDTORegister.Email));
+            if (isUsedPhoneNumber) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.PhoneNumber, userDTORegister.PhoneNumber));
+            if (isUsedUserName) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.UserName, userDTORegister.UserName));
             if (result.Errors.Count > 0)
                 return result;
             #endregion

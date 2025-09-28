@@ -39,7 +39,7 @@ namespace Invoice.Controllers
         [Authorize(Policy = AppRoles.Admin)]
         [HttpGet("admin/getAll")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(Result<List<CategoryDTOGetForAdmin>>),StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<List<CategoryDTOGetForAdmin>>), StatusCodes.Status200OK)]
         [EndpointSummary("Get all (Admin only)")]
         [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.")]
         public async Task<ActionResult> GetAllForAdmin()
@@ -49,6 +49,22 @@ namespace Invoice.Controllers
         }
 
         #endregion
-          
+        #region Update For Admin
+        [Authorize(Policy = AppRoles.Admin)]
+        [HttpPut("admin/update")]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status409Conflict)]
+        [EndpointSummary("Update (Admin only)")]
+        [EndpointDescription("This endpoint can only be accessed by Admins. It updates an existing category.")]
+        public async Task<ActionResult> Update(CategoryDTOUpdate categoryDTOUpdate)
+        {
+            this.HttpContext.Items["NewData"] = $"{categoryDTOUpdate.NewName} ({categoryDTOUpdate.Id})";
+            var result = await _categoryManager.UpdateAsync(categoryDTOUpdate);
+            return this.HandleResponse(result);
+        }
+
+        #endregion
     }
 }

@@ -3,6 +3,7 @@ using InvoiceBL.DTOs;
 using InvoiceBL.IManagers;
 using InvoiceBL.Validation;
 using InvoiceDAL;
+using InvoiceDAL.Constants;
 using InvoiceDAL.Models;
 using System;
 using System.Collections.Generic;
@@ -16,18 +17,20 @@ namespace InvoiceBL.Managers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<CategoryDTOCreate> _validatorCategoryDTOCreate;
+        private readonly IValidator<CategoryDTOUpdate> _validatorCategoryDTOUpdate;
 
-        public CategoryManager(IUnitOfWork unitOfWork, IValidator<CategoryDTOCreate> validatorCategoryDTOCreate)
+        public CategoryManager(IUnitOfWork unitOfWork, IValidator<CategoryDTOCreate> validatorCategoryDTOCreate,IValidator<CategoryDTOUpdate> validatorCategoryDTOUpdate)
         {
             _unitOfWork = unitOfWork;
             _validatorCategoryDTOCreate = validatorCategoryDTOCreate;
+            _validatorCategoryDTOUpdate = validatorCategoryDTOUpdate;
 
         }
         #region Create
         public async Task<Result<string>> CreateAsync(CategoryDTOCreate categoryDTOCreate)
         {
             var result = new Result<string>();
-            categoryDTOCreate.Name = categoryDTOCreate.Name.Trim();
+            categoryDTOCreate.Name = categoryDTOCreate.Name.Trim().ToLower();
             #region Check category is valid
             var validatorResult = _validatorCategoryDTOCreate.Validate(categoryDTOCreate);
             if (!validatorResult.IsValid)
@@ -37,17 +40,17 @@ namespace InvoiceBL.Managers
             }
             #endregion
             #region Check Name of Category is unique
-            var isUniqueName = await _unitOfWork._CategoryRepo.IsUniqueAsync(c => c.Name == categoryDTOCreate.Name);
-            if (!isUniqueName)
+            var isUsed = await _unitOfWork._CategoryRepo.IsUsedAsync(c => c.Name == categoryDTOCreate.Name);
+            if (isUsed)
             {
                 result.Errors.Add(new Error { Code = "NameIsNotUnique", Message = $"{categoryDTOCreate.Name} is exist.", PropertyName = "Name" });
                 return result;
             }
             #endregion
+            await _unitOfWork.startTransactionAsync();
             var newCategory = new Category() { Name = categoryDTOCreate.Name };
             await _unitOfWork._CategoryRepo.CreateAsync(newCategory);
             //await _unitOfWork.SaveChangesAsync(); Changes will be saved by middleware AdminLoggingMiddleware
-            await _unitOfWork.startTransactionAsync();
             result.Data = $"'{categoryDTOCreate.Name}' created successfully";
             result.Successed = true;
             return result;
@@ -80,6 +83,45 @@ namespace InvoiceBL.Managers
             });
             return result;
             #endregion
+        }
+        #endregion
+        #region Update
+        public async Task<Result<string>> UpdateAsync(CategoryDTOUpdate categoryDTOUpdate)
+        {
+            var result = new Result<string>();
+            var category = await _unitOfWork._CategoryRepo.GetByIdAsync(categoryDTOUpdate.Id);
+
+            #region Check category is exist
+            if (category == null)
+            {
+                result.Errors.Add(new Error { Code = ErrorCodes.NotFound, Message = $"This category is not found.", PropertyName = "Id" });
+                return result;
+            }
+            #endregion
+            #region 400 Check name is new && Check name is valid
+            if (category.Name.ToLower() == categoryDTOUpdate.NewName.ToLower().Trim())
+                result.Errors.Add(new Error { Code = ErrorCodes.BadRequest, Message = $"The name is not changed.", PropertyName = "Name" });
+            var validatorResult = _validatorCategoryDTOUpdate.Validate(categoryDTOUpdate);
+            if (!validatorResult.IsValid)
+                result.Errors.AddRange(validatorResult.ToErrorList());
+            if (result.Errors.Any()) return result;
+            #endregion
+            #region 409 Check concurrency stamp is correct && Check Name of Category is unique
+            if (category.ConcurrencyStamp != categoryDTOUpdate.ConcurrencyStamp)
+                result.Errors.Add(new Error { Code = ErrorCodes.Conflict, Message = $"This category is changed, please enter the new ConcurrencyStamp({category.ConcurrencyStamp}).", PropertyName = "ConcurrencyStamp" });
+            var isUsed = await _unitOfWork._CategoryRepo.IsUsedAsync(c => c.Name.ToLower() == categoryDTOUpdate.NewName.Trim().ToLower());
+            if (isUsed)
+                result.Errors.Add(new Error { Code = ErrorCodes.Conflict, Message = $"{categoryDTOUpdate.NewName} is exist.", PropertyName = "Name" });
+            if (result.Errors.Any()) return result;
+
+            #endregion
+            await _unitOfWork.startTransactionAsync();
+            category.Name = categoryDTOUpdate.NewName.ToLower().Trim();
+            category.ConcurrencyStamp = Guid.NewGuid().ToString();
+            result.Successed = true;
+            result.Data = category.ConcurrencyStamp;
+            //await _unitOfWork.SaveChangesAsync(); Changes will be saved by middleware AdminLoggingMiddleware
+            return result;
         }
         #endregion
     }

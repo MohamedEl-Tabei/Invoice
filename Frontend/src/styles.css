@@ -32,7 +32,8 @@
 
 .btn-1,
 .btn-2,
-.btn-x {
+.btn-x,
+.btn-d {
     border: none;
     cursor: pointer;
     opacity: 0.9;
@@ -59,9 +60,18 @@
     background-color: var(--bs-secondary) !important;
 }
 
+.btn-d,
+.btn-d:hover,
+.btn-d:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-red-500) !important;
+}
+
+
 .btn-1:hover,
 .btn-2:hover,
-.btn-x:hover {
+.btn-x:hover ,
+.btn-d:hover {
     color: var(--bs-body-bg);
     opacity: 1;
 }
@@ -166,4 +176,7 @@
 }
 hr{
     border-color: var(--color-2);
+}
+.bi{
+    color: inherit;
 }
