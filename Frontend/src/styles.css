@@ -75,7 +75,10 @@
     color: var(--bs-body-bg);
     opacity: 1;
 }
-
+.btn-close:active{
+    outline: none;
+    box-shadow: none;
+}
 .form-check-input-2:checked {
     background-color: var(--color-2);
     border-color: var(--color-2);

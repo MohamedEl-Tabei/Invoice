@@ -11,7 +11,8 @@ namespace Invoice
             return result.Successed ? controllerBase.Ok(result)
                : result.Errors.Any(e => e.Code == ErrorCodes.NotFound) ? controllerBase.NotFound(result)
                : result.Errors.Any(e => e.Code == ErrorCodes.Conflict) ? controllerBase.Conflict(result)
-               : controllerBase.BadRequest(result);
+               : result.Errors.Any(e => e.Code == ErrorCodes.BadRequest) ? controllerBase.BadRequest(result)
+               : controllerBase.NoContent();
         }
     }
 }

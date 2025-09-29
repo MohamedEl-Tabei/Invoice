@@ -43,7 +43,7 @@ namespace InvoiceBL.Managers
             var isUsed = await _unitOfWork._CategoryRepo.IsUsedAsync(c => c.Name == categoryDTOCreate.Name);
             if (isUsed)
             {
-                result.Errors.Add(new Error { Code = "NameIsNotUnique", Message = $"{categoryDTOCreate.Name} is exist.", PropertyName = "Name" });
+                result.Errors.Add(new Error { Code = ErrorCodes.Conflict, Message = $"{categoryDTOCreate.Name} is exist.", PropertyName = "Name" });
                 return result;
             }
             #endregion

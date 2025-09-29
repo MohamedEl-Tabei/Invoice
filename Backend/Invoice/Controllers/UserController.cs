@@ -29,7 +29,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> Register([FromBody] UserDTORegister userDTORegister)
         {
             var result = await _userManager.RegisterAsync(userDTORegister);
-            return result.Successed ? Ok(result) : BadRequest(result);
+            return this.HandleResponse(result);
         }
         #endregion
 
@@ -42,7 +42,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> LoginWithEmail([FromBody] UserDTOLoginEmail userDTOLoginEmail)
         {
             var result = await _userManager.LoginWithEmailAsync(userDTOLoginEmail);
-            return result.Successed ? Ok(result) : BadRequest(result);
+            return this.HandleResponse(result);
         }
         #endregion 
         #region Login By UserName
@@ -54,7 +54,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> LoginWithUserName([FromBody] UserDTOLoginUserName userDTOLoginUserName)
         {
             var result = await _userManager.LoginWithUserNameAsync(userDTOLoginUserName);
-            return result.Successed ? Ok(result) : BadRequest(result);
+            return this.HandleResponse(result);
         }
         #endregion
         #region Login By Phone Number
@@ -66,7 +66,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> LoginWithPhoneNumber([FromBody] UserDTOLoginPhoneNumber userDTOLoginPhoneNumber)
         {
             var result = await _userManager.LoginWithPhoneNumberAsync(userDTOLoginPhoneNumber);
-            return result.Successed ? Ok(result) : BadRequest(result);
+            return this.HandleResponse(result);
         }
         #endregion
 

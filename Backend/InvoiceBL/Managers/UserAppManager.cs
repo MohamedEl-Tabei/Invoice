@@ -34,7 +34,7 @@ namespace InvoiceBL.Managers
             var result = new Result<UserDTOAuthenticated>();
             var error = new Error()
             {
-                Code = "InvalidLogin",
+                Code = ErrorCodes.BadRequest,
                 Message = "Invalid Email or Password",
                 PropertyName = "Email or Password"
             };
@@ -80,7 +80,7 @@ namespace InvoiceBL.Managers
             var result = new Result<UserDTOAuthenticated>();
             var error = new Error()
             {
-                Code = "InvalidLogin",
+                Code = ErrorCodes.BadRequest,
                 Message = "Invalid Phone Number or Password",
                 PropertyName = "Phone Number or Password"
             };
@@ -126,7 +126,7 @@ namespace InvoiceBL.Managers
             var result = new Result<UserDTOAuthenticated>();
             var error = new Error()
             {
-                Code = "InvalidLogin",
+                Code = ErrorCodes.BadRequest,
                 Message = "Invalid UserName or Password",
                 PropertyName = "UserName or Password"
             };
@@ -175,9 +175,9 @@ namespace InvoiceBL.Managers
             var isUsedPhoneNumber = await _unitOfWork._UserRepo.IsUsedAsync(x => x.PhoneNumber == userDTORegister.PhoneNumber);
             var isUsedEmail = await _unitOfWork._UserRepo.IsUsedAsync(x => x.Email == userDTORegister.Email);
 
-            if (isUsedEmail) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.Email, userDTORegister.Email));
-            if (isUsedPhoneNumber) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.PhoneNumber, userDTORegister.PhoneNumber));
-            if (isUsedUserName) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.UserName, userDTORegister.UserName));
+            if (isUsedEmail) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.Email));
+            if (isUsedPhoneNumber) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.PhoneNumber));
+            if (isUsedUserName) result.Errors.Add(Utilities.GetUniqueStringDataError(UniqueProperties.UserName));
             if (result.Errors.Count > 0)
                 return result;
             #endregion
@@ -207,6 +207,7 @@ namespace InvoiceBL.Managers
             var RoleResult = await _userManager.AddToRoleAsync(user, userDTORegister.Role);
             if (!RoleResult.Succeeded)
             {
+                await _userManager.DeleteAsync(user);
                 result.Errors.AddRange(RoleResult.ToErrorList());
                 return result;
             }

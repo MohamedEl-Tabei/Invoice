@@ -31,7 +31,7 @@ namespace Invoice.Controllers
         {
             this.HttpContext.Items["NewData"] = categoryDTOCreate.Name;
             var result = await _categoryManager.CreateAsync(categoryDTOCreate);
-            return result.Successed ? Ok(result) : BadRequest(result);
+            return this.HandleResponse(result);
 
         }
         #endregion
@@ -45,7 +45,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> GetAllForAdmin()
         {
             var result = await _categoryManager.GetAllForAdminAsync();
-            return result.Successed ? Ok(result) : NoContent();
+            return this.HandleResponse(result);
         }
 
         #endregion

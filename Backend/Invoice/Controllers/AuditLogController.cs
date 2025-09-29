@@ -30,11 +30,7 @@ namespace Invoice.Controllers
         public async Task<ActionResult> GetHistoryPageAsync([FromQuery] DateOnly date)
         {
             var result = await _auditLogManager.GetByDateAsync(date);
-            if (result.Successed)
-                return Ok(result);
-            else
-                return NoContent();
-
+            return this.HandleResponse(result);
         }
         #endregion
     }
