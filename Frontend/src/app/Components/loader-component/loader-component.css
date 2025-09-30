@@ -6,6 +6,46 @@
 
 }
 
+.default {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+.default:before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  background-image: url("/images/eg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: loading-bounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes loading-bounce {
+  0% {
+    transform: scale(1, 0.7)
+  }
+
+  40% {
+    transform: scale(0.8, 1.2)
+  }
+
+  60% {
+    transform: scale(1, 1)
+  }
+
+  100% {
+    bottom: 140px
+  }
+}
+
+
 
 @keyframes changeColor {
   from {

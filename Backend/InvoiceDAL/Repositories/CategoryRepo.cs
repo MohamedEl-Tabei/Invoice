@@ -12,12 +12,8 @@ namespace InvoiceDAL.Repositories
 {
     public class CategoryRepo : Repository<Category>, ICategoryRepo
     {
-        public CategoryRepo(InvoiceContext invoiceContext) : base(invoiceContext)
-        {
-          
+        public CategoryRepo(InvoiceContext invoiceContext) : base(invoiceContext){}
 
-        }
-
-       
+        
     }
 }

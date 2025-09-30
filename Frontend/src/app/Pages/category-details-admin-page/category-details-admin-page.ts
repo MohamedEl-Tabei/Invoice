@@ -1,28 +1,69 @@
 import { Component } from '@angular/core';
-import { CategoryForAdmin } from '../../Interfaces/category-for-admin';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InputDirective } from '../../Directives/input-directive';
+import { CategoryService } from '../../Services/category-service';
+import { CategoryUpdate } from '../../Interfaces/category-update';
+import { ToastrService } from 'ngx-toastr';
+import { Constants } from '../../Constants';
+import { LoaderService } from '../../Services/loader-service';
+import { LoaderComponent } from "../../Components/loader-component/loader-component";
 
 @Component({
   selector: 'app-category-details-admin-page',
-  imports: [FormsModule,InputDirective],
+  imports: [FormsModule, InputDirective, LoaderComponent],
   templateUrl: './category-details-admin-page.html',
   styleUrl: './category-details-admin-page.css'
 })
 export class CategoryDetailsAdminPage {
-  category!: CategoryForAdmin;
+  category: CategoryUpdate = { id: '', newName: '', oldName: '', concurrencyStamp: '' };
+  validCategory = false;
   onEdit = false;
-  constructor(private activeRoute: ActivatedRoute) {
+  constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService) { }
+  ngOnInit() {
     this.activeRoute.queryParams.subscribe(p => {
-      this.category = {
-        id: p['id'],
-        name: p['name'],
-        concurrencyStamp: p['concurrencyStamp']
+      this.category.id = p['id'];
+    });
+    this.categoryService.getById(this.category.id).subscribe({
+      next: (response) => {
+        this.category.concurrencyStamp = response.data.concurrencyStamp;
+        this.category.oldName = response.data.name;
+        this.category.newName = response.data.name;
+      },
+      error: (err) => {
+        this.router.navigate(['/NotFound']);
       }
     });
   }
+  checkCategory() {
+    if (!this.category.newName.trim().length || this.category.newName == this.category.oldName) this.validCategory = false;
+    else if (!/^[a-z A-Z]+$/.test(this.category.newName)) {
+      this.toastrService.error("Category name can only contain letters and spaces", '', Constants.toastrConfig);
+      this.validCategory = false
+    }
+    else {
+      this.validCategory = true
+    }
+  }
   toggleEdit(isOn: boolean) {
     this.onEdit = isOn;
+    if (!isOn) {
+      this.category.newName = this.category.oldName;
+      this.validCategory = false;
+    }
+  }
+  updateCategory(event: Event) {
+    event.preventDefault();
+    this.categoryService.updateCategory(this.category).subscribe({
+      next: (response) => {
+        this.toastrService.success("Category updated successfully", '', Constants.toastrConfig);
+        this.category.concurrencyStamp = response.data;
+        this.category.oldName = this.category.newName;
+        this.toggleEdit(false);
+      },
+      error: (response) => {
+        this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
+      }
+    })
   }
 }

@@ -6,6 +6,7 @@ import { CategoriesAdminPage } from './Pages/categories-admin-page/categories-ad
 import { HistoryAdminPage } from './Pages/history-admin-page/history-admin-page';
 import { CategoryDetailsPage } from './Pages/category-details-page/category-details-page';
 import { CategoryDetailsAdminPage } from './Pages/category-details-admin-page/category-details-admin-page';
+import { NotFoundPage } from './Pages/not-found-page/not-found-page';
 
 export const routes: Routes = [
     { path: '', component: HomePage, title: 'Home', },
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'signUp', component: SignUpPage, title: 'Sign Up' },
     { path: 'admin/categories', component: CategoriesAdminPage, title: "Categories" },
     { path: 'admin/categories/details', component: CategoryDetailsAdminPage, title: "Details" },
-    { path: 'admin/history', component: HistoryAdminPage, title: "History" }
+    { path: 'admin/history', component: HistoryAdminPage, title: "History" },
+    { path: '**', component: NotFoundPage, title: "Not Found" }
 
 ];

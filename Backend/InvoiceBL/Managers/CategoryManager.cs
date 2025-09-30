@@ -85,6 +85,28 @@ namespace InvoiceBL.Managers
             #endregion
         }
         #endregion
+        #region Get by Id
+        public async Task<Result<CategoryDTOGetForAdmin>> GetForAdminAsyncById(string id)
+        {
+            var result = new Result<CategoryDTOGetForAdmin>();
+            var category =await _unitOfWork._CategoryRepo.GetByIdAsync(id);
+            #region Check category is exist
+            if (category == null)
+            {
+                result.Errors.Add(new Error { Code = ErrorCodes.NotFound, Message = $"This category is not found.", PropertyName = "Id" });
+                return result;
+            }
+            #endregion
+            result.Data=new CategoryDTOGetForAdmin()
+            {
+                Id = category.Id,
+                ConcurrencyStamp = category.ConcurrencyStamp,
+                Name = category.Name
+            };
+            result.Successed = true;
+            return result;
+        }
+        #endregion
         #region Update
         public async Task<Result<string>> UpdateAsync(CategoryDTOUpdate categoryDTOUpdate)
         {

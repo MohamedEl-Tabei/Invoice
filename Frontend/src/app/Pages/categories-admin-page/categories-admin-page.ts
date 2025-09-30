@@ -54,7 +54,7 @@ export class CategoriesAdminPage {
     }
   }
   toCategoryDetails(category: CategoryForAdmin) {
-    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id, name: category.name, concurrencyStamp: category.concurrencyStamp } })
+    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id} })
   }
 
 }

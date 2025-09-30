@@ -66,5 +66,19 @@ namespace Invoice.Controllers
         }
 
         #endregion
+        #region Get Concurrency Stamp For Admin
+        [Authorize(Policy = AppRoles.Admin)]
+        [HttpGet("admin/get")]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status404NotFound)]
+        [EndpointSummary("Get Category (Admin only)")]
+        [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves the category by its ID.")]
+        public async Task<ActionResult> GetConcurrencyStamp([FromQuery] string id)
+        {
+            var result = await _categoryManager.GetForAdminAsyncById(id);
+            return this.HandleResponse(result);
+        }
+
+        #endregion
     }
 }
