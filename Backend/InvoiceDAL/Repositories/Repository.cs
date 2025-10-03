@@ -1,5 +1,6 @@
 ﻿using InvoiceDAL.Context;
 using InvoiceDAL.IRepositories;
+using InvoiceDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace InvoiceDAL.Repositories
         public async Task CreateAsync(T entity)
         {
             await _context.AddAsync(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _context.Set<T>().Remove(entity);
         }
 
         public async Task<List<T>> GetAllAsync()

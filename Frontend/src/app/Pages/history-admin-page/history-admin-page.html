@@ -11,7 +11,14 @@
         @for (item of (auditLogs$|async)?.data; track $index) {
         <div class="grid grid-cols-6 py-2">
             <small class="col-span-1">{{ item.date |date:'hh:mm a' }}</small>
-            <small class="col-span-6 md:col-span-5">{{ item.details }}</small>
+            <small class="col-span-6 md:col-span-5">
+            @switch(item.action){
+                @case ("Delete") {<i class="bi bi-x-square me-2 text-danger"></i>}
+                @case ("Update") {<i class="bi bi-pencil-square me-2 text-warning"></i>}
+                @case ("Create") {<i class="bi bi-plus-square me-2 text-success"></i>}
+            }
+                {{ item.details }}
+            </small>
 
         </div>
         }

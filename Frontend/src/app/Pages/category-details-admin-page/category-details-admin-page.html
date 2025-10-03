@@ -1,10 +1,9 @@
-<h1>{{category.concurrencyStamp}}</h1>
 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <div class="d-flex my-4 align-items-center">
         <h1>{{category.oldName}}</h1>
         <div class="ms-auto">
             <button class="btn btn-1" (click)="toggleEdit(true)"><i class="bi bi-pencil-square me-2"></i>Edit</button>
-            <button class="btn btn-d ms-4"><i class="bi bi-trash3 me-2"></i>Delete</button>
+            <button class="btn btn-d ms-4" (click)="toggleDelete(true)"><i class="bi bi-trash3 me-2"></i>Delete</button>
         </div>
     </div>
 
@@ -12,7 +11,7 @@
 
 </div>
 
-@if(onEdit){
+@if(onEdit||onDelete){
 <div class="modal filter d-flex">
 </div>
 
@@ -23,7 +22,7 @@
     @if (loaderService.isLoading()) {
     <app-loader-component></app-loader-component>
     }
-    @else {
+    @else if(onEdit) {
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Edit Category</h2>
@@ -41,6 +40,24 @@
                 <button type="submit" [disabled]="!validCategory" class="btn btn-1">Save</button>
             </div>
         </form>
+    </div>
+    }
+    @else if(onDelete) {
+    <div class="modal-content p-4 shadow-lg rounded">
+        <div class="d-flex align-items-center mb-4 ">
+            <h2 class="me-auto">Delete Category</h2>
+            <button class="btn-close rounded-circle" (click)="toggleDelete(false)"></button>
+        </div>
+        <div >
+            <div class="mb-3">
+                <p>This will delete {{category.oldName}}</p>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-2 me-2" (click)="toggleDelete(false)">Cancel</button>
+                <button type="submit" class="btn btn-d"(click)="deleteCategory($event)">Delete</button>
+            </div>
+        </div>
     </div>
     }
 

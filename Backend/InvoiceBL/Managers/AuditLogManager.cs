@@ -31,6 +31,7 @@ namespace InvoiceBL.Managers
             {
                 result.Data = history.Select(x => new AuditLogDTOGetByDate
                 {
+                    Action = x.Action,
                     Details = $"{x.Admin.UserName} {x.Action.ToLower()} {x.Entity.ToLower()} '{x.Data}'",
                     Date = x.Timestamp,
                 }).ToList();

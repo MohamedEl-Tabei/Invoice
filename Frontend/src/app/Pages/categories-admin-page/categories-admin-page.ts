@@ -34,7 +34,7 @@ export class CategoriesAdminPage {
         {
           next: (res) => {
             this.categories$ = this.categoryService.getAllForAdmin()
-            this.toastrService.success(`${name} created successfully`, '', Constants.toastrConfig)
+            this.toastrService.success(res.data, '', Constants.toastrConfig)
           },
           error: (err) => {
             this.toastrService.error(err.error.errors[0].message, '', Constants.toastrConfig)

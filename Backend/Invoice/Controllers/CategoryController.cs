@@ -80,5 +80,21 @@ namespace Invoice.Controllers
         }
 
         #endregion
+        #region Delete For Admin
+        [Authorize(Policy = AppRoles.Admin)]
+        [HttpDelete("admin/delete")]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status409Conflict)]
+        [EndpointSummary("Delete Category (Admin only)")]
+        [EndpointDescription("This endpoint can only be accessed by Admins. It Delete the category by its ID.")]
+        public async Task<ActionResult> Delete([FromQuery]CategoryDTODelete categoryDTODelete)
+        {
+            this.HttpContext.Items["NewData"]=categoryDTODelete.Id;
+            var result = await _categoryManager.DeleteAsync(categoryDTODelete);
+            return this.HandleResponse(result);
+        }
+
+        #endregion
     }
 }

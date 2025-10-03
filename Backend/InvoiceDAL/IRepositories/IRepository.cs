@@ -14,5 +14,6 @@ namespace InvoiceDAL.IRepositories
         public Task<List<T>> GetAllAsync();
         public Task CreateAsync(T entity);
         public Task<T?> GetByIdAsync(string id);
+        public void Delete(T entity);
     }
 }

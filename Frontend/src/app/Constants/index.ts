@@ -42,9 +42,10 @@ export class Constants {
   //#endregion
   //#region toastr config
   public static readonly toastrConfig = {
-    timeOut: 3000,
+    timeOut: 5000,
     positionClass: 'toast-bottom-left',
     progressBar: true,
+    messageClass:"text-light"
   }
   //#endregion
 }

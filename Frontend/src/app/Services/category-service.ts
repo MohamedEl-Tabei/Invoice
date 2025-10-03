@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from '../Interfaces/api-response';
 import { CategoryForAdmin } from '../Interfaces/category-for-admin';
 import { CategoryUpdate } from '../Interfaces/category-update';
+import { CategoryDelete } from '../Interfaces/category-delete';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,8 @@ export class CategoryService {
   }
   updateCategory(category: CategoryUpdate): Observable<ApiResponse<string>> {
     return this.httpClient.put<ApiResponse<string>>(`${Constants.API_URL}category/admin/update`, category)
+  }
+  deleteCategory(category:CategoryDelete):Observable<ApiResponse<string>>{
+    return this.httpClient.delete<ApiResponse<string>>(`${Constants.API_URL}category/admin/delete`,{params:{...category}})
   }
 }

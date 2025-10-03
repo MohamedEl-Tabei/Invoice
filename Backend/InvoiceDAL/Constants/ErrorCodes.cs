@@ -8,8 +8,9 @@ namespace InvoiceDAL.Constants
 {
     public static class ErrorCodes
     {
-        public const string NotFound = "ERR-404";
+        public const string NoContent = "ERR-204";
         public const string BadRequest = "ERR-400";
+        public const string NotFound = "ERR-404";
         public const string Conflict = "ERR-409";
     }
 }

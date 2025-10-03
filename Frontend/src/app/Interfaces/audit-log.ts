@@ -1,4 +1,5 @@
 export interface AuditLog {
     date: Date
-    details: string
+    details: string,
+    action:"Create"|"Delete"|"Update"
 }

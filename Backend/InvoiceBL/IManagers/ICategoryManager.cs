@@ -14,5 +14,6 @@ namespace InvoiceBL.IManagers
         public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync();
         public Task<Result<CategoryDTOGetForAdmin>> GetForAdminAsyncById(string id);
         public Task<Result<string>> UpdateAsync(CategoryDTOUpdate categoryDTOUpdate);
+        public Task<Result<string>> DeleteAsync(CategoryDTODelete categoryDTODelete);
     }
 }

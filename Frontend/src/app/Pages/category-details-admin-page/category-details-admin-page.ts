@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Constants } from '../../Constants';
 import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
+import { CategoryDelete } from '../../Interfaces/category-delete';
 
 @Component({
   selector: 'app-category-details-admin-page',
@@ -19,6 +20,7 @@ export class CategoryDetailsAdminPage {
   category: CategoryUpdate = { id: '', newName: '', oldName: '', concurrencyStamp: '' };
   validCategory = false;
   onEdit = false;
+  onDelete=false;
   constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService) { }
   ngOnInit() {
     this.activeRoute.queryParams.subscribe(p => {
@@ -52,6 +54,9 @@ export class CategoryDetailsAdminPage {
       this.validCategory = false;
     }
   }
+  toggleDelete(isOn:boolean){
+    this.onDelete=isOn;
+  }
   updateCategory(event: Event) {
     event.preventDefault();
     this.categoryService.updateCategory(this.category).subscribe({
@@ -62,8 +67,30 @@ export class CategoryDetailsAdminPage {
         this.toggleEdit(false);
       },
       error: (response) => {
-        this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
+
+        if (response.status == 409) this.toastrService.error("This category was updated by someone else. Please refresh and try again.", '', Constants.toastrConfig);
+        else this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
       }
     })
+  }
+  deleteCategory(event: Event) {
+    event.preventDefault();
+    let categoryDelete: CategoryDelete = {
+      id: this.category.id,
+      concurrencyStamp: this.category.concurrencyStamp
+    }
+    this.categoryService.deleteCategory(categoryDelete).subscribe(
+      {
+        next: (response) => {
+          this.toastrService.success(response.data, '', Constants.toastrConfig);
+          this.router.navigateByUrl("admin/categories");
+        },
+        error: (response) => {
+          if (response.status == 409) this.toastrService.error("This category was updated by someone else. Please refresh and try again.", '', Constants.toastrConfig);
+          else this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
+          this.toggleDelete(false)
+        }
+      }
+    )
   }
 }

@@ -5,7 +5,7 @@
 The backend exposes a secure and well-documented RESTful API, documented using **Scalar**, enabling developers to explore endpoints, test requests, and integrate quickly and efficiently.
 
 
-The app helps users **estimate their total expenses before going out to buy products**, and allows stores to list their items and prices, and restaurants to share their menus, so users can find what they need at the best price, and both can attract more customers.
+The app helps users estimate their total expenses before shopping, and allows stores to list their products to attract more customers.
 
 
 
@@ -25,8 +25,7 @@ The app helps users **estimate their total expenses before going out to buy prod
 *   📦 **Product & Invoice Management**:  
     Users can create, update, and save invoices, as well as view their purchase history.
     
-*   🍱 **Menu Management**:
-    Customers can view the live menu, and restaurant admins can easily upload, edit, and manage menu items in real time through a secure dashboard.
+
 
 * * *
 
