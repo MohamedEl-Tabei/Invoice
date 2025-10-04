@@ -136,10 +136,6 @@ namespace InvoiceDAL.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<decimal>("CurrentPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
@@ -154,6 +150,10 @@ namespace InvoiceDAL.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasDefaultValue(1m);
 
+                    b.Property<string>("SubCategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Unit")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -161,29 +161,9 @@ namespace InvoiceDAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("SubCategoryId");
 
                     b.ToTable("Items");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
-                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
-                            CurrentPrice = 500m,
-                            Description = "Transportation by bus",
-                            Quantity = 1m,
-                            Unit = "trip"
-                        },
-                        new
-                        {
-                            Id = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
-                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
-                            CurrentPrice = 500m,
-                            Description = "Transportation by taxi",
-                            Quantity = 1m,
-                            Unit = "trip"
-                        });
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.Price", b =>
@@ -201,6 +181,295 @@ namespace InvoiceDAL.Migrations
                     b.HasKey("ItemId", "CreatedOn");
 
                     b.ToTable("Prices");
+                });
+
+            modelBuilder.Entity("InvoiceDAL.Models.SubCategory", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("SubCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
+                            ConcurrencyStamp = "28b21eb8-d6dc-4dcf-9ab8-91bf746efe84",
+                            Name = "Men’s Wear"
+                        },
+                        new
+                        {
+                            Id = "8f5d2472-3f60-4f66-a4ee-7a26f57e2e0f",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
+                            ConcurrencyStamp = "8f5d2472-3f60-4f66-a4ee-7a26f57e2e0f",
+                            Name = "Women’s Wear"
+                        },
+                        new
+                        {
+                            Id = "9a1a3b1e-d066-4dd6-8e6a-4e97f7b2ef70",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
+                            ConcurrencyStamp = "9a1a3b1e-d066-4dd6-8e6a-4e97f7b2ef70",
+                            Name = "Kids & Babies"
+                        },
+                        new
+                        {
+                            Id = "2cf7a9a5-1dd6-40a1-b04a-4eb1c7f54838",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
+                            ConcurrencyStamp = "2cf7a9a5-1dd6-40a1-b04a-4eb1c7f54838",
+                            Name = "Shoes"
+                        },
+                        new
+                        {
+                            Id = "6bbf63c4-2528-4e30-8a68-33dcb4ee0ef3",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe83",
+                            ConcurrencyStamp = "6bbf63c4-2528-4e30-8a68-33dcb4ee0ef3",
+                            Name = "Accessories"
+                        },
+                        new
+                        {
+                            Id = "f2a76835-c5cd-4d91-b355-37c818db9490",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            ConcurrencyStamp = "f2a76835-c5cd-4d91-b355-37c818db9490",
+                            Name = "School Supplies"
+                        },
+                        new
+                        {
+                            Id = "84d4485e-4060-4df3-80ed-64ff1d2099d3",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            ConcurrencyStamp = "84d4485e-4060-4df3-80ed-64ff1d2099d3",
+                            Name = "Books & Stationery"
+                        },
+                        new
+                        {
+                            Id = "51dfd39d-564e-4de2-8135-0f05366d68d0",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            ConcurrencyStamp = "51dfd39d-564e-4de2-8135-0f05366d68d0",
+                            Name = "Online Courses"
+                        },
+                        new
+                        {
+                            Id = "8e482041-1844-4d3b-bd7f-89dba3a10941",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe85",
+                            ConcurrencyStamp = "8e482041-1844-4d3b-bd7f-89dba3a10941",
+                            Name = "Private Lessons"
+                        },
+                        new
+                        {
+                            Id = "52f51a2a-4e85-4d91-a8a0-171a8a39e318",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
+                            ConcurrencyStamp = "52f51a2a-4e85-4d91-a8a0-171a8a39e318",
+                            Name = "Mobile Phones"
+                        },
+                        new
+                        {
+                            Id = "5b2ffca7-8af2-4c5b-9f45-2f908be9c1ea",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
+                            ConcurrencyStamp = "5b2ffca7-8af2-4c5b-9f45-2f908be9c1ea",
+                            Name = "Laptops & Computers"
+                        },
+                        new
+                        {
+                            Id = "e9b9b4ae-84e3-4ef9-8920-baeac7cb241b",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
+                            ConcurrencyStamp = "e9b9b4ae-84e3-4ef9-8920-baeac7cb241b",
+                            Name = "TV & Audio"
+                        },
+                        new
+                        {
+                            Id = "c62e935d-5d7a-4ee0-9a30-c6888f2b4f6a",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe82",
+                            ConcurrencyStamp = "c62e935d-5d7a-4ee0-9a30-c6888f2b4f6a",
+                            Name = "Home Appliances"
+                        },
+                        new
+                        {
+                            Id = "20722ad6-174a-4eea-9e97-491e88f8e394",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
+                            ConcurrencyStamp = "20722ad6-174a-4eea-9e97-491e88f8e394",
+                            Name = "Cinema & Movies"
+                        },
+                        new
+                        {
+                            Id = "e1220173-0844-4a28-b3f0-bdb3ba6e5b54",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
+                            ConcurrencyStamp = "e1220173-0844-4a28-b3f0-bdb3ba6e5b54",
+                            Name = "Streaming Subscriptions"
+                        },
+                        new
+                        {
+                            Id = "2033b319-2149-45bb-94a0-6804f883d49a",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
+                            ConcurrencyStamp = "2033b319-2149-45bb-94a0-6804f883d49a",
+                            Name = "Games & Toys"
+                        },
+                        new
+                        {
+                            Id = "cfcaf271-27c6-4b64-8470-5af597004003",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe89",
+                            ConcurrencyStamp = "cfcaf271-27c6-4b64-8470-5af597004003",
+                            Name = "Concerts & Events"
+                        },
+                        new
+                        {
+                            Id = "cbab53b5-76b3-41e1-8485-0d7585a61b85",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
+                            ConcurrencyStamp = "cbab53b5-76b3-41e1-8485-0d7585a61b85",
+                            Name = "Groceries"
+                        },
+                        new
+                        {
+                            Id = "fe8b4964-87e4-401f-9a44-45348d8d1af8",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
+                            ConcurrencyStamp = "fe8b4964-87e4-401f-9a44-45348d8d1af8",
+                            Name = "Restaurants & Cafes"
+                        },
+                        new
+                        {
+                            Id = "3e1e27a0-7261-4b62-8e4c-2a3fc7ebc090",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
+                            ConcurrencyStamp = "3e1e27a0-7261-4b62-8e4c-2a3fc7ebc090",
+                            Name = "Fast Food"
+                        },
+                        new
+                        {
+                            Id = "38e37c89-0ef4-4a6a-951f-9a5bc82a2920",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe81",
+                            ConcurrencyStamp = "38e37c89-0ef4-4a6a-951f-9a5bc82a2920",
+                            Name = "Bakeries & Sweets"
+                        },
+                        new
+                        {
+                            Id = "7ef51658-cc02-4af9-89e0-29d189b30a69",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            ConcurrencyStamp = "7ef51658-cc02-4af9-89e0-29d189b30a69",
+                            Name = "Living Room Furniture"
+                        },
+                        new
+                        {
+                            Id = "6bbfcb72-5528-4f68-89e4-2cbfcd16621c",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            ConcurrencyStamp = "6bbfcb72-5528-4f68-89e4-2cbfcd16621c",
+                            Name = "Bedroom Furniture"
+                        },
+                        new
+                        {
+                            Id = "6b9a5061-18a2-45cc-9e0e-2170f79cfe7b",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            ConcurrencyStamp = "6b9a5061-18a2-45cc-9e0e-2170f79cfe7b",
+                            Name = "Office Furniture"
+                        },
+                        new
+                        {
+                            Id = "03e2fca0-5313-4d59-b78d-303e70a17a71",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe84",
+                            ConcurrencyStamp = "03e2fca0-5313-4d59-b78d-303e70a17a71",
+                            Name = "Outdoor Furniture"
+                        },
+                        new
+                        {
+                            Id = "1896315a-3c1e-4b20-b6af-423902cd8ee7",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            ConcurrencyStamp = "1896315a-3c1e-4b20-b6af-423902cd8ee7",
+                            Name = "Public Transport"
+                        },
+                        new
+                        {
+                            Id = "d84df214-cf36-4eea-b3ec-422693e1c74f",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            ConcurrencyStamp = "d84df214-cf36-4eea-b3ec-422693e1c74f",
+                            Name = "Fuel"
+                        },
+                        new
+                        {
+                            Id = "b69fc653-85bb-46f8-9c92-70e85eb0fc68",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            ConcurrencyStamp = "b69fc653-85bb-46f8-9c92-70e85eb0fc68",
+                            Name = "Taxi & Ride Sharing"
+                        },
+                        new
+                        {
+                            Id = "8d775015-7f63-43de-aab3-6c9cb2294170",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe86",
+                            ConcurrencyStamp = "8d775015-7f63-43de-aab3-6c9cb2294170",
+                            Name = "Vehicle Maintenance"
+                        },
+                        new
+                        {
+                            Id = "10df0b8c-10a1-4cc5-95d0-7f0d3cce0f88",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
+                            ConcurrencyStamp = "10df0b8c-10a1-4cc5-95d0-7f0d3cce0f88",
+                            Name = "Medicines & Pharmacy"
+                        },
+                        new
+                        {
+                            Id = "a16cc45a-1ef0-4745-b7cc-25e699a40c47",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
+                            ConcurrencyStamp = "a16cc45a-1ef0-4745-b7cc-25e699a40c47",
+                            Name = "Doctor Visits"
+                        },
+                        new
+                        {
+                            Id = "e6895ef5-df64-4781-b099-98f2f7af5f70",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
+                            ConcurrencyStamp = "e6895ef5-df64-4781-b099-98f2f7af5f70",
+                            Name = "Health Insurance"
+                        },
+                        new
+                        {
+                            Id = "bbf29261-3bc1-42ba-9c63-7086f7a3cc39",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe87",
+                            ConcurrencyStamp = "bbf29261-3bc1-42ba-9c63-7086f7a3cc39",
+                            Name = "Fitness & Gym"
+                        },
+                        new
+                        {
+                            Id = "de5f74bc-33ff-4b3a-bc48-1c6993e1a40d",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
+                            ConcurrencyStamp = "de5f74bc-33ff-4b3a-bc48-1c6993e1a40d",
+                            Name = "Cleaning Services"
+                        },
+                        new
+                        {
+                            Id = "9a6dcb70-899e-4c5f-b2d2-4bfb60126f5f",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
+                            ConcurrencyStamp = "9a6dcb70-899e-4c5f-b2d2-4bfb60126f5f",
+                            Name = "Repair & Maintenance"
+                        },
+                        new
+                        {
+                            Id = "22622b36-1538-4de7-a171-9f40ce6232a8",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
+                            ConcurrencyStamp = "22622b36-1538-4de7-a171-9f40ce6232a8",
+                            Name = "Beauty & Salon"
+                        },
+                        new
+                        {
+                            Id = "aef55b58-19e0-4964-bf1c-8e0545276ef7",
+                            CategoryId = "78b21eb8-d6dc-4acf-9ab8-91bf746efe88",
+                            ConcurrencyStamp = "aef55b58-19e0-4964-bf1c-8e0545276ef7",
+                            Name = "Delivery Services"
+                        });
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.UserApp", b =>
@@ -532,13 +801,13 @@ namespace InvoiceDAL.Migrations
 
             modelBuilder.Entity("InvoiceDAL.Models.Item", b =>
                 {
-                    b.HasOne("InvoiceDAL.Models.Category", "Category")
+                    b.HasOne("InvoiceDAL.Models.SubCategory", "SubCategory")
                         .WithMany("Items")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("SubCategory");
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.Price", b =>
@@ -550,6 +819,17 @@ namespace InvoiceDAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Item");
+                });
+
+            modelBuilder.Entity("InvoiceDAL.Models.SubCategory", b =>
+                {
+                    b.HasOne("InvoiceDAL.Models.Category", "Category")
+                        .WithMany("subCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -604,6 +884,11 @@ namespace InvoiceDAL.Migrations
                 });
 
             modelBuilder.Entity("InvoiceDAL.Models.Category", b =>
+                {
+                    b.Navigation("subCategories");
+                });
+
+            modelBuilder.Entity("InvoiceDAL.Models.SubCategory", b =>
                 {
                     b.Navigation("Items");
                 });

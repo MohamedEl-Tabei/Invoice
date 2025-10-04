@@ -8,16 +8,18 @@ import { Constants } from './Constants';
 import { jwtDecode } from 'jwt-decode'
 import { UserAuthenticated } from './Interfaces/user-authenticated';
 import { TokenPayload } from './Interfaces/token-payload';
+import { SubCategoriesSideBarComponent } from "./Components/sub-categories-side-bar-component/sub-categories-side-bar-component";
+import { BehaviorSubject } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent],
+  imports: [RouterOutlet, NavBarComponent, SubCategoriesSideBarComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   public theme: TTheme = "light";
-
-  constructor(private screenService: ScreenService, private userService: UserService) { }
+  constructor(public screenService: ScreenService, private userService: UserService) { }
   ngOnInit() {
     this.screenService.selectTheme$.subscribe(theme => this.theme = theme)
     //#region  Auto login

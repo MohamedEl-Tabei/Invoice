@@ -14,6 +14,7 @@ namespace InvoiceDAL
         public IUserRepo _UserRepo { get; }
         public ICategoryRepo _CategoryRepo { get; }
         public IAuditLogRepo _AuditLogRepo { get; }
+        public ISubCategoryRepo _SubCategoryRepo { get; }
         public IDbContextTransaction _Transaction { get; set; }
         public Task startTransactionAsync();
         public Task SaveChangesAsync();

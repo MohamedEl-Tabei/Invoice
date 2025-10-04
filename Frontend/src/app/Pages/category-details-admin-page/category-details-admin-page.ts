@@ -9,6 +9,7 @@ import { Constants } from '../../Constants';
 import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
 import { CategoryDelete } from '../../Interfaces/category-delete';
+import { ScreenService } from '../../Services/screen-service';
 
 @Component({
   selector: 'app-category-details-admin-page',
@@ -20,22 +21,24 @@ export class CategoryDetailsAdminPage {
   category: CategoryUpdate = { id: '', newName: '', oldName: '', concurrencyStamp: '' };
   validCategory = false;
   onEdit = false;
-  onDelete=false;
-  constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService) { }
+  onDelete = false;
+  constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService, public screenService: ScreenService) { }
   ngOnInit() {
+    this.screenService.showSidebar.set(true)
     this.activeRoute.queryParams.subscribe(p => {
       this.category.id = p['id'];
+      this.categoryService.getById(this.category.id).subscribe({
+        next: (response) => {
+          this.category.concurrencyStamp = response.data.concurrencyStamp;
+          this.category.oldName = response.data.name;
+          this.category.newName = response.data.name;
+        },
+        error: (err) => {
+          this.router.navigate(['/NotFound']);
+        }
+      });
     });
-    this.categoryService.getById(this.category.id).subscribe({
-      next: (response) => {
-        this.category.concurrencyStamp = response.data.concurrencyStamp;
-        this.category.oldName = response.data.name;
-        this.category.newName = response.data.name;
-      },
-      error: (err) => {
-        this.router.navigate(['/NotFound']);
-      }
-    });
+
   }
   checkCategory() {
     if (!this.category.newName.trim().length || this.category.newName == this.category.oldName) this.validCategory = false;
@@ -54,8 +57,8 @@ export class CategoryDetailsAdminPage {
       this.validCategory = false;
     }
   }
-  toggleDelete(isOn:boolean){
-    this.onDelete=isOn;
+  toggleDelete(isOn: boolean) {
+    this.onDelete = isOn;
   }
   updateCategory(event: Event) {
     event.preventDefault();
@@ -92,5 +95,8 @@ export class CategoryDetailsAdminPage {
         }
       }
     )
+  }
+  ngOnDestroy() {
+    this.screenService.showSidebar.set(false)
   }
 }

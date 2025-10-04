@@ -11,6 +11,7 @@ import { LoaderComponent } from "../../Components/loader-component/loader-compon
 import { ToastrService } from "ngx-toastr"
 import { Constants } from '../../Constants';
 import { Router } from '@angular/router';
+import { ScreenService } from '../../Services/screen-service';
 
 @Component({
   selector: 'app-categories-admin-page',
@@ -54,7 +55,7 @@ export class CategoriesAdminPage {
     }
   }
   toCategoryDetails(category: CategoryForAdmin) {
-    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id} })
+    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id } })
   }
-
+  
 }

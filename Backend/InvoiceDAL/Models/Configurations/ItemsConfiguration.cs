@@ -18,7 +18,7 @@ namespace InvoiceDAL.Models.Configurations
             builder.Property(x=>x.Unit).IsRequired().HasMaxLength(20);
             builder.Property(x => x.CurrentPrice).IsRequired().HasPrecision(18, 2);
             builder.Property(x=>x.Quantity).IsRequired().HasPrecision(18, 2).HasDefaultValue(1);
-            builder.HasData(SeedData.GetItems());
+            //builder.HasData(SeedData.GetItems());
         }
     }
 }

@@ -240,6 +240,43 @@
     "Summary": "Create (Admin only)"
   },
   {
+    "ContainingType": "Invoice.Controllers.SubCategoryController",
+    "Method": "GetByCategoryId",
+    "RelativePath": "api/SubCategory/getByCategoryId/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.SubCategoryDTOGet, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Description": "This endpoint retrieves all sub-categories that belong to a specific category by its ID.",
+    "Summary": "Get by category id"
+  },
+  {
     "ContainingType": "Invoice.Controllers.TestController",
     "Method": "Get",
     "RelativePath": "api/Test",
@@ -249,7 +286,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

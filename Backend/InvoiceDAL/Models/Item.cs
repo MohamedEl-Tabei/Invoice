@@ -13,8 +13,8 @@ namespace InvoiceDAL.Models
         public decimal CurrentPrice { get; set; }
         public string Unit {  get; set; }
         public decimal Quantity { get; set; }
-        public string CategoryId { get; set; }
-        public  Category Category { get; set; }
+        public string SubCategoryId { get; set; }
+        public  SubCategory SubCategory { get; set; }
         //Brand
         //Type
         //public HashSet<Price> Prices { get; set; }

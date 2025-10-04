@@ -20,7 +20,6 @@
     background-color: var(--bs-body-bg);
     overflow-y: scroll;
     scrollbar-color: var(--color-2) var(--color-4);
-    padding-bottom: 40px;
 }
 
 * {

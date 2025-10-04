@@ -18,16 +18,17 @@ namespace InvoiceDAL
         public ICategoryRepo _CategoryRepo { get; }
 
         public IAuditLogRepo _AuditLogRepo { get; }
-
+        public ISubCategoryRepo _SubCategoryRepo { get; }
         public IDbContextTransaction _Transaction { get; set; }
 
-        public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo, ICategoryRepo categoryRepo, IAuditLogRepo auditLogRepo)
+        public UnitOfWork(InvoiceContext context, IItemRepo itemRepo, IUserRepo userRepo, ICategoryRepo categoryRepo, IAuditLogRepo auditLogRepo, ISubCategoryRepo subCategoryRepo)
         {
             _context = context;
             _ItemRepo = itemRepo;
             _UserRepo = userRepo;
             _CategoryRepo = categoryRepo;
             _AuditLogRepo = auditLogRepo;
+            _SubCategoryRepo = subCategoryRepo;
         }
         public async Task SaveChangesAsync()
         {

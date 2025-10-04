@@ -17,12 +17,9 @@ namespace Invoice.Controllers
             _context = context;
         }
         [HttpGet]
-        public ActionResult<List<string>> Get()
+        public ActionResult<string> Get()
         {
-            var Transportation = _context.Categories.Include(c=>c.Items).FirstOrDefault(c => c.Name == "Transportation");
-            var itemsDes = Transportation.Items.Select(i=>i.Description);
-            throw new Exception("NOooooooooooo");
-            return itemsDes.ToList();
+            return "test";
 
         }
     }

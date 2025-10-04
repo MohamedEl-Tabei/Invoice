@@ -1,0 +1,21 @@
+@if(this.screenService.showSidebar()){
+<div class="accordion shadow">
+    @for (category of ((categories$|async)?.data); track $index) {
+    <div class="accordion-item rounded-0 border-0">
+        <h2 class="accordion-header rounded-0">
+            <button [class.collapsed]="categoryId!=category.id" class="accordion-button rounded-0" (click)="onAccordionClick(category.id)" type="button">
+                {{category.name}}
+            </button>
+        </h2>
+        <div id="{{category.id}}" [class.show]="categoryId===category.id" [class.collapse]="categoryId!=category.id"
+            class="accordion-collapse  rounded-0">
+            <div class="accordion-body rounded-0">
+                {{category.id}}
+            </div>
+        </div>
+    </div>
+    }
+
+
+</div>
+}

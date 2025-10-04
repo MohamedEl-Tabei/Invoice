@@ -13,6 +13,7 @@ namespace InvoiceDAL.Constants
         public static string GetCreateMessage(string name) => $"{name} was created successfully.";
         public static string GetIsExistMessage(string name) => $"The {name} already exists. Please choose a different one.";
         public static string GetNotFoundMessage(string entityName) => $"We couldn't find this {entityName}.";
+        public static string GetNotFoundMessage(string entitiesName, string entityGetBy) => $"No {entitiesName} found for this {entityGetBy}.";
         public static string GetConflictMessage(string entityName, string concurrencyStamp) => $"This {entityName} is changed, please enter the new ConcurrencyStamp({concurrencyStamp}).";
         public static string GetNotChangedMessage(string name) => $"{name} has not been modified.";
     }

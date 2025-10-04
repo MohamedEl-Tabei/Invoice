@@ -9,5 +9,7 @@ namespace InvoiceDAL.Constants
     public class ModelName
     {
         public const string Category = "category"; 
+        public const string SubCategory = "sub-category";
+        public const string SubCategories = "sub-categories";
     }
 }
