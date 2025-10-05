@@ -6,6 +6,9 @@ import { CategoryForAdmin } from '../../Interfaces/category-for-admin';
 import { ApiResponse } from '../../Interfaces/api-response';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from '../../Interfaces/category';
+import { SubCategory } from '../../Interfaces/sub-category';
+import { SubCategoryService } from '../../Services/sub-category-service';
 
 @Component({
   selector: 'app-sub-categories-side-bar-component',
@@ -14,13 +17,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './sub-categories-side-bar-component.css'
 })
 export class SubCategoriesSideBarComponent {
-  categories$!: Observable<ApiResponse<CategoryForAdmin[]>>;
+  categories$!: Observable<ApiResponse<Category[]>>;
+  subCategories$!: Observable<ApiResponse<SubCategory[]>>;
   categoryId: string = '';
-  constructor(public screenService: ScreenService, private categoryService: CategoryService, private activedRoute: ActivatedRoute, private router: Router) { }
+  constructor(public screenService: ScreenService, private subCategoryService: SubCategoryService, private categoryService: CategoryService, private activedRoute: ActivatedRoute, private router: Router) { }
   ngOnInit() {
-    this.categories$ = this.categoryService.getAllForAdmin();
+    this.categories$ = this.categoryService.getAll();
     this.activedRoute.queryParams.subscribe(p => {
       this.categoryId = p['id'];
+      this.subCategories$ = this.subCategoryService.getSubCategoriesByCategoryId(this.categoryId);
     });
   }
   onAccordionClick(categoryId: string) {

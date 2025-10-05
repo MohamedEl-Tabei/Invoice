@@ -17,4 +17,11 @@
         </div>
         }
     </div>
+    @if (loaderService.isLoading()) {
+    <div class="modal filter  d-flex "></div>
+    <div class="modal d-flex justify-content-center align-items-center">
+        <app-loader-component></app-loader-component>
+
+    </div>
+    }
 </div>

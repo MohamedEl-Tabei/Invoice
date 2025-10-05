@@ -240,6 +240,33 @@
     "Summary": "Create (Admin only)"
   },
   {
+    "ContainingType": "Invoice.Controllers.CategoryController",
+    "Method": "GetAll",
+    "RelativePath": "api/Category/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.CategoryDTOGet, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Description": "This endpoint retrieves all categories without their concurrency stamps.",
+    "Summary": "Get all"
+  },
+  {
     "ContainingType": "Invoice.Controllers.SubCategoryController",
     "Method": "GetByCategoryId",
     "RelativePath": "api/SubCategory/getByCategoryId/{categoryId}",

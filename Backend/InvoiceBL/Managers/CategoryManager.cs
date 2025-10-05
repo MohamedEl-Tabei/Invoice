@@ -88,8 +88,10 @@ namespace InvoiceBL.Managers
             //await _unitOfWork.SaveChangesAsync(); Changes will be saved by middleware AdminLoggingMiddleware
             return result;
         }
+
+
         #endregion
-        #region Get All
+        #region Get All (for Admin)
         public async Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync()
         {
             var result = new Result<List<CategoryDTOGetForAdmin>>();
@@ -102,6 +104,34 @@ namespace InvoiceBL.Managers
                 {
                     Id = c.Id,
                     ConcurrencyStamp = c.ConcurrencyStamp,
+                    Name = c.Name
+                }).OrderBy(c => c.Name).ToList();
+                result.Successed = true;
+                return result;
+            }
+            #endregion
+            #region don't have categories
+            result.Errors.Add(new Error()
+            {
+                Code = ErrorCodes.NoContent,
+                Message = "No categories found in the system.",
+            });
+            return result;
+            #endregion
+        }
+        #endregion
+        #region Get All
+        public async Task<Result<List<CategoryDTOGet>>> GetAllAsync()
+        {
+            var result = new Result<List<CategoryDTOGet>>();
+
+            var categories = await _unitOfWork._CategoryRepo.GetAllAsync();
+            #region check have categories
+            if (categories != null && categories.Any())
+            {
+                result.Data = categories.Select(c => new CategoryDTOGet()
+                {
+                    Id = c.Id,
                     Name = c.Name
                 }).OrderBy(c => c.Name).ToList();
                 result.Successed = true;

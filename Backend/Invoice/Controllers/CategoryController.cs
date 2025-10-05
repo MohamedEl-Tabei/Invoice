@@ -49,6 +49,19 @@ namespace Invoice.Controllers
         }
 
         #endregion
+        #region Get All 
+        [HttpGet("getAll")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(Result<List<CategoryDTOGet>>), StatusCodes.Status200OK)]
+        [EndpointSummary("Get all")]
+        [EndpointDescription("This endpoint retrieves all categories without their concurrency stamps.")]
+        public async Task<ActionResult> GetAll()
+        {
+            var result = await _categoryManager.GetAllAsync();
+            return this.HandleResponse(result);
+        }
+
+        #endregion
         #region Update For Admin
         [Authorize(Policy = AppRoles.Admin)]
         [HttpPut("admin/update")]

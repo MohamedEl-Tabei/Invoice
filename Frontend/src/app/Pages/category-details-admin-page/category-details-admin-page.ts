@@ -10,10 +10,11 @@ import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
 import { CategoryDelete } from '../../Interfaces/category-delete';
 import { ScreenService } from '../../Services/screen-service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-category-details-admin-page',
-  imports: [FormsModule, InputDirective, LoaderComponent],
+  imports: [FormsModule, InputDirective,],
   templateUrl: './category-details-admin-page.html',
   styleUrl: './category-details-admin-page.css'
 })
@@ -22,12 +23,13 @@ export class CategoryDetailsAdminPage {
   validCategory = false;
   onEdit = false;
   onDelete = false;
+  getByIdSubscription!:Subscription;
   constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService, public screenService: ScreenService) { }
   ngOnInit() {
     this.screenService.showSidebar.set(true)
     this.activeRoute.queryParams.subscribe(p => {
       this.category.id = p['id'];
-      this.categoryService.getById(this.category.id).subscribe({
+      this.getByIdSubscription= this.categoryService.getById( p['id']).subscribe({
         next: (response) => {
           this.category.concurrencyStamp = response.data.concurrencyStamp;
           this.category.oldName = response.data.name;
@@ -98,5 +100,6 @@ export class CategoryDetailsAdminPage {
   }
   ngOnDestroy() {
     this.screenService.showSidebar.set(false)
+    this.getByIdSubscription?.unsubscribe();
   }
 }

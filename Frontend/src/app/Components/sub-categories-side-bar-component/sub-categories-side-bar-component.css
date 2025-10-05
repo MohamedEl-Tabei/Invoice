@@ -1,1 +1,29 @@
-.accordion{min-height: 93vh;}
+.accordion {
+    min-height: 93vh;
+}
+
+
+
+.accordion-btn {
+    text-transform: capitalize;
+    position: relative;
+    display: flex;
+    align-items: start;
+    width: 100%;
+    padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+    font-size: 1rem;
+    color: var(--bs-accordion-btn-color);
+    text-align: left;
+    background-color: var(--color-1-);
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: var(--bs-accordion-transition);
+}
+.list-group-item{
+    background-color: transparent;
+}
+.accordion-body{
+    background-color: var(--color-1-);
+    opacity: 0.75;
+}

@@ -11,15 +11,17 @@ import { TokenPayload } from './Interfaces/token-payload';
 import { SubCategoriesSideBarComponent } from "./Components/sub-categories-side-bar-component/sub-categories-side-bar-component";
 import { BehaviorSubject } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { LoaderComponent } from "./Components/loader-component/loader-component";
+import { LoaderService } from './Services/loader-service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, SubCategoriesSideBarComponent],
+  imports: [RouterOutlet, NavBarComponent, SubCategoriesSideBarComponent, LoaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   public theme: TTheme = "light";
-  constructor(public screenService: ScreenService, private userService: UserService) { }
+  constructor(public screenService: ScreenService, private userService: UserService,public loaderService:LoaderService) { }
   ngOnInit() {
     this.screenService.selectTheme$.subscribe(theme => this.theme = theme)
     //#region  Auto login
