@@ -12,6 +12,6 @@ export class SubCategoryService {
   path: string = Constants.API_URL + 'SubCategory/';
   constructor(private httpClient: HttpClient) { }
   getSubCategoriesByCategoryId(categoryId: string): Observable<ApiResponse<SubCategory[]>> {
-    return this.httpClient.get<ApiResponse<SubCategory[]>>(this.path + `getByCategoryId/${categoryId}`).pipe(shareReplay(1));
+    return this.httpClient.get<ApiResponse<SubCategory[]>>(this.path + `getByCategoryId/${categoryId}`);
   }
 }

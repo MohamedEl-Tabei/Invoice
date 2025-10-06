@@ -10,7 +10,7 @@ import { LoaderService } from '../../Services/loader-service';
 import { LoaderComponent } from "../../Components/loader-component/loader-component";
 import { CategoryDelete } from '../../Interfaces/category-delete';
 import { ScreenService } from '../../Services/screen-service';
-import { Subscription } from 'rxjs';
+import { Subscription, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-category-details-admin-page',
@@ -23,23 +23,25 @@ export class CategoryDetailsAdminPage {
   validCategory = false;
   onEdit = false;
   onDelete = false;
-  getByIdSubscription!:Subscription;
+  getByIdSubscription!: Subscription;
   constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService, public screenService: ScreenService) { }
   ngOnInit() {
     this.screenService.showSidebar.set(true)
-    this.activeRoute.queryParams.subscribe(p => {
+    this.getByIdSubscription = this.activeRoute.queryParams.pipe(switchMap(p => {
       this.category.id = p['id'];
-      this.getByIdSubscription= this.categoryService.getById( p['id']).subscribe({
-        next: (response) => {
-          this.category.concurrencyStamp = response.data.concurrencyStamp;
-          this.category.oldName = response.data.name;
-          this.category.newName = response.data.name;
-        },
-        error: (err) => {
-          this.router.navigate(['/NotFound']);
-        }
-      });
+      return this.categoryService.getById(p['id'])
+    }
+    )).subscribe({
+      next: (response) => {
+        this.category.concurrencyStamp = response.data.concurrencyStamp;
+        this.category.oldName = response.data.name;
+        this.category.newName = response.data.name;
+      },
+      error: (err) => {
+        this.router.navigate(['/NotFound']);
+      }
     });
+
 
   }
   checkCategory() {

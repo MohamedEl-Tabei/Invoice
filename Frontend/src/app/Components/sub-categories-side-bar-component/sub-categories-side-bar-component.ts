@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ScreenService } from '../../Services/screen-service';
 import { CategoryService } from '../../Services/category-service';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { CategoryForAdmin } from '../../Interfaces/category-for-admin';
 import { ApiResponse } from '../../Interfaces/api-response';
 import { AsyncPipe } from '@angular/common';
@@ -25,7 +25,7 @@ export class SubCategoriesSideBarComponent {
     this.categories$ = this.categoryService.getAll();
     this.activedRoute.queryParams.subscribe(p => {
       this.categoryId = p['id'];
-      this.subCategories$ = this.subCategoryService.getSubCategoriesByCategoryId(this.categoryId);
+      this.subCategories$ = this.subCategoryService.getSubCategoriesByCategoryId(this.categoryId).pipe(shareReplay(1));
     });
   }
   onAccordionClick(categoryId: string) {

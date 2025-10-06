@@ -23,7 +23,7 @@ export class CategoryService {
     return this.httpClient.post<ApiResponse<string>>(`${Constants.API_URL}category/create`, { name })
   }
   getById(id: string): Observable<ApiResponse<CategoryForAdmin>> {
-    return this.httpClient.get<ApiResponse<CategoryForAdmin>>(`${Constants.API_URL}category/admin/get`, { params: { id } }).pipe(shareReplay(1))
+    return this.httpClient.get<ApiResponse<CategoryForAdmin>>(`${Constants.API_URL}category/admin/get`, { params: { id } })
   }
   updateCategory(category: CategoryUpdate): Observable<ApiResponse<string>> {
     return this.httpClient.put<ApiResponse<string>>(`${Constants.API_URL}category/admin/update`, category)
