@@ -27,3 +27,12 @@
     background-color: var(--color-1-);
     opacity: 0.75;
 }
+.modal-content{
+    width: 50%;
+    height:max-content;
+    border: 0;
+}
+.filter{
+    background-color: var(--bs-body-bg) !important;
+    filter: blur(108px);
+}

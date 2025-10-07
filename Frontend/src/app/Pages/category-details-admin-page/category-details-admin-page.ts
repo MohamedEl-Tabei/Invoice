@@ -7,7 +7,6 @@ import { CategoryUpdate } from '../../Interfaces/category-update';
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from '../../Constants';
 import { LoaderService } from '../../Services/loader-service';
-import { LoaderComponent } from "../../Components/loader-component/loader-component";
 import { CategoryDelete } from '../../Interfaces/category-delete';
 import { ScreenService } from '../../Services/screen-service';
 import { Subscription, switchMap } from 'rxjs';

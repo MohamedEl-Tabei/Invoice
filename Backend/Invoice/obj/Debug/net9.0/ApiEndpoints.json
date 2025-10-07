@@ -85,70 +85,6 @@
   },
   {
     "ContainingType": "Invoice.Controllers.CategoryController",
-    "Method": "GetConcurrencyStamp",
-    "RelativePath": "api/Category/admin/get",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ],
-    "Description": "This endpoint can only be accessed by Admins. It retrieves the category by its ID.",
-    "Summary": "Get Category (Admin only)"
-  },
-  {
-    "ContainingType": "Invoice.Controllers.CategoryController",
-    "Method": "GetAllForAdmin",
-    "RelativePath": "api/Category/admin/getAll",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "InvoiceBL.Result\u00601[[System.Collections.Generic.List\u00601[[InvoiceBL.DTOs.CategoryDTOGetForAdmin, InvoiceBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "Description": "This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.",
-    "Summary": "Get all (Admin only)"
-  },
-  {
-    "ContainingType": "Invoice.Controllers.CategoryController",
     "Method": "Update",
     "RelativePath": "api/Category/admin/update",
     "HttpMethod": "PUT",
@@ -238,6 +174,43 @@
     ],
     "Description": "Allows only Admins to create a new category.",
     "Summary": "Create (Admin only)"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.CategoryController",
+    "Method": "Get",
+    "RelativePath": "api/Category/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Description": "This endpoint retrieves the category by its ID.",
+    "Summary": "Get Category "
   },
   {
     "ContainingType": "Invoice.Controllers.CategoryController",

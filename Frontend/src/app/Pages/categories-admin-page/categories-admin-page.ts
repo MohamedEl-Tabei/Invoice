@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CategoryService } from '../../Services/category-service';
-import { CategoryForAdmin } from '../../Interfaces/category-for-admin';
 import { InputDirective } from '../../Directives/input-directive';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -11,7 +10,7 @@ import { LoaderComponent } from "../../Components/loader-component/loader-compon
 import { ToastrService } from "ngx-toastr"
 import { Constants } from '../../Constants';
 import { Router } from '@angular/router';
-import { ScreenService } from '../../Services/screen-service';
+import { Category } from '../../Interfaces/category';
 
 @Component({
   selector: 'app-categories-admin-page',
@@ -20,12 +19,12 @@ import { ScreenService } from '../../Services/screen-service';
   styleUrl: './categories-admin-page.css'
 })
 export class CategoriesAdminPage {
-  categories$!: Observable<ApiResponse<CategoryForAdmin[]>>
+  categories$!: Observable<ApiResponse<Category[]>>
   newCategoryName: string = ""
   disabled: boolean = true
   constructor(private categoryService: CategoryService, public router: Router, public loaderService: LoaderService, private toastrService: ToastrService) { }
   ngOnInit() {
-    this.categories$ = this.categoryService.getAllForAdmin()
+    this.categories$ = this.categoryService.getAll()
   }
   create(event: Event) {
     let name = this.newCategoryName.trim();
@@ -34,7 +33,7 @@ export class CategoriesAdminPage {
       this.categoryService.addNewCategory(this.newCategoryName).subscribe(
         {
           next: (res) => {
-            this.categories$ = this.categoryService.getAllForAdmin()
+            this.categories$ = this.categoryService.getAll()
             this.toastrService.success(res.data, '', Constants.toastrConfig)
           },
           error: (err) => {
@@ -54,7 +53,7 @@ export class CategoriesAdminPage {
       this.disabled = false
     }
   }
-  toCategoryDetails(category: CategoryForAdmin) {
+  toCategoryDetails(category: Category) {
     this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id } })
   }
   

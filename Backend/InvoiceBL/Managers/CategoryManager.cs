@@ -91,35 +91,7 @@ namespace InvoiceBL.Managers
 
 
         #endregion
-        #region Get All (for Admin)
-        public async Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync()
-        {
-            var result = new Result<List<CategoryDTOGetForAdmin>>();
-
-            var categories = await _unitOfWork._CategoryRepo.GetAllAsync();
-            #region check have categories
-            if (categories != null && categories.Any())
-            {
-                result.Data = categories.Select(c => new CategoryDTOGetForAdmin()
-                {
-                    Id = c.Id,
-                    ConcurrencyStamp = c.ConcurrencyStamp,
-                    Name = c.Name
-                }).OrderBy(c => c.Name).ToList();
-                result.Successed = true;
-                return result;
-            }
-            #endregion
-            #region don't have categories
-            result.Errors.Add(new Error()
-            {
-                Code = ErrorCodes.NoContent,
-                Message = "No categories found in the system.",
-            });
-            return result;
-            #endregion
-        }
-        #endregion
+        
         #region Get All
         public async Task<Result<List<CategoryDTOGet>>> GetAllAsync()
         {
@@ -132,7 +104,9 @@ namespace InvoiceBL.Managers
                 result.Data = categories.Select(c => new CategoryDTOGet()
                 {
                     Id = c.Id,
-                    Name = c.Name
+                    Name = c.Name,
+                    ConcurrencyStamp = c.ConcurrencyStamp
+
                 }).OrderBy(c => c.Name).ToList();
                 result.Successed = true;
                 return result;
@@ -149,9 +123,9 @@ namespace InvoiceBL.Managers
         }
         #endregion
         #region Get by Id
-        public async Task<Result<CategoryDTOGetForAdmin>> GetForAdminAsyncById(string id)
+        public async Task<Result<CategoryDTOGet>> GetByIdAsync(string id)
         {
-            var result = new Result<CategoryDTOGetForAdmin>();
+            var result = new Result<CategoryDTOGet>();
             var category = await _unitOfWork._CategoryRepo.GetByIdAsync(id);
             #region Check category is exist
             if (category == null)
@@ -160,7 +134,7 @@ namespace InvoiceBL.Managers
                 return result;
             }
             #endregion
-            result.Data = new CategoryDTOGetForAdmin()
+            result.Data = new CategoryDTOGet()
             {
                 Id = category.Id,
                 ConcurrencyStamp = category.ConcurrencyStamp,

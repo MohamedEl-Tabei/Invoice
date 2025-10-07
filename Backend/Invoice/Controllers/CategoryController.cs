@@ -35,20 +35,7 @@ namespace Invoice.Controllers
 
         }
         #endregion
-        #region Get All For Admin
-        [Authorize(Policy = AppRoles.Admin)]
-        [HttpGet("admin/getAll")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(Result<List<CategoryDTOGetForAdmin>>), StatusCodes.Status200OK)]
-        [EndpointSummary("Get all (Admin only)")]
-        [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves all categories including their concurrency stamps.")]
-        public async Task<ActionResult> GetAllForAdmin()
-        {
-            var result = await _categoryManager.GetAllForAdminAsync();
-            return this.HandleResponse(result);
-        }
-
-        #endregion
+       
         #region Get All 
         [HttpGet("getAll")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -79,16 +66,15 @@ namespace Invoice.Controllers
         }
 
         #endregion
-        #region Get Concurrency Stamp For Admin
-        [Authorize(Policy = AppRoles.Admin)]
-        [HttpGet("admin/get")]
+        #region Get one By Id
+        [HttpGet("get")]
         [ProducesResponseType(typeof(Result<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<string>), StatusCodes.Status404NotFound)]
-        [EndpointSummary("Get Category (Admin only)")]
-        [EndpointDescription("This endpoint can only be accessed by Admins. It retrieves the category by its ID.")]
-        public async Task<ActionResult> GetConcurrencyStamp([FromQuery] string id)
+        [EndpointSummary("Get Category ")]
+        [EndpointDescription("This endpoint retrieves the category by its ID.")]
+        public async Task<ActionResult> Get([FromQuery] string id)
         {
-            var result = await _categoryManager.GetForAdminAsyncById(id);
+            var result = await _categoryManager.GetByIdAsync(id);
             return this.HandleResponse(result);
         }
 

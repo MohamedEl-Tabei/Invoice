@@ -4,7 +4,6 @@ import { LoginPage } from './Pages/login-page/login-page';
 import { SignUpPage } from './Pages/sign-up-page/sign-up-page';
 import { CategoriesAdminPage } from './Pages/categories-admin-page/categories-admin-page';
 import { HistoryAdminPage } from './Pages/history-admin-page/history-admin-page';
-import { CategoryDetailsPage } from './Pages/category-details-page/category-details-page';
 import { CategoryDetailsAdminPage } from './Pages/category-details-admin-page/category-details-admin-page';
 import { NotFoundPage } from './Pages/not-found-page/not-found-page';
 

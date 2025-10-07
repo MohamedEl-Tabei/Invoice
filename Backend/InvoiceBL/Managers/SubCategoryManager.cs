@@ -34,6 +34,7 @@ namespace InvoiceBL.Managers
             {
                 Id = sc.Id,
                 Name = sc.Name,
+                ConcurrencyStamp = sc.ConcurrencyStamp,
             }).ToList();
             result.Successed = true;
             return result;

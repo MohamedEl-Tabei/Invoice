@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoice\\controllers\\subcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|solutionrelative:invoice\\controllers\\subcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoice\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72758EFB-C479-471B-9082-05E696478468}|Invoice\\Invoice.csproj|solutionrelative:invoice\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\managers\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\managers\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|e:\\\uD83D\uDE80 projects\\invoice\\backend\\invoicebl\\managers\\subcategorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F06617-8821-41A5-9941-875648F684AC}|InvoiceBL\\InvoiceBL.csproj|solutionrelative:invoicebl\\managers\\subcategorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SubCategoryController.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Controllers\\SubCategoryController.cs",
-              "RelativeDocumentMoniker": "Invoice\\Controllers\\SubCategoryController.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Controllers\\SubCategoryController.cs",
-              "RelativeToolTip": "Invoice\\Controllers\\SubCategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Title": "SubCategoryManager.cs",
+              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\SubCategoryManager.cs",
+              "RelativeDocumentMoniker": "InvoiceBL\\Managers\\SubCategoryManager.cs",
+              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\SubCategoryManager.cs",
+              "RelativeToolTip": "InvoiceBL\\Managers\\SubCategoryManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwCQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T15:56:55.653Z",
+              "WhenOpened": "2025-10-07T16:50:54.45Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Invoice\\Controllers\\CategoryController.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Invoice\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Invoice\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwDMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T15:48:19.909Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryManager.cs",
-              "DocumentMoniker": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\CategoryManager.cs",
-              "RelativeDocumentMoniker": "InvoiceBL\\Managers\\CategoryManager.cs",
-              "ToolTip": "E:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\InvoiceBL\\Managers\\CategoryManager.cs",
-              "RelativeToolTip": "InvoiceBL\\Managers\\CategoryManager.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAYwH8AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T15:44:02.289Z"
             }
           ]
         }

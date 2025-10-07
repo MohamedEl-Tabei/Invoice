@@ -11,9 +11,8 @@ namespace InvoiceBL.IManagers
     public interface ICategoryManager
     {
         public Task<Result<string>> CreateAsync(CategoryDTOCreate categoryDTOCreate);
-        public Task<Result<List<CategoryDTOGetForAdmin>>> GetAllForAdminAsync();
         public Task<Result<List<CategoryDTOGet>>> GetAllAsync();
-        public Task<Result<CategoryDTOGetForAdmin>> GetForAdminAsyncById(string id);
+        public Task<Result<CategoryDTOGet>> GetByIdAsync(string id);
         public Task<Result<string>> UpdateAsync(CategoryDTOUpdate categoryDTOUpdate);
         public Task<Result<string>> DeleteAsync(CategoryDTODelete categoryDTODelete);
     }
