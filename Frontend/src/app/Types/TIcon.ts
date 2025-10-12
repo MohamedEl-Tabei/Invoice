@@ -1,0 +1,1 @@
+export type IconBtn = "" | "add" | "update" | "delete" 

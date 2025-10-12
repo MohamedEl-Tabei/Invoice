@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: 'signUp', component: SignUpPage, title: 'Sign Up' },
     { path: 'admin/categories', component: CategoriesAdminPage, title: "Categories" },
     { path: 'admin/categories/details', component: CategoryDetailsAdminPage, title: "Details" },
-    { path: 'admin/history', component: HistoryAdminPage, title: "History" },
+    { path: 'admin/history',loadComponent:()=>import("./Pages/history-admin-page/history-admin-page").then(c=>c.HistoryAdminPage),  title: "History" },//lazy loading example
     { path: '**', component: NotFoundPage, title: "Not Found" }
 
 ];

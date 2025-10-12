@@ -10,10 +10,11 @@ import { LoaderService } from '../../Services/loader-service';
 import { CategoryDelete } from '../../Interfaces/category-delete';
 import { ScreenService } from '../../Services/screen-service';
 import { Subscription, switchMap } from 'rxjs';
+import { ButtonComponent } from "../../Components/button-component/button-component";
 
 @Component({
   selector: 'app-category-details-admin-page',
-  imports: [FormsModule, InputDirective,],
+  imports: [FormsModule, InputDirective, ButtonComponent],
   templateUrl: './category-details-admin-page.html',
   styleUrl: './category-details-admin-page.css'
 })

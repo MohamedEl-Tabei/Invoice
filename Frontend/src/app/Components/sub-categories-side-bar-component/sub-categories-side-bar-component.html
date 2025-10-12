@@ -7,7 +7,8 @@
                 (click)="onAccordionClick(category.id)" type="button">
                 {{category.name}}
                 @if(categoryId===category.id&&isAdmin) {
-                <button class="btn btn-sm btn-2 ms-auto" title="Add new sub-category" (click)="toggleAdd(true)"><i class="bi bi-plus-square "></i></button>
+                <app-button-component class="ms-auto" action="add" [hasIcon]="true" size="sm"
+                    title="Add new sub-category" (click)="toggleAdd(true)" />
                 }
             </button>
         </small>
@@ -19,13 +20,14 @@
                     <li class="list-group-item p-0">
                         <small class="text-body-secondary d-flex mb-2">{{subCategory.name}}
                             @if(isAdmin){
-                            <button class="btn btn-sm btn-1 ms-auto"title="Edit"(click)="toggleEdit(true)" ><i class="bi bi-pencil-square "></i></button>
-                            <button class="btn btn-sm btn-d ms-1" title="Delete" (click)="toggleDelete(true)"><i class="bi bi-trash3 "></i></button>
+                            <app-button-component action="update" class="ms-auto" size="sm" [hasIcon]="true"
+                                title="Edit" (click)="toggleEdit(true)" />
+                            <app-button-component action="delete" class="ms-1" size="sm" [hasIcon]="true" title="Delete"
+                                (click)="toggleDelete(true)" />
                             }
 
                         </small>
                     </li>
-
                     }
                 </ul>
             </div>
@@ -52,7 +54,7 @@
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Edit Sub-Category</h2>
-            <button class="btn-close rounded-circle" (click)="toggleEdit(false)"></button>
+            <app-button-component action="close" (click)="toggleEdit(false)" />
         </div>
         <form (ngSubmit)="updateSubCategory($event)">
             <div class="mb-3">
@@ -62,8 +64,9 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-2 me-2" (click)="toggleEdit(false)">Cancel</button>
-                <button type="submit" [disabled]="!validSubCategory" class="btn btn-1">Save</button>
+                <app-button-component type="button" action="cancle" class="me-2" text="Cancel"
+                    (click)="toggleEdit(false)" />
+                <app-button-component type="submit" [disabled]="!validSubCategory" action="save" text="Save" />
             </div>
         </form>
     </div>
@@ -72,7 +75,7 @@
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Delete Category</h2>
-            <button class="btn-close rounded-circle" (click)="toggleDelete(false)"></button>
+            <app-button-component action="close" (click)="toggleDelete(false)" />
         </div>
         <div>
             <div class="mb-3">
@@ -80,8 +83,9 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-2 me-2" (click)="toggleDelete(false)">Cancel</button>
-                <button type="submit" class="btn btn-d" (click)="deleteSubCategory($event)">Delete</button>
+                <app-button-component type="button" action="cancle" text="Cancel" class="me-2"
+                    (click)="toggleDelete(false)" />
+                <app-button-component type="submit" action="delete" text="Delete" (click)="deleteSubCategory($event)" />
             </div>
         </div>
     </div>

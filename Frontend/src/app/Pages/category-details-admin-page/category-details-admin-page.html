@@ -2,8 +2,9 @@
     <div class="d-flex my-4 align-items-center">
         <h1>{{category.oldName}}</h1>
         <div class="ms-auto">
-            <button class="btn btn-1" (click)="toggleEdit(true)"><i class="bi bi-pencil-square me-2"></i>Edit</button>
-            <button class="btn btn-d ms-4" (click)="toggleDelete(true)"><i class="bi bi-trash3 me-2"></i>Delete</button>
+            <app-button-component text="Edit" action="update" [hasIcon]="true" (click)="toggleEdit(true)" />
+            <app-button-component text="Delete" action="delete" class="ms-2" [hasIcon]="true"
+                (click)="toggleDelete(true)" />
         </div>
     </div>
 

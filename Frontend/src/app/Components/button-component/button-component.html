@@ -1,0 +1,15 @@
+@if(action()=='close'){
+<button class="btn-close rounded-circle" (click)="onClick($event)"></button>
+}
+@else{<button (click)="onClick($event)" class="btn btn-{{color()}} btn-{{size()}} {{class()}}">
+    @if (hasIcon()) {
+    @switch(action()) {
+    @case('add') { <i class="bi bi-plus-lg "></i>}
+    @case('update') { <i class="bi bi-pencil-square"></i>}
+    @case('delete') { <i class="bi bi-trash3  "></i>}
+    }
+    }
+    @if(text()){
+    <span [className]="hasIcon()?'ms-2':''">{{text()}}</span>
+    }
+</button>}

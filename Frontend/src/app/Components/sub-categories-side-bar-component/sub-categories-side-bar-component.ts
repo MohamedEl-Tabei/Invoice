@@ -13,10 +13,11 @@ import { Constants } from '../../Constants';
 import { LoaderService } from '../../Services/loader-service';
 import { CategoryUpdate } from '../../Interfaces/category-update';
 import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from "../button-component/button-component";
 
 @Component({
   selector: 'app-sub-categories-side-bar-component',
-  imports: [AsyncPipe,FormsModule],
+  imports: [AsyncPipe, FormsModule, ButtonComponent],
   templateUrl: './sub-categories-side-bar-component.html',
   styleUrl: './sub-categories-side-bar-component.css'
 })
