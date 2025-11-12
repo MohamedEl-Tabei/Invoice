@@ -7,3 +7,6 @@
     background-color: var(--bs-body-bg) !important;
     filter: blur(108px);
 }
+h1{
+    color: var(--bs-body-color);
+}

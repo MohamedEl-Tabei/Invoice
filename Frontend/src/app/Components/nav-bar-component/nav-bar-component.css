@@ -7,3 +7,32 @@
 .btn-nav{
     width: 90px;
 }
+
+
+
+
+.btn:disabled {
+    opacity: 0.6;
+}
+
+.btn-x{
+    border: none;
+    opacity: 0.9;
+}
+
+
+
+
+.btn-x,
+.btn-x:hover,
+.btn-x:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--bs-secondary) !important;
+}
+
+
+
+.btn-x:hover{
+    color: var(--bs-body-bg);
+    opacity: 1;
+}

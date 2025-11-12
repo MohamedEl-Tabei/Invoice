@@ -29,7 +29,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    color: var(--bs-body-color);
     padding: 0;
     text-transform: capitalize;
 }
@@ -38,55 +37,6 @@ input,textarea{
 }
 .bg-4{
     background-color: var(--color-4);
-}
-.btn-1,
-.btn-2,
-.btn-x,
-.btn-d {
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-.btn-1,
-.btn-1:hover,
-.btn-1:active {
-    color: var(--bs-body-bg) !important;
-    background-color: var(--color-1) !important;
-}
-
-.btn-2,
-.btn-2:hover,
-.btn-2:active {
-    color: var(--bs-body-bg) !important;
-    background-color: var(--color-2) !important;
-}
-
-.btn-x,
-.btn-x:hover,
-.btn-x:active {
-    color: var(--bs-body-bg) !important;
-    background-color: var(--bs-secondary) !important;
-}
-
-.btn-d,
-.btn-d:hover,
-.btn-d:active {
-    color: var(--bs-body-bg) !important;
-    background-color: var(--color-red-500) !important;
-}
-
-
-.btn-1:hover,
-.btn-2:hover,
-.btn-x:hover ,
-.btn-d:hover {
-    color: var(--bs-body-bg);
-    opacity: 1;
-}
-.btn-close:active{
-    outline: none;
-    box-shadow: none;
 }
 .form-check-input-2:checked {
     background-color: var(--color-2);
@@ -191,4 +141,8 @@ hr{
 }
 .bi{
     color: inherit;
+}
+.selected {
+    background-color: var(--color-2);
+    color: var(--bs-body-bg);
 }

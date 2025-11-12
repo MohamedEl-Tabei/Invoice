@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputDirective } from '../../Directives/input-directive';
-import { LabelDirective } from '../../Directives/label-directive';
-import { SpinnerDirective } from '../../Directives/spinner-directive';
-import { LogoComponent } from '../../Components/logo-component/logo-component';
+import { InputDirective } from '../../../Directives/input-directive';
+import { LabelDirective } from '../../../Directives/label-directive';
+import { SpinnerDirective } from '../../../Directives/spinner-directive';
+import { LogoComponent } from '../../../Components/logo-component/logo-component';
 import { Router, RouterLink } from '@angular/router';
-import { TRole } from '../../Types/TRole';
-import { PasswordErrorDirective } from '../../Directives/password-error-directive';
-import { AppValidators } from '../../Validators';
-import { ScreenService } from '../../Services/screen-service';
-import { Constants } from '../../Constants';
-import { UserService } from '../../Services/user-service';
-import { EmailErrorDirective } from '../../Directives/email-error-directive';
-import { UserNameErrorDirective } from '../../Directives/user-name-error-directive';
-import { PhoneErrorDirective } from '../../Directives/phone-error-directive';
-import { ConfirmPasswordErrorDirective } from "../../Directives/confirm-password-error-directive";
-import { ApiError } from '../../Interfaces/api-error';
+import { TRole } from '../../../Types/TRole';
+import { PasswordErrorDirective } from '../../../Directives/password-error-directive';
+import { AppValidators } from '../../../Validators';
+import { ScreenService } from '../../../Services/screen-service';
+import { Constants } from '../../../Constants';
+import { UserService } from '../../../Services/user-service';
+import { EmailErrorDirective } from '../../../Directives/email-error-directive';
+import { UserNameErrorDirective } from '../../../Directives/user-name-error-directive';
+import { PhoneErrorDirective } from '../../../Directives/phone-error-directive';
+import { ConfirmPasswordErrorDirective } from "../../../Directives/confirm-password-error-directive";
+import { ApiError } from '../../../Interfaces/api-error';
+import { ButtonComponent } from "../../../Components/button-component/button-component";
 
 @Component({
   selector: 'app-sign-up-page',
-  imports: [LogoComponent, ReactiveFormsModule, InputDirective, LabelDirective, SpinnerDirective, PhoneErrorDirective, UserNameErrorDirective, PasswordErrorDirective, EmailErrorDirective, RouterLink, ConfirmPasswordErrorDirective],
+  imports: [LogoComponent, ReactiveFormsModule, InputDirective, LabelDirective, SpinnerDirective, PhoneErrorDirective, UserNameErrorDirective, PasswordErrorDirective, EmailErrorDirective, RouterLink, ConfirmPasswordErrorDirective, ButtonComponent],
   templateUrl: './sign-up-page.html',
   styleUrl: './sign-up-page.css'
 })

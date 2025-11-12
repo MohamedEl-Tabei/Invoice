@@ -1,13 +1,13 @@
 import { Component, Signal } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuditLog } from '../../Interfaces/audit-log';
-import { AuditLogService } from '../../Services/audit-log-service';
-import { ApiResponse } from '../../Interfaces/api-response';
+import { AuditLog } from '../../../Interfaces/audit-log';
+import { AuditLogService } from '../../../Services/audit-log-service';
+import { ApiResponse } from '../../../Interfaces/api-response';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { InputDirective } from "../../Directives/input-directive";
+import { InputDirective } from "../../../Directives/input-directive";
 import { FormsModule } from '@angular/forms';
-import { LoaderService } from '../../Services/loader-service';
-import { LoaderComponent } from "../../Components/loader-component/loader-component";
+import { LoaderService } from '../../../Services/loader-service';
+import { LoaderComponent } from "../../../Components/loader-component/loader-component";
 
 @Component({
   selector: 'app-history-admin-page',

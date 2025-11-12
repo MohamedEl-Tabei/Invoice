@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Constants } from '../Constants';
 import { Observable, shareReplay } from 'rxjs';
 import { ApiResponse } from '../Interfaces/api-response';
@@ -12,9 +12,9 @@ import { Category } from '../Interfaces/category';
 })
 export class CategoryService {
   constructor(private httpClient: HttpClient) { }
- 
+  selectedCategoryId=signal<string>('');
   getAll(): Observable<ApiResponse<Category[]>> {
-    return this.httpClient.get<ApiResponse<Category[]>>(`${Constants.API_URL}category/getAll`)
+    return this.httpClient.get<ApiResponse<Category[]>>(`${Constants.API_URL}category/getAll`).pipe(shareReplay(1));
   }
   addNewCategory(name: string): Observable<ApiResponse<string>> {
     return this.httpClient.post<ApiResponse<string>>(`${Constants.API_URL}category/create`, { name })

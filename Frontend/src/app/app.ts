@@ -8,14 +8,11 @@ import { Constants } from './Constants';
 import { jwtDecode } from 'jwt-decode'
 import { UserAuthenticated } from './Interfaces/user-authenticated';
 import { TokenPayload } from './Interfaces/token-payload';
-import { SubCategoriesSideBarComponent } from "./Components/sub-categories-side-bar-component/sub-categories-side-bar-component";
-import { BehaviorSubject } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { LoaderComponent } from "./Components/loader-component/loader-component";
 import { LoaderService } from './Services/loader-service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, SubCategoriesSideBarComponent, LoaderComponent],
+  imports: [RouterOutlet, NavBarComponent, LoaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

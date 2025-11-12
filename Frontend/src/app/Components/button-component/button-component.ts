@@ -1,5 +1,4 @@
 import { Component, computed, input, output, } from '@angular/core';
-import { IconBtn } from '../../Types/TIcon';
 
 @Component({
   selector: 'app-button-component',
@@ -12,7 +11,7 @@ export class ButtonComponent {
   text = input<string>();
   size = input<'sm' | 'md' | 'lg'>('md');
   disabled = input<boolean>(false);
-  action = input<'default' | 'link' | 'cancle' | 'save' | 'update' | 'add' | 'delete' | 'close'>('default');
+  action = input<'default'|'back' | 'link' | 'cancel' | 'save' | 'create' | 'update' | 'add' | 'delete' | 'close' | 'login' | 'signup'>('default');
   type = input<'button' | 'submit' | 'reset'>('button');
   class = input<string>('');
   hasIcon = input<boolean>(false);
@@ -20,15 +19,15 @@ export class ButtonComponent {
   //#region Outputs
   click = output<Event>();
   //#endregion
- //#region computed
+  //#region computed
   color = computed(() =>
-    this.action() === 'cancle' || this.action() === 'add' ? '2' :
-      this.action() === 'save' || this.action() === 'update' ? '1' :
+    this.action() === 'cancel'||this.action() === 'back' || this.action() === "create" || this.action() === 'add' || this.action() === 'login' ? '2' :
+      this.action() === 'save' || this.action() === 'signup' || this.action() === 'update' ? '1' :
         this.action() === 'delete' ? 'd' :
           '')
-//#endregion
+  //#endregion
   onClick(event: Event) {
-    event.preventDefault();
-    if (!this.disabled) this.click.emit(event);
+    if (this.type() != 'submit') event.preventDefault();
+    this.click.emit(event);
   }
 }

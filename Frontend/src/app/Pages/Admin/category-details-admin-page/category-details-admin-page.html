@@ -1,5 +1,6 @@
-<div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+<div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
     <div class="d-flex my-4 align-items-center">
+        <app-button-component action="back" [class]="'me-4 rounded-circle'" size="lg" (click)="back()" title="Categories" [hasIcon]="true"/>
         <h1>{{category.oldName}}</h1>
         <div class="ms-auto">
             <app-button-component text="Edit" action="update" [hasIcon]="true" (click)="toggleEdit(true)" />
@@ -27,7 +28,7 @@
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Edit Category</h2>
-            <button class="btn-close rounded-circle" (click)="toggleEdit(false)"></button>
+            <app-button-component action="close" (click)="toggleEdit(false)" />
         </div>
         <form (ngSubmit)="updateCategory($event)">
             <div class="mb-3">
@@ -37,8 +38,9 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-2 me-2" (click)="toggleEdit(false)">Cancel</button>
-                <button type="submit" [disabled]="!validCategory" class="btn btn-1">Save</button>
+                <app-button-component action="cancel" text="Cancel" [type]="'button'" [class]="'me-2'"
+                    (click)="toggleEdit(false)" />
+                <app-button-component [type]="'submit'" [disabled]="!validCategory" text="Save" action="save" />
             </div>
         </form>
     </div>
@@ -47,7 +49,7 @@
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Delete Category</h2>
-            <button class="btn-close rounded-circle" (click)="toggleDelete(false)"></button>
+            <app-button-component action="close" (click)="toggleDelete(false)" />
         </div>
         <div>
             <div class="mb-3">
@@ -55,8 +57,10 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-2 me-2" (click)="toggleDelete(false)">Cancel</button>
-                <button type="submit" class="btn btn-d" (click)="deleteCategory($event)">Delete</button>
+                <app-button-component type="button" action="cancel" text="Cancel" [class]="'me-2'"
+                    (click)="toggleDelete(false)" />
+                <app-button-component [type]="'submit'" action="delete" text="Delete"
+                    (click)="deleteCategory($event)" />
             </div>
         </div>
     </div>
@@ -68,3 +72,4 @@
 
 
 }
+

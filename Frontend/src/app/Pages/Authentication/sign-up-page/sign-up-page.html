@@ -68,7 +68,7 @@
                     </div>
 
                 </div>
-                <button type="submit" [disabled]="SignUpForm.invalid" class="btn btn-1 w-100 mb-3">Sign Up</button>
+                <app-button-component [type]="'submit'" action="signup" text="Sign Up" [disabled]="SignUpForm.invalid" class="w-100 mb-3"/>
                 <div>
                     <small class="text-gray-600 dark:text-gray-500 text-center d-block">
                         Already have an account? <a routerLink="/login" class="text-2 hover:underline">Login</a>

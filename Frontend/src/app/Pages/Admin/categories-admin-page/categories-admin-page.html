@@ -2,7 +2,7 @@
     <form class="d-flex my-4" (submit)="create($event)">
         <input type="text" appInput colorNumber="2" [(ngModel)]="newCategoryName" (input)="checkCategoryName()"
             name="category" id="category" placeholder="Category" required />
-        <button type="submit" [disabled]="disabled" class="btn btn-2 px-4 ms-4 ">Create</button>
+        <app-button-component [type]="'submit'" action="create" text="Create" [disabled]="disabled" [class]="'px-4 ms-4 '"/>
     </form>
     
     <hr>

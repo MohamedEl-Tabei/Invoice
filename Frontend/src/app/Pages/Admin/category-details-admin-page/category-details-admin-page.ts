@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { InputDirective } from '../../Directives/input-directive';
-import { CategoryService } from '../../Services/category-service';
-import { CategoryUpdate } from '../../Interfaces/category-update';
+import { InputDirective } from '../../../Directives/input-directive';
+import { CategoryService } from '../../../Services/category-service';
+import { CategoryUpdate } from '../../../Interfaces/category-update';
 import { ToastrService } from 'ngx-toastr';
-import { Constants } from '../../Constants';
-import { LoaderService } from '../../Services/loader-service';
-import { CategoryDelete } from '../../Interfaces/category-delete';
-import { ScreenService } from '../../Services/screen-service';
+import { Constants } from '../../../Constants';
+import { LoaderService } from '../../../Services/loader-service';
+import { CategoryDelete } from '../../../Interfaces/category-delete';
+import { ScreenService } from '../../../Services/screen-service';
 import { Subscription, switchMap } from 'rxjs';
-import { ButtonComponent } from "../../Components/button-component/button-component";
+import { ButtonComponent } from "../../../Components/button-component/button-component";
 
 @Component({
   selector: 'app-category-details-admin-page',
@@ -26,7 +26,6 @@ export class CategoryDetailsAdminPage {
   getByIdSubscription!: Subscription;
   constructor(private activeRoute: ActivatedRoute, public loaderService: LoaderService, private categoryService: CategoryService, private router: Router, private toastrService: ToastrService, public screenService: ScreenService) { }
   ngOnInit() {
-    this.screenService.showSidebar.set(true)
     this.getByIdSubscription = this.activeRoute.queryParams.pipe(switchMap(p => {
       this.category.id = p['id'];
       return this.categoryService.getById(p['id'])
@@ -100,8 +99,10 @@ export class CategoryDetailsAdminPage {
       }
     )
   }
+  back() {
+    this.router.navigateByUrl("admin/categories");
+  }
   ngOnDestroy() {
-    this.screenService.showSidebar.set(false)
     this.getByIdSubscription?.unsubscribe();
   }
 }

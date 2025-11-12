@@ -1,0 +1,39 @@
+<div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <form class="d-flex my-4" (submit)="create($event)">
+        @if (mounted) {
+        <select name="category" appInput colorNumber="2" class="form-select me-2" [(ngModel)]="selectedCategoryId"
+            (change)="selectCategory()">
+
+            @for (category of (categories$|async)?.data; track $index) {
+            <option [value]="category.id" [disabled]="category.id==selectedCategoryId"
+                [class.selected]="category.id==selectedCategoryId">{{category.name}}</option>
+            }
+            <option value="" class="d-none" disabled>Select Category</option>
+        </select>
+        }
+        <input type="text" appInput colorNumber="2" [(ngModel)]="newSubcategoryName" (input)="checkSubcategoryName()"
+            name="categoryname" id="category" placeholder="Category" required />
+        <app-button-component action="create" [type]="'submit'" [disabled]="disabled" text="Create"
+            [class]="'px-4 ms-4 '" />
+    </form>
+
+    <hr>
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 relative">
+        @if (loaderService.isLoading()) {
+        <app-loader-component type="card"></app-loader-component>
+        }
+        @for (subcategory of (subcategories$|async)?.data; track $index) {
+        <div class="card " [title]="subcategory.name" (click)="toSubcategoryDetails(subcategory)">
+            <div class="my-4 flex justify-center">
+                <div>
+                    <h3 class="text-sm ">
+                        {{subcategory.name}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+        }
+
+
+    </div>
+</div>

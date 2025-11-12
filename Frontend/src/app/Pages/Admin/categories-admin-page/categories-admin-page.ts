@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { CategoryService } from '../../Services/category-service';
-import { InputDirective } from '../../Directives/input-directive';
+import { CategoryService } from '../../../Services/category-service';
+import { InputDirective } from '../../../Directives/input-directive';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { ApiResponse } from '../../Interfaces/api-response';
+import { ApiResponse } from '../../../Interfaces/api-response';
 import { FormsModule } from "@angular/forms";
-import { LoaderService } from '../../Services/loader-service';
-import { LoaderComponent } from "../../Components/loader-component/loader-component";
+import { LoaderService } from '../../../Services/loader-service';
+import { LoaderComponent } from "../../../Components/loader-component/loader-component";
 import { ToastrService } from "ngx-toastr"
-import { Constants } from '../../Constants';
+import { Constants } from '../../../Constants';
 import { Router } from '@angular/router';
-import { Category } from '../../Interfaces/category';
+import { Category } from '../../../Interfaces/category';
+import { ButtonComponent } from "../../../Components/button-component/button-component";
 
 @Component({
   selector: 'app-categories-admin-page',
-  imports: [InputDirective, AsyncPipe, FormsModule, LoaderComponent],
+  imports: [InputDirective, AsyncPipe, FormsModule, LoaderComponent, ButtonComponent],
   templateUrl: './categories-admin-page.html',
   styleUrl: './categories-admin-page.css'
 })

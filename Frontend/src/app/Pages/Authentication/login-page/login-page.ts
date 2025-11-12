@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../Services/user-service';
-import { Constants } from '../../Constants';
-import { LogoComponent } from "../../Components/logo-component/logo-component";
-import { InputDirective } from '../../Directives/input-directive';
-import { LabelDirective } from '../../Directives/label-directive';
+import { UserService } from '../../../Services/user-service';
+import { Constants } from '../../../Constants';
+import { LogoComponent } from "../../../Components/logo-component/logo-component";
+import { InputDirective } from '../../../Directives/input-directive';
+import { LabelDirective } from '../../../Directives/label-directive';
 import { Router, RouterLink } from '@angular/router';
-import { UserUniqueInputData } from '../../Interfaces/user-unique-input-data';
+import { UserUniqueInputData } from '../../../Interfaces/user-unique-input-data';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AppValidators } from '../../Validators';
-import { SpinnerDirective } from '../../Directives/spinner-directive';
-import { ApiResponse } from '../../Interfaces/api-response';
-import { UserAuthenticated } from '../../Interfaces/user-authenticated';
-import { ScreenService } from '../../Services/screen-service';
+import { AppValidators } from '../../../Validators';
+import { SpinnerDirective } from '../../../Directives/spinner-directive';
+import { ApiResponse } from '../../../Interfaces/api-response';
+import { UserAuthenticated } from '../../../Interfaces/user-authenticated';
+import { ScreenService } from '../../../Services/screen-service';
+import { ButtonComponent } from "../../../Components/button-component/button-component";
 
 @Component({
   selector: 'app-login-page',
-  imports: [LogoComponent, InputDirective, LabelDirective, RouterLink, ReactiveFormsModule, SpinnerDirective],
+  imports: [LogoComponent, InputDirective, LabelDirective, RouterLink, ReactiveFormsModule, SpinnerDirective, ButtonComponent],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css'
 })
