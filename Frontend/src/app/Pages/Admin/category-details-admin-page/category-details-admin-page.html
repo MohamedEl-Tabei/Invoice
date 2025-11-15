@@ -3,9 +3,9 @@
         <app-button-component action="back" [class]="'me-4 rounded-circle'" size="lg" (click)="back()" title="Categories" [hasIcon]="true"/>
         <h1>{{category.oldName}}</h1>
         <div class="ms-auto">
-            <app-button-component text="Edit" action="update" [hasIcon]="true" (click)="toggleEdit(true)" />
-            <app-button-component text="Delete" action="delete" class="ms-2" [hasIcon]="true"
-                (click)="toggleDelete(true)" />
+            <app-button-component  action="update" [hasIcon]="true" (click)="toggleEdit(true)"> Edit</app-button-component>
+            <app-button-component  action="delete" class="ms-2" [hasIcon]="true"
+                (click)="toggleDelete(true)" > Delete</app-button-component>
         </div>
     </div>
 
@@ -38,9 +38,9 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <app-button-component action="cancel" text="Cancel" [type]="'button'" [class]="'me-2'"
-                    (click)="toggleEdit(false)" />
-                <app-button-component [type]="'submit'" [disabled]="!validCategory" text="Save" action="save" />
+                <app-button-component action="cancel" [type]="'button'" [class]="'me-2'"
+                    (click)="toggleEdit(false)" >Cancel</app-button-component>
+                <app-button-component [type]="'submit'" [disabled]="!validCategory" action="save" >Save</app-button-component>
             </div>
         </form>
     </div>
@@ -57,10 +57,10 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <app-button-component type="button" action="cancel" text="Cancel" [class]="'me-2'"
-                    (click)="toggleDelete(false)" />
-                <app-button-component [type]="'submit'" action="delete" text="Delete"
-                    (click)="deleteCategory($event)" />
+                <app-button-component type="button" action="cancel" [class]="'me-2'"
+                    (click)="toggleDelete(false)" >Cancel</app-button-component>
+                <app-button-component [type]="'submit'" action="delete" 
+                    (click)="deleteCategory($event)" >Delete</app-button-component>
             </div>
         </div>
     </div>

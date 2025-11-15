@@ -13,8 +13,8 @@
         }
         <input type="text" appInput colorNumber="2" [(ngModel)]="newSubcategoryName" (input)="checkSubcategoryName()"
             name="categoryname" id="category" placeholder="Category" required />
-        <app-button-component action="create" [type]="'submit'" [disabled]="disabled" text="Create"
-            [class]="'px-4 ms-4 '" />
+        <app-button-component action="create" [type]="'submit'" [disabled]="disabled" 
+            [class]="'px-4 ms-4 '" >Create</app-button-component>
     </form>
 
     <hr>

@@ -20,6 +20,7 @@ export class NavBarComponent {
   public isHidden = false;
   public links: LinkApp[] = [
     { href: "", text: "Home" },
+    { href: "test", text: "Study" },
     { href: "admin/categories", text: "Categories" },
     { href: "admin/subcategories", text: "Subcategories" },
     { href: "admin/history", text: "History" }

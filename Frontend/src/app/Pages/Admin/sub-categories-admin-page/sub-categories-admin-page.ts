@@ -30,12 +30,12 @@ export class SubCategoriesAdminPage {
 
   }
   ngOnInit() {
+    this.mounted = true;
     this.categories$ = this.categoryService.getAll();
     if (this.categoryService.selectedCategoryId()) {
       this.selectedCategoryId = this.categoryService.selectedCategoryId();
       this.subcategories$ = this.subCategoryService.getSubCategoriesByCategoryId(this.selectedCategoryId)
     }
-    this.mounted = true;
   }
 
   toSubcategoryDetails(subcategory: SubCategory) {

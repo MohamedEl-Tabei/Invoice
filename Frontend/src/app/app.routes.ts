@@ -5,9 +5,11 @@ import { SignUpPage } from './Pages/Authentication/sign-up-page/sign-up-page';
 import { CategoriesAdminPage } from './Pages/Admin/categories-admin-page/categories-admin-page';
 import { CategoryDetailsAdminPage } from './Pages/Admin/category-details-admin-page/category-details-admin-page';
 import { NotFoundPage } from './Pages/not-found-page/not-found-page';
+import { Test } from './Pages/Test/test/test';
 
 export const routes: Routes = [
     { path: '', component: HomePage, title: 'Home', },
+    { path: 'test', component: Test, title: 'Study', },
     { path: 'login', component: LoginPage, title: 'Login' },
     { path: 'signUp', component: SignUpPage, title: 'Sign Up' },
     { path: 'admin/categories', component: CategoriesAdminPage, title: "Categories" },

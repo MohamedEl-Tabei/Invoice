@@ -8,7 +8,6 @@ import { Component, computed, input, output, } from '@angular/core';
 })
 export class ButtonComponent {
   //#region Inputs
-  text = input<string>();
   size = input<'sm' | 'md' | 'lg'>('md');
   disabled = input<boolean>(false);
   action = input<'default'|'back' | 'link' | 'cancel' | 'save' | 'create' | 'update' | 'add' | 'delete' | 'close' | 'login' | 'signup'>('default');

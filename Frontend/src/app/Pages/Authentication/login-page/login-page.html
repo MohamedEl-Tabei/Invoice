@@ -58,7 +58,7 @@
                 <small class="text-red-500 mb-3 d-block text-center" [style]="{height: '20px'}">
                     {{dataError}}
                 </small>
-                <app-button-component [type]="'submit'" action="login" text="Login" [disabled]="loginForm.invalid" class="w-100 mb-3"/>
+                <app-button-component [type]="'submit'" action="login"  [disabled]="loginForm.invalid" class="w-100 mb-3">Login</app-button-component>
                 <div>
                     <small class="text-gray-600 dark:text-gray-500 text-center d-block">
                         Don't have an account? <a routerLink="/signUp" class="text-1 hover:underline">Sign Up</a>

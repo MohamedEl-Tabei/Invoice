@@ -11,16 +11,6 @@
 
 
 
-.btn:disabled {
-    opacity: 0.6;
-}
-
-.btn-x{
-    border: none;
-    opacity: 0.9;
-}
-
-
 
 
 .btn-x,
@@ -33,6 +23,55 @@
 
 
 .btn-x:hover{
+    color: var(--bs-body-bg);
+    opacity: 1;
+}
+.btn:disabled {
+    opacity: 0.6;
+}
+
+
+.btn-1,
+.btn-2,
+.btn-x,
+.btn-d {
+    border: none;
+    opacity: 0.9;
+}
+
+.btn-1,
+.btn-1:hover,
+.btn-1:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-1) !important;
+}
+
+.btn-2,
+.btn-2:hover,
+.btn-2:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-2) !important;
+}
+
+.btn-x,
+.btn-x:hover,
+.btn-x:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--bs-secondary) !important;
+}
+
+.btn-d,
+.btn-d:hover,
+.btn-d:active {
+    color: var(--bs-body-bg) !important;
+    background-color: var(--color-red-500) !important;
+}
+
+
+.btn-1:hover,
+.btn-2:hover,
+.btn-x:hover,
+.btn-d:hover {
     color: var(--bs-body-bg);
     opacity: 1;
 }
