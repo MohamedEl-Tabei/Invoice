@@ -6,6 +6,7 @@ import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { tokenInterceptor } from './Interceptors/token-interceptor';
 import { loadInterceptor } from './Interceptors/load-interceptor';
+import { errorHandlerInterceptor } from './Interceptors/error-handler-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideToastr(),
     provideAnimations(),
-    provideHttpClient(withInterceptors([tokenInterceptor,loadInterceptor])),
+    provideHttpClient(withInterceptors([tokenInterceptor, loadInterceptor, errorHandlerInterceptor])),
   ]
 };

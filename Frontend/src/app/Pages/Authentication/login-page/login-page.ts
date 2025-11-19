@@ -40,6 +40,7 @@ export class LoginPage {
     this.loginForm.removeControl('uniqueInput');
     this.loginForm.addControl('uniqueInput', new FormControl<string>('', { validators: data.validators }));
     this.selectedUserUniqueInputData = data;
+    this.clearDataError();
   }
   //#endregion
   //#region  error & nex Methods
@@ -73,8 +74,9 @@ export class LoginPage {
       //#endregion
       //#region Login by Phone
       else if (this.selectedUserUniqueInputData.id === 'phone') {
+        
         this.userService.loginByPhone({
-          phone: this.loginForm.value.uniqueInput,
+          phoneNumber: this.loginForm.value.uniqueInput,
           password: this.loginForm.value.password,
           rememberMe: this.loginForm.value.rememberMe
         }).subscribe({
@@ -86,7 +88,7 @@ export class LoginPage {
       //#region Login by Name
       else if (this.selectedUserUniqueInputData.id === 'name') {
         this.userService.loginByUsername({
-          name: this.loginForm.value.uniqueInput,
+          userName: this.loginForm.value.uniqueInput,
           password: this.loginForm.value.password,
           rememberMe: this.loginForm.value.rememberMe
         }).subscribe({
@@ -108,8 +110,9 @@ export class LoginPage {
   ngOnDestroy() {
     this.screenService.hideNavbar$.next(false);
   }
-  ngAfterViewChecked() {
-    this.dataError = "";
-  }
+  
   //#endregion
+  clearDataError() {
+    if(this.dataError) this.dataError = ''
+  }
 }

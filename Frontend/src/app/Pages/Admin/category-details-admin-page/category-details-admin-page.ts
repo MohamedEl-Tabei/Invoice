@@ -75,7 +75,6 @@ export class CategoryDetailsAdminPage {
       error: (response) => {
 
         if (response.status == 409) this.toastrService.error("This category was updated by someone else. Please refresh and try again.", '', Constants.toastrConfig);
-        else this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
       }
     })
   }
@@ -93,7 +92,6 @@ export class CategoryDetailsAdminPage {
         },
         error: (response) => {
           if (response.status == 409) this.toastrService.error("This category was updated by someone else. Please refresh and try again.", '', Constants.toastrConfig);
-          else this.toastrService.error(response.error.errors[0].message, '', Constants.toastrConfig);
           this.toggleDelete(false)
         }
       }

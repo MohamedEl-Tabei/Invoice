@@ -37,9 +37,6 @@ export class CategoriesAdminPage {
             this.categories$ = this.categoryService.getAll()
             this.toastrService.success(res.data, '', Constants.toastrConfig)
           },
-          error: (err) => {
-            this.toastrService.error(err.error.errors[0].message, '', Constants.toastrConfig)
-          }
         });
     this.newCategoryName = ""
     this.disabled = true

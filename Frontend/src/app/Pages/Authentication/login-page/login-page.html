@@ -32,14 +32,14 @@
                     </div>
                     <input [type]="selectedUserUniqueInputData.inputType" appInput colorNumber="2"
                         [id]="selectedUserUniqueInputData.id" [placeholder]="selectedUserUniqueInputData.placeholder"
-                        formControlName="uniqueInput" />
+                        formControlName="uniqueInput" (change)="clearDataError()" />
                 </div>
 
                 <div class="mb-3">
                     <label for="password" appLabel>Password</label>
                     <div class="position-relative ">
                         <input [type]="showPassword?'text':'password'" appInput colorNumber="2" id="password" placeholder="Password" required
-                            formControlName="password" />
+                            formControlName="password" (change)="clearDataError()"/>
                         <div class="eye" (click)="showPassword=!showPassword">
                             @if (showPassword) {<i class="bi bi-eye-fill"></i>}
                             @else {<i class="bi bi-eye-slash-fill"></i>}

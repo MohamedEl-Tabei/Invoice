@@ -45,7 +45,8 @@ export class Constants {
     timeOut: 5000,
     positionClass: 'toast-bottom-left',
     progressBar: true,
-    messageClass:"text-light"
+    messageClass: "text-light"
   }
   //#endregion
+  
 }
