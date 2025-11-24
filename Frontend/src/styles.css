@@ -133,7 +133,6 @@ input,textarea{
 }
 
 .toast-container .ngx-toastr {
-    width: max-content !important;
     min-width: 200px !important;
 }
 hr{

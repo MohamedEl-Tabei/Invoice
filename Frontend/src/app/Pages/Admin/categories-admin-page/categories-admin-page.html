@@ -1,17 +1,18 @@
 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <form class="d-flex my-4" (submit)="create($event)">
-        <input type="text" appInput colorNumber="2" [(ngModel)]="newCategoryName" (input)="checkCategoryName()"
-            name="category" id="category" placeholder="Category" required />
-        <app-button-component [type]="'submit'" action="create" [disabled]="disabled" [class]="'px-4 ms-4 '">Create</app-button-component>
+    <form class="d-flex my-4" [formGroup]="createForm" (submit)="create($event)">
+        <input type="text" appInput colorNumber="2" formControlName="name" name="category" id="category"
+            placeholder="Category" required />
+        <app-button-component [type]="'submit'" action="create" [disabled]="createForm.getRawValue().name.length<1"
+            [class]="'px-4 ms-4 '">Create</app-button-component>
     </form>
-    
+
     <hr>
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 relative">
         @if (loaderService.isLoading()) {
         <app-loader-component type="card"></app-loader-component>
         }
         @for (category of (categories$|async)?.data; track $index) {
-        <div class="card " [title]="category.name"(click)="toCategoryDetails(category)">
+        <div class="card " [title]="category.name" (click)="toCategoryDetails(category)">
             <div class="my-4 flex justify-center">
                 <div>
                     <h3 class="text-sm ">

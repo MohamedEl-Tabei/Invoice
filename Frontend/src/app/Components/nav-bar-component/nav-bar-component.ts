@@ -5,7 +5,6 @@ import { TTheme } from '../../Types/TTheme';
 import { ScreenService } from '../../Services/screen-service';
 import { Constants } from '../../Constants';
 import { UserService } from '../../Services/user-service';
-import { UserAuthenticated } from '../../Interfaces/user-authenticated';
 import { LinkApp } from '../../Interfaces/link-app';
 
 @Component({
@@ -15,9 +14,7 @@ import { LinkApp } from '../../Interfaces/link-app';
   styleUrl: './nav-bar-component.css'
 })
 export class NavBarComponent {
-  public theme: TTheme = Constants.Theme.light;
   public Constants = Constants;
-  public isHidden = false;
   public links: LinkApp[] = [
     { href: "", text: "Home" },
     { href: "test", text: "Study" },
@@ -25,23 +22,26 @@ export class NavBarComponent {
     { href: "admin/subcategories", text: "Subcategories" },
     { href: "admin/history", text: "History" }
   ]
-  public authenticatedUser: false | UserAuthenticated = false;
-  constructor(private screenService: ScreenService, private userService: UserService) { }
+  constructor(public screenService: ScreenService, public userService: UserService) { }
   ngOnInit() {
     const storedTheme = localStorage.getItem(Constants.localStorageKey.theme) as TTheme;
-    if (storedTheme) this.theme = storedTheme;
-    this.screenService.selectTheme$.next(this.theme);
-    this.screenService.hideNavbar$.subscribe((isHidden: boolean) => this.isHidden = isHidden);
-    this.userService.athenticatedUser$.subscribe((data) => this.authenticatedUser = data)
+    if (storedTheme)
+      this.screenService.selectThemeSignal.set(storedTheme);
   }
   toggleTheme() {
-    this.theme = this.theme === Constants.Theme.light ? Constants.Theme.dark : Constants.Theme.light;
-    localStorage.setItem(Constants.localStorageKey.theme, this.theme);
-    this.screenService.selectTheme$.next(this.theme)
+    let theme = this.screenService.selectThemeSignal();
+    theme = theme === Constants.Theme.light ? Constants.Theme.dark : Constants.Theme.light;
+    localStorage.setItem(Constants.localStorageKey.theme, theme);
+    this.screenService.selectThemeSignal.set(theme)
   }
   logOut() {
     localStorage.removeItem(Constants.localStorageKey.token)
     sessionStorage.removeItem(Constants.localStorageKey.token)
-    this.userService.athenticatedUser$.next(false)
+    this.userService.userSignal.set({
+      isAuthenticated: false,
+      userName: "",
+      role: Constants.Roles.Customer,
+      token: ""
+    })
   }
 }

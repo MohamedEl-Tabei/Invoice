@@ -1,4 +1,4 @@
-import { TRole } from "../Types/TRole";
+import { TRole } from "../../Types/TRole"
 
 export interface UserSignup {
     userName: string

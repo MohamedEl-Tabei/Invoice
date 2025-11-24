@@ -1,8 +1,8 @@
 import { Component, Signal } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuditLog } from '../../../Interfaces/audit-log';
+import { AuditLog } from '../../../Interfaces/Models/audit-log';
 import { AuditLogService } from '../../../Services/audit-log-service';
-import { ApiResponse } from '../../../Interfaces/api-response';
+import { ApiResponse } from '../../../Interfaces/DTOs/api-response';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { InputDirective } from "../../../Directives/input-directive";
 import { FormsModule } from '@angular/forms';

@@ -1,7 +1,7 @@
 import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../../../Interfaces/api-response';
+import { ApiResponse } from '../../../Interfaces/DTOs/api-response';
 import { SubCategory } from '../../../Interfaces/sub-category';
 import { LoaderComponent } from "../../../Components/loader-component/loader-component";
 import { LoaderService } from '../../../Services/loader-service';
@@ -9,7 +9,7 @@ import { ButtonComponent } from "../../../Components/button-component/button-com
 import { FormsModule } from '@angular/forms';
 import { InputDirective } from '../../../Directives/input-directive';
 import { SubCategoryService } from '../../../Services/sub-category-service';
-import { Category } from '../../../Interfaces/category';
+import { Category } from '../../../Interfaces/Models/category';
 import { CategoryService } from '../../../Services/category-service';
 import { Router } from '@angular/router';
 

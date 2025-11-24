@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from "./Components/nav-bar-component/nav-bar-component";
 import { ScreenService } from './Services/screen-service';
-import { TTheme } from './Types/TTheme';
 import { UserService } from './Services/user-service';
 import { Constants } from './Constants';
 import { jwtDecode } from 'jwt-decode'
-import { UserAuthenticated } from './Interfaces/user-authenticated';
 import { TokenPayload } from './Interfaces/token-payload';
 import { LoaderComponent } from "./Components/loader-component/loader-component";
 import { LoaderService } from './Services/loader-service';
@@ -17,10 +15,8 @@ import { LoaderService } from './Services/loader-service';
   styleUrl: './app.css'
 })
 export class App {
-  public theme: TTheme = "light";
-  constructor(public screenService: ScreenService, private userService: UserService,public loaderService:LoaderService) { }
+  constructor(public screenService: ScreenService, private userService: UserService, public loaderService: LoaderService) { }
   ngOnInit() {
-    this.screenService.selectTheme$.subscribe(theme => this.theme = theme)
     //#region  Auto login
     const tokenFromLocal = localStorage.getItem(Constants.localStorageKey.token)
     const tokenFromSession = sessionStorage.getItem(Constants.localStorageKey.token)
@@ -28,14 +24,14 @@ export class App {
 
     if (token) {
       let data = jwtDecode<TokenPayload>(token)
-      let userAuthenticated: UserAuthenticated | false = false;
       let isValidToken = data && data.exp && Date.now() <= data.exp * 1000;
-      if (isValidToken) userAuthenticated = {
-        role: data.role,
-        token: token,
-        userName: data.unique_name
-      }
-      this.userService.athenticatedUser$.next(userAuthenticated)
+      if (isValidToken)
+        this.userService.userSignal.set({
+          isAuthenticated: true,
+          role: data.role,
+          token: token,
+          userName: data.unique_name
+        });
     }
 
     //#endregion

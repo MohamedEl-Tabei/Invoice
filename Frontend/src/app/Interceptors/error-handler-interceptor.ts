@@ -24,7 +24,7 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
           message = "Access to this resource is forbidden.";
         else {
           for (let i = 0; i < errorResponse.error.errors.length; i++)
-            toastrService.error(errorResponse.error.errors[i].message, '', Constants.toastrConfig);
+            toastrService.error(errorResponse.error.errors[i].message, '', {...Constants.toastrConfig,closeButton: true,disableTimeOut: true});
           return throwError(() => errorResponse);
         }
         toastrService.error(message, '', Constants.toastrConfig);

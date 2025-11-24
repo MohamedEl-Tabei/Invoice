@@ -1,5 +1,5 @@
 @if (action()=='back') {
-<button (click)="onClick($event)" class="btn btn-back btn-{{color()}} btn-{{size()}} {{class()}}">
+<button  class="btn btn-back btn-{{color()}} btn-{{size()}} {{class()}}">
     @if (hasIcon()) {
     <i class="bi bi-arrow-return-left"></i>
     }
@@ -7,9 +7,9 @@
 }
 
 @else if(action()=='close'){
-<button class="btn-close rounded-circle" (click)="onClick($event)"></button>
+<button class="btn-close rounded-circle" ></button>
 }
-@else{<button (click)="onClick($event)" [disabled]="disabled()" class="btn btn-{{color()}} btn-{{size()}} {{class()}}">
+@else{<button  [disabled]="disabled()" class="btn btn-{{color()}} btn-{{size()}} {{class()}}">
     @if (hasIcon()) {
     @switch(action()) {
     @case('add') { <i class="bi bi-plus-lg "></i>}

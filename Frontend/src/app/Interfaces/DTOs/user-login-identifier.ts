@@ -1,8 +1,8 @@
 import { ValidatorFn } from "@angular/forms";
 
-export interface UserUniqueInputData {
+export interface UserLoginIdentifier {
     label: string;
-    inputType: string;
+    identifier: string;
     placeholder: string;
     id: string;
     validators?: ValidatorFn[];

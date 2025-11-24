@@ -1,11 +1,13 @@
 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
     <div class="d-flex my-4 align-items-center">
-        <app-button-component action="back" [class]="'me-4 rounded-circle'" size="lg" (click)="back()" title="Categories" [hasIcon]="true"/>
-        <h1>{{category.oldName}}</h1>
+        <app-button-component action="back" [class]="'me-4 rounded-circle'" size="lg" (click)="back()"
+            title="Categories" [hasIcon]="true" />
+        <h1>{{category.name}}</h1>
         <div class="ms-auto">
-            <app-button-component  action="update" [hasIcon]="true" (click)="toggleEdit(true)"> Edit</app-button-component>
-            <app-button-component  action="delete" class="ms-2" [hasIcon]="true"
-                (click)="toggleDelete(true)" > Delete</app-button-component>
+            <app-button-component action="update" [hasIcon]="true" (click)="toggleShowEdit(true)">
+                Edit</app-button-component>
+            <app-button-component action="delete" class="ms-2" [hasIcon]="true" (click)="toggleShowDelete(true)">
+                Delete</app-button-component>
         </div>
     </div>
 
@@ -13,7 +15,7 @@
 
 </div>
 
-@if(onEdit||onDelete){
+@if(showEdit||showDelete){
 <div class="modal filter d-flex">
 </div>
 
@@ -24,43 +26,45 @@
 <div class="modal d-flex justify-content-center align-items-center">
 
 
-    @if(onEdit) {
+    @if(showEdit) {
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Edit Category</h2>
-            <app-button-component action="close" (click)="toggleEdit(false)" />
+            <app-button-component action="close" (click)="toggleShowEdit(false)" />
         </div>
-        <form (ngSubmit)="updateCategory($event)">
+        <form [formGroup]="updateForm" (ngSubmit)="updateCategory($event)">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" class="form-control" appInput colorNumber="1" (input)="checkCategory()"
-                    [(ngModel)]="category.newName" name="name" required>
+                <input type="text" id="name" class="form-control" appInput colorNumber="1" formControlName="name"
+                    name="name" required>
             </div>
 
             <div class="d-flex justify-content-end">
                 <app-button-component action="cancel" [type]="'button'" [class]="'me-2'"
-                    (click)="toggleEdit(false)" >Cancel</app-button-component>
-                <app-button-component [type]="'submit'" [disabled]="!validCategory" action="save" >Save</app-button-component>
+                    (click)="toggleShowEdit(false)">Cancel</app-button-component>
+                <app-button-component [type]="'submit'"
+                    [disabled]="updateForm.controls.name.value===category.name"
+                    action="save">Save</app-button-component>
             </div>
         </form>
     </div>
     }
-    @else if(onDelete) {
+    @else if(showDelete) {
     <div class="modal-content p-4 shadow-lg rounded">
         <div class="d-flex align-items-center mb-4 ">
             <h2 class="me-auto">Delete Category</h2>
-            <app-button-component action="close" (click)="toggleDelete(false)" />
+            <app-button-component action="close" (click)="toggleShowDelete(false)" />
         </div>
         <div>
             <div class="mb-3">
-                <p>This will delete {{category.oldName}}</p>
+                <p>This will delete {{category.name}}</p>
             </div>
 
             <div class="d-flex justify-content-end">
                 <app-button-component type="button" action="cancel" [class]="'me-2'"
-                    (click)="toggleDelete(false)" >Cancel</app-button-component>
-                <app-button-component [type]="'submit'" action="delete" 
-                    (click)="deleteCategory($event)" >Delete</app-button-component>
+                    (click)="toggleShowDelete(false)">Cancel</app-button-component>
+                <app-button-component [type]="'button'" action="delete"
+                    (click)="deleteCategory($event)">Delete</app-button-component>
             </div>
         </div>
     </div>
@@ -72,4 +76,3 @@
 
 
 }
-

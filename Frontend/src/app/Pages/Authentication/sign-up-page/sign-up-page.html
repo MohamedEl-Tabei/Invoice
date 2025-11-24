@@ -3,34 +3,29 @@
         <h2 class="text-2xl font-bold text-center mb-6 text-x"><app-logo-component /></h2>
 
         <div class="position-relative">
-            @if (isLoading) {
-            <div class="position-absolute d-flex justify-content-center align-items-center top-0 start-0 w-100 h-100">
-                <div appSpinner colorNumber="2"></div>
-            </div>
-            }
-            <form [formGroup]="SignUpForm" (submit)="signUp($event)" [class.invisible]="isLoading">
+            <form [formGroup]="signUpForm" (submit)="signUp($event)">
                 <div class="mb-3">
                     <label for="userName" appLabel appUserNameErrore
-                        [userNameControl]="SignUpForm.get('userName')">Name</label>
+                        [userNameControl]="signUpForm.get('userName')">Name</label>
                     <input type="text" appInput colorNumber="1" id="userName" placeholder="User123" required
                         formControlName="userName" />
                 </div>
                 <div class="mb-3">
-                    <label for="email" appLabel appEmailError [emailControl]="SignUpForm.get('email')">email</label>
+                    <label for="email" appLabel appEmailError [emailControl]="signUpForm.get('email')">email</label>
                     <input type="text" appInput colorNumber="1" id="email" placeholder="user@invoice.com" required
                         formControlName="email" />
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="mb-3">
                             <label for="phoneNumber" appLabel appPhoneError
-                                [phoneControl]="SignUpForm.get('phoneNumber')">phone</label>
+                                [phoneControl]="signUpForm.get('phoneNumber')">phone</label>
                             <input type="tel" appInput colorNumber="1" id="phoneNumber" placeholder="01020210495"
                                 required formControlName="phoneNumber" />
                         </div>
 
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="mb-3">
                             <label for="role" appLabel>type of account</label>
                             <select class="form-select" appInput colorNumber="1" formControlName="role">
@@ -46,7 +41,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" appLabel appPasswordError
-                        [passwordControl]='SignUpForm.get("password")'>Password</label>
+                        [passwordControl]='signUpForm.get("password")'>Password</label>
                     <div class="position-relative ">
                         <input [type]="!showPassword?'password':'text'" appInput appInputPassword colorNumber="1"
                             id="password" placeholder="Password" required formControlName="password" />
@@ -57,18 +52,21 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="confirmPassword" appLabel appConfirmPasswordError [confirmPasswordControl]="SignUpForm.get('confirmPassword')" [passwordControl]="SignUpForm.get('password')">confirm Password</label>
+                    <label for="confirmPassword" appLabel appConfirmPasswordError
+                        [confirmPasswordControl]="signUpForm.get('confirmPassword')"
+                        [passwordControl]="signUpForm.get('password')">confirm Password</label>
                     <div class="position-relative ">
-                        <input [type]="!showConfirmPassword?'password':'text'" appInput appInputPassword colorNumber="1"
+                        <input [type]="!showPassword?'password':'text'" appInput appInputPassword colorNumber="1"
                             id="confirmPassword" placeholder="Password" required formControlName="confirmPassword" />
-                        <div class="eye" (click)="showConfirmPassword=!showConfirmPassword">
-                            @if (showConfirmPassword) {<i class="bi bi-eye-fill"></i>}
+                        <div class="eye" (click)="showPassword=!showPassword">
+                            @if (showPassword) {<i class="bi bi-eye-fill"></i>}
                             @else {<i class="bi bi-eye-slash-fill"></i>}
                         </div>
                     </div>
 
                 </div>
-                <app-button-component [type]="'submit'" action="signup"  [disabled]="SignUpForm.invalid" class="w-100 mb-3">Sign Up</app-button-component>
+                <app-button-component [type]="'submit'" action="signup" [disabled]="signUpForm.invalid"
+                    class="w-100 mb-3">Sign Up</app-button-component>
                 <div>
                     <small class="text-gray-600 dark:text-gray-500 text-center d-block">
                         Already have an account? <a routerLink="/login" class="text-2 hover:underline">Login</a>

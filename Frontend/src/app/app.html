@@ -1,4 +1,4 @@
-<div class="page" [attr.data-bs-theme]="theme">
+<div class="page" [attr.data-bs-theme]="screenService.selectThemeSignal()">
     <app-nav-bar-component />
     <router-outlet />
 
@@ -7,7 +7,6 @@
     <div class="modal filter  d-flex "></div>
     <div class="modal d-flex justify-content-center align-items-center">
         <app-loader-component></app-loader-component>
-
     </div>
     }
 </div>

@@ -16,7 +16,6 @@ export class ButtonComponent {
   hasIcon = input<boolean>(false);
   //#endregion
   //#region Outputs
-  click = output<Event>();
   //#endregion
   //#region computed
   color = computed(() =>
@@ -25,8 +24,5 @@ export class ButtonComponent {
         this.action() === 'delete' ? 'd' :
           '')
   //#endregion
-  onClick(event: Event) {
-    if (this.type() != 'submit') event.preventDefault();
-    this.click.emit(event);
-  }
+  
 }

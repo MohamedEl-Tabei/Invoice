@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputDirective } from '../../../Directives/input-directive';
 import { LabelDirective } from '../../../Directives/label-directive';
-import { SpinnerDirective } from '../../../Directives/spinner-directive';
 import { LogoComponent } from '../../../Components/logo-component/logo-component';
 import { Router, RouterLink } from '@angular/router';
 import { TRole } from '../../../Types/TRole';
@@ -15,54 +14,47 @@ import { EmailErrorDirective } from '../../../Directives/email-error-directive';
 import { UserNameErrorDirective } from '../../../Directives/user-name-error-directive';
 import { PhoneErrorDirective } from '../../../Directives/phone-error-directive';
 import { ConfirmPasswordErrorDirective } from "../../../Directives/confirm-password-error-directive";
-import { ApiError } from '../../../Interfaces/api-error';
+import { ApiError } from '../../../Interfaces/DTOs/api-error';
 import { ButtonComponent } from "../../../Components/button-component/button-component";
+import { SignUpForm } from '../../../Interfaces/Forms/sign-up-form';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up-page',
-  imports: [LogoComponent, ReactiveFormsModule, InputDirective, LabelDirective, SpinnerDirective, PhoneErrorDirective, UserNameErrorDirective, PasswordErrorDirective, EmailErrorDirective, RouterLink, ConfirmPasswordErrorDirective, ButtonComponent],
+  imports: [LogoComponent, ReactiveFormsModule, InputDirective, LabelDirective, PhoneErrorDirective, UserNameErrorDirective, PasswordErrorDirective, EmailErrorDirective, RouterLink, ConfirmPasswordErrorDirective, ButtonComponent],
   templateUrl: './sign-up-page.html',
   styleUrl: './sign-up-page.css'
 })
 export class SignUpPage {
   constructor(private screenServices: ScreenService, private userService: UserService, private router: Router) { }
-  //#region Properties
-  SignUpForm: FormGroup = new FormGroup({
-    userName: new FormControl<string>("", AppValidators.name),
-    email: new FormControl<string>("", AppValidators.email),
-    phoneNumber: new FormControl<string>("", AppValidators.phone),
-    password: new FormControl<string>("", AppValidators.password),
-    confirmPassword: new FormControl<string>("", { validators: [Validators.required] }),
-    role: new FormControl<TRole>("Customer"),
+  //#region Form Controls
+  signUpForm = new FormGroup<SignUpForm>({
+    userName: new FormControl<string>("", { validators: AppValidators.name, nonNullable: true }),
+    email: new FormControl<string>("", { validators: AppValidators.email, nonNullable: true }),
+    phoneNumber: new FormControl<string>("", { validators: AppValidators.phone, nonNullable: true }),
+    password: new FormControl<string>("", { validators: AppValidators.password, nonNullable: true }),
+    confirmPassword: new FormControl<string>("", { validators: [Validators.required], nonNullable: true }),
+    role: new FormControl<TRole>(Constants.Roles.Customer, { nonNullable: true }),
   });
-  isLoading: boolean = false;
+
+  //#endregion
   roles = Constants.Roles.List;
   showPassword: boolean = false;
-  showConfirmPassword: boolean = false
-  //#endregion
+  signUpSubscribtion: Subscription | null = null;
   //#region Sign Up Method
   signUp(event: Event) {
     event.preventDefault()
-    if (this.SignUpForm.valid) {
-      this.isLoading = true
-      this.userService.signUp({
-        userName: this.SignUpForm.value.userName,
-        email: this.SignUpForm.value.email,
-        phoneNumber: this.SignUpForm.value.phoneNumber,
-        role: this.SignUpForm.value.role,
-        password: this.SignUpForm.value.password,
-        confirmPassword: this.SignUpForm.value.confirmPassword
-      }).subscribe(
+    if (this.signUpForm.valid) {
+      const data = this.signUpForm.getRawValue()
+      this.signUpSubscribtion = this.userService.signUp({ ...data }).subscribe(
         {
           next: response => {
-            this.isLoading = false;
             this.router.navigateByUrl("/")
           },
           error: response => {
-            this.isLoading = false
             let errors: ApiError[] = response.error.errors;
             for (let i = 0; i < errors.length; i++) {
-              let control = this.SignUpForm.get(errors[i].propertyName)
+              let control = this.signUpForm.get(errors[i].propertyName)
               control?.setErrors({ apiError: errors[i].message })
             }
           }
@@ -74,10 +66,11 @@ export class SignUpPage {
   //#endregion
   //#region Component Lifecycle
   ngOnInit() {
-    this.screenServices.hideNavbar$.next(true)
+    this.screenServices.hideNavbarSignal.set(true);
   }
   ngOnDestroy() {
-    this.screenServices.hideNavbar$.next(false)
+    this.screenServices.hideNavbarSignal.set(false);
+    this.signUpSubscribtion?.unsubscribe();
   }
   //#endregion
 }

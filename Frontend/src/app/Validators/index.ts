@@ -1,6 +1,7 @@
 import { ValidatorFn, Validators } from "@angular/forms";
 
 export class AppValidators {
+    //#region user
     private static passwordPattern: RegExp = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+\[\]{};:'",.<>\/?\\|`~]).+$/;
     private static emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     private static phonePattern: RegExp = /^01[0,1,2,5][0-9]{8}$/;
@@ -9,4 +10,9 @@ export class AppValidators {
     public static readonly email: ValidatorFn[] = [Validators.required, Validators.email, Validators.pattern(this.emailPattern)];
     public static readonly phone: ValidatorFn[] = [Validators.required, Validators.pattern(this.phonePattern)];
     public static readonly name: ValidatorFn[] = [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern(this.namePattern)];
+    //#endregion
+    //#region category
+    private static categoryNamePattern: RegExp = /^[a-zA-Z ]+$/;
+    public static readonly categoryName: ValidatorFn[] = [Validators.required, Validators.pattern(this.categoryNamePattern)];
+    //#endregion
 }

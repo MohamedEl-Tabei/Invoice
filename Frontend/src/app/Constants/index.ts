@@ -1,4 +1,4 @@
-import { UserUniqueInputData } from "../Interfaces/user-unique-input-data";
+import { UserLoginIdentifier } from "../Interfaces/DTOs/user-login-identifier";
 import { TRole } from "../Types/TRole";
 import { TTheme } from "../Types/TTheme";
 import { AppValidators } from "../Validators";
@@ -7,11 +7,11 @@ export class Constants {
   //#region api
   public static readonly API_URL = 'https://localhost:7237/api/';
   //#endregion
-  //#region user unique data used in login
-  public static readonly UserUniqueInputData: UserUniqueInputData[] = [
-    { label: 'Email', inputType: 'email', placeholder: 'user@invoice.com', id: 'email', validators: AppValidators.email },
-    { label: 'Phone', inputType: 'tel', placeholder: '01020210495', id: 'phone', validators: AppValidators.phone },
-    { label: 'Name', inputType: 'text', placeholder: 'USer123', id: 'name', validators: AppValidators.name },
+  //#region user login identifiers
+  public static readonly userLoginIdentifiers: UserLoginIdentifier[] = [
+    { label: 'Email', identifier: 'email', placeholder: 'user@invoice.com', id: 'email', validators: AppValidators.email },
+    { label: 'Phone', identifier: 'tel', placeholder: '01020210495', id: 'phone', validators: AppValidators.phone },
+    { label: 'Name', identifier: 'text', placeholder: 'USer123', id: 'name', validators: AppValidators.name },
   ]
   //#endregion
   //#region theme
@@ -48,5 +48,5 @@ export class Constants {
     messageClass: "text-light"
   }
   //#endregion
-  
+
 }

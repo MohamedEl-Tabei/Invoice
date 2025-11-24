@@ -1,4 +1,5 @@
-<nav class="navbar shadow navbar-expand-lg bg-body-tertiary " [class]="isHidden? 'd-none' : ''">
+<nav class="navbar shadow navbar-expand-lg bg-body-tertiary "
+  [class]="screenService.hideNavbarSignal() ? 'd-none' : ''">
   <div class="container-fluid">
     <app-logo-component />
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -7,11 +8,11 @@
     </button>
     <div class="collapse navbar-collapse " id="navbarContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        @if (authenticatedUser) { <!--small screen-->
+        @if (userService.userSignal().isAuthenticated) { <!--small screen-->
         <div class="d-flex flex-column d-lg-none border-bottom ">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="bi bi-person-fill me-2"></i>
-              {{authenticatedUser.userName}}</a>
+              {{userService.userSignal().userName}}</a>
           </li>
         </div>
         }
@@ -24,10 +25,10 @@
         </li>
         }
         <div class="d-flex flex-column d-lg-none border-top "> <!--small screen-->
-          @if (authenticatedUser) {
+          @if (userService.userSignal().isAuthenticated) {
           <li class="nav-item">
             <span class="nav-link " (click)="toggleTheme()">
-              @if (theme!==Constants.Theme.dark) {
+              @if (screenService.selectThemeSignal()!==Constants.Theme.dark) {
               <i class="bi bi-moon-stars-fill me-2"></i> Dark mode
               } @else {
               <i class="bi bi-brightness-high-fill me-2"></i> Light mode
@@ -49,7 +50,7 @@
         </div>
       </ul>
       <div class="d-none d-lg-flex "> <!--large screen-->
-        @if (authenticatedUser) {
+        @if (userService.userSignal().isAuthenticated) {
         <div class="btn-group dropstart">
           <button class="btn btn-sm btn-x rounded-circle " data-bs-toggle="dropdown" data-bs-auto-close="outside"
             aria-expanded="false">
@@ -59,11 +60,11 @@
           <ul class="dropdown-menu">
             <li>
               <a class="dropdown-item border-bottom">
-                <i class="bi bi-person-fill me-2"></i> {{authenticatedUser.userName}}</a>
+                <i class="bi bi-person-fill me-2"></i> {{userService.userSignal().userName}}</a>
             </li>
             <li>
               <span class="dropdown-item " (click)="toggleTheme()">
-                @if (theme!==Constants.Theme.dark) {
+                @if (screenService.selectThemeSignal()!==Constants.Theme.dark) {
                 <i class="bi bi-moon-stars-fill me-2"></i> Dark mode
                 } @else {
                 <i class="bi bi-brightness-high-fill me-2"></i> Light mode
@@ -81,7 +82,7 @@
         <a routerLink="signUp" class="btn btn-sm btn-1 rounded-pill px-3 btn-nav">Sign Up</a>
         <div class="mx-5 border"></div>
         <button class="btn btn-sm btn-x rounded-circle " (click)="toggleTheme()">
-          @if (theme===Constants.Theme.dark) {
+          @if (screenService.selectThemeSignal() ===Constants.Theme.dark) {
           <i class="bi bi-moon-stars-fill"></i>
           } @else {
           <i class="bi bi-brightness-high-fill"></i>

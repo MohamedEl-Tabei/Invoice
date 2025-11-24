@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../Interfaces/api-response';
-import { AuditLog } from '../Interfaces/audit-log';
+import { ApiResponse } from '../Interfaces/DTOs/api-response';
+import { AuditLog } from '../Interfaces/Models/audit-log';
 import { Constants } from '../Constants';
 
 @Injectable({

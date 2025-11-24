@@ -3,43 +3,38 @@
         <h2 class="text-2xl font-bold text-center mb-6 text-x"><app-logo-component /></h2>
 
         <div class="position-relative">
-            @if (isLoading) {
-            <div class="position-absolute d-flex justify-content-center align-items-center top-0 start-0 w-100 h-100">
-                <div appSpinner colorNumber="2"></div>
-            </div>
-            }
-            <form [formGroup]="loginForm" (submit)="login($event)" [class.invisible]="isLoading">
+
+            <form [formGroup]="loginForm" (submit)="login($event)">
 
                 <div class="mb-3">
                     <div class="dropdown">
                         <button class="dropdown-toggle text-2" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <label [for]="selectedUserUniqueInputData.id" appLabel>
-                                {{selectedUserUniqueInputData.label}}
+                            <label [for]="selecteduserLoginIdentifier.id" appLabel>
+                                {{selecteduserLoginIdentifier.label}}
                             </label>
                         </button>
 
                         <ul class="dropdown-menu">
-                            @for (item of userUniqueInputData; track $index) {
-                            @if (item.id!==selectedUserUniqueInputData.id) {
-                            <li (click)="setSelectedUserUniqueInputData(item)"
-                                class="text-center dropdown-item cursor-pointer">
+                            @for (item of userLoginIdentifiers; track $index) {
+                            @if (item.id!==selecteduserLoginIdentifier.id) {
+                            <li (click)="setSelectedLoginType(item)" class="text-center dropdown-item cursor-pointer">
                                 {{item.label}}</li>
                             }
 
                             }
                         </ul>
                     </div>
-                    <input [type]="selectedUserUniqueInputData.inputType" appInput colorNumber="2"
-                        [id]="selectedUserUniqueInputData.id" [placeholder]="selectedUserUniqueInputData.placeholder"
-                        formControlName="uniqueInput" (change)="clearDataError()" />
+                    <input [type]="selecteduserLoginIdentifier.identifier" appInput colorNumber="2"
+                        [id]="selecteduserLoginIdentifier.id" [placeholder]="selecteduserLoginIdentifier.placeholder"
+                        formControlName="identifier" (change)="clearDataError()" />
                 </div>
 
                 <div class="mb-3">
                     <label for="password" appLabel>Password</label>
                     <div class="position-relative ">
-                        <input [type]="showPassword?'text':'password'" appInput colorNumber="2" id="password" placeholder="Password" required
-                            formControlName="password" (change)="clearDataError()"/>
+                        <input [type]="showPassword?'text':'password'" appInput colorNumber="2" id="password"
+                            placeholder="Password" required formControlName="password" (change)="clearDataError()" />
                         <div class="eye" (click)="showPassword=!showPassword">
                             @if (showPassword) {<i class="bi bi-eye-fill"></i>}
                             @else {<i class="bi bi-eye-slash-fill"></i>}
@@ -58,7 +53,8 @@
                 <small class="text-red-500 mb-3 d-block text-center" [style]="{height: '20px'}">
                     {{dataError}}
                 </small>
-                <app-button-component [type]="'submit'" action="login"  [disabled]="loginForm.invalid" class="w-100 mb-3">Login</app-button-component>
+                <app-button-component [type]="'submit'" action="login" [disabled]="loginForm.invalid"
+                    class="w-100 mb-3">Login</app-button-component>
                 <div>
                     <small class="text-gray-600 dark:text-gray-500 text-center d-block">
                         Don't have an account? <a routerLink="/signUp" class="text-1 hover:underline">Sign Up</a>
