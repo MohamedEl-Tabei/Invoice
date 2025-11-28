@@ -1,1 +1,60 @@
-<p>home-page works!</p>
+<!-- Hero Section -->
+<section class=" hero ">
+    <div class="container relative  h-100 d-flex flex-column justify-content-center gap-3 align-items-center ">
+        <h2 class="font-bold  scale-75">We tell you what it really costs.</h2>
+        <section class="w-100">
+            <form class="d-flex w-100 relative scale-75" role="search">
+                <input class="rounded-5 form-control-lg form-control w-100 me-2 ps-5" appInput [colorNumber]="'2'"
+                    type="search" placeholder="The price of..." aria-label="Search" />
+                <div class=" search"><i class="bi bi-search"></i></div>
+
+            </form>
+        </section>
+        <section class="createContainer  static md:absolute ">
+            <div class=" d-flex justify-content-center gap-3 flex-column flex-md-row w-100">
+                @for (card of cards; track $index) {
+                <div class="p-5 create rounded-xl shadow text-center d-flex  align-items-center gap-4 bg-{{card.color}}" (click)="clickCard()">
+                    <div>
+                        <div class="item text-{{card.color}}">
+                            <i class="bi bi-{{card.icon}}"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 tmc">{{card.head}}</h3>
+                        <p class="text-white-600 tmc">{{card.body}}</p>
+                    </div>
+
+                </div>
+                }
+            </div>
+
+        </section>
+    </div>
+</section>
+
+<!-- Features Section -->
+<!-- <section id="features" class="py-20 mt-5">
+    <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-5 bg-white rounded-xl shadow text-center">
+                    <h3 class="text-xl font-semibold mb-3">Fast</h3>
+                    <p class="text-gray-600">Build responsive layouts quickly using modern tools.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 bg-white rounded-xl shadow text-center">
+                    <h3 class="text-xl font-semibold mb-3">Customizable</h3>
+                    <p class="text-gray-600">Easily customize the design to fit your branding.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 bg-white rounded-xl shadow text-center">
+                    <h3 class="text-xl font-semibold mb-3">Responsive</h3>
+                    <p class="text-gray-600">Works perfectly on all screen sizes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

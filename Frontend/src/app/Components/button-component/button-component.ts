@@ -8,9 +8,9 @@ import { Component, computed, input, output, } from '@angular/core';
 })
 export class ButtonComponent {
   //#region Inputs
-  size = input<'sm' | 'md' | 'lg'>('md');
+  size = input<'sm' | 'md' | 'lg'>("md");
   disabled = input<boolean>(false);
-  action = input<'default'|'back' | 'link' | 'cancel' | 'save' | 'create' | 'update' | 'add' | 'delete' | 'close' | 'login' | 'signup'>('default');
+  action = input<'default' | 'back' | 'search' | 'link' | 'cancel' | 'save' | 'create' | 'update' | 'add' | 'delete' | 'close' | 'login' | 'signup'>('default');
   type = input<'button' | 'submit' | 'reset'>('button');
   class = input<string>('');
   hasIcon = input<boolean>(false);
@@ -19,10 +19,11 @@ export class ButtonComponent {
   //#endregion
   //#region computed
   color = computed(() =>
-    this.action() === 'cancel'||this.action() === 'back' || this.action() === "create" || this.action() === 'add' || this.action() === 'login' ? '2' :
-      this.action() === 'save' || this.action() === 'signup' || this.action() === 'update' ? '1' :
-        this.action() === 'delete' ? 'd' :
+    this.action() === 'cancel' || this.action() == 'search' || this.action() === 'back' || this.action() === 'add' || this.action() === 'login' ? '2' :
+      this.action() === 'signup'  ? '1' :
+        this.action() === "create" ||this.action() === 'save'|| this.action() === 'update'?'3':
+          this.action() === 'delete' ? 'd' :
           '')
   //#endregion
-  
+
 }

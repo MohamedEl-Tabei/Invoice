@@ -1,0 +1,45 @@
+.hero {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    background-color: var(--color-4);
+    color: var(--bs-body-color);
+    margin-bottom: 160px;
+}
+.createContainer{
+    bottom: -270px;
+    transform: scale(.6);
+}
+.tmc{
+    width: max-content;
+    margin: auto;
+}
+.create{
+    cursor: pointer;
+}
+.create:hover{
+    transform: scale(1.01);
+}
+.item{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    background-color: var(--bs-body-bg);
+}
+.eg {
+    width: 200px;
+    height: auto;
+    opacity: 55%;
+}
+.search{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 25px;
+    position: absolute;
+    opacity: .6;
+}

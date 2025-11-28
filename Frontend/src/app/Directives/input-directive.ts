@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class InputDirective {
   @Input()
-  colorNumber: "1" | "2" = "1";
+  colorNumber: "1" | "2" |"3"= "1";
   
   constructor(private input: ElementRef) { }
   ngAfterViewInit() {

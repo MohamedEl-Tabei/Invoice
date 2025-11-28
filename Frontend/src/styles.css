@@ -5,14 +5,14 @@
 @import 'ngx-toastr/toastr';
 
 :root {
-    --color-1: #6e869e;
-    --color-1-: #6e869e3a;
-    --color-2: #85838e;
-    --color-3: #d5cfd1;
-    --color-4: #d5cfd130;
-    --shadow-1: 0 0 0 0.25rem #6e869e30;
-    --shadow-2: 0 0 0 0.25rem #85838e30;
-    --shadow-3: 0 0 0 0.25rem #d5cfd130;
+    --color-1: #C7B953;
+    --color-2: #A0B2D1;
+    --color-3: #97C46B;
+    --color-4: #adb5bd33;
+    --shadow-1: 0 0 0 0.25rem #c7b98330;
+    --shadow-2: 0 0 0 0.25rem #A0B2B830;
+    --shadow-3: 0 0 0 0.25rem #A0C78E30;
+    --shadow-4: 0 0 0 0.25rem #adb5bd14;
 
 }
 .filter{
@@ -23,7 +23,7 @@
     height: 100vh;
     background-color: var(--bs-body-bg);
     overflow-y: scroll;
-    scrollbar-color: var(--color-2) var(--color-4);
+    scrollbar-color: var(--color-4) var(--color-4);
 }
 
 * {
@@ -48,6 +48,10 @@ input,textarea{
     border-color: var(--color-1);
 }
 
+.form-check-input-3:checked {
+    background-color: var(--color-3);
+    border-color: var(--color-3);
+}
 .form-control-1:focus,
 .form-check-input-2:focus {
     border-color: var(--color-1);
@@ -59,13 +63,20 @@ input,textarea{
     border-color: var(--color-2);
     box-shadow: var(--shadow-2);
 }
-
+.form-control-3:focus,
+.form-check-input-3:focus {
+    border-color: var(--color-3);
+    box-shadow: var(--shadow-3);
+}
 .text-1 {
     color: var(--color-1);
 }
 
 .text-2 {
     color: var(--color-2);
+}
+.text-3{
+    color: var(--color-3);
 }
 
 .text-x {
@@ -107,6 +118,10 @@ input,textarea{
     color: var(--bs-body-bg);
     background-color: var(--color-2);
 }
+.bg-3 {
+    color: var(--bs-body-bg);
+    background-color: var(--color-3);
+}
 
 .bg {
     background-color: var(--bs-body-bg);
@@ -127,7 +142,7 @@ input,textarea{
 }
 
 .card:hover {
-    box-shadow: var(--shadow-1);
+    box-shadow: var(--shadow-4);
     transform: scale(1.03);
     transition: all 0.3s ease-in-out;
 }

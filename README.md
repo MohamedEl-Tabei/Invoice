@@ -32,18 +32,22 @@ The app helps users estimate their total expenses before shopping, and allows st
 ### 👨‍💻 Tech Stack:
 
 *   **Backend**: ASP.NET Core Web API
-    
+    *   **Authentication**: ASP.NET Identity with JWT
+    *   **Validation**: FluentValidation 
+    *   **Architecture**: N-tier with Clean Code & SOLID principles
+    *   **API Documentation**: Scalar
+      
 *   **Frontend**: Angular
+    *   Typed Form
+    *   Interceptors
+    *   Services
+    *   Bootstrap
+    *   Tailwind
+    *   Toastr
     
 *   **Database**: SQL Server
     
-*   **Authentication**: ASP.NET Identity with JWT
 
-*   **Validation**: FluentValidation 
-
-*   **Architecture**: N-tier with Clean Code & SOLID principles
-
-*   **API Documentation**: Scalar
   
 * * *
 
