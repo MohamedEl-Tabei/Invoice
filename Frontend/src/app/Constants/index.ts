@@ -21,11 +21,11 @@ export class Constants {
   }
   //#endregion
   //#region roles
-  public static readonly Roles: { Customer: TRole, Admin: TRole, Shop: TRole, Restaurant: TRole, List: TRole[] } = {
+  public static readonly Roles: { Customer: TRole, Admin: TRole, Shop: TRole, Guest: TRole, List: TRole[] } = {
     Customer: "Customer",
     Admin: "Admin",
     Shop: "Shop",
-    Restaurant: "Restaurant",
+    Guest: "Guest",
     List: ["Customer"]
   }
   //#endregion

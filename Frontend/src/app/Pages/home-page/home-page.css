@@ -1,9 +1,9 @@
 .hero {
     padding-top: 100px;
     padding-bottom: 150px;
-    background-color: var(--color-4);
+    background: linear-gradient(15deg,rgba(160, 178, 209, 1) 0%, rgba(151, 196, 107, 0.25) 50%, rgba(199, 185, 83, 1) 100%);
     color: var(--bs-body-color);
-    margin-bottom: 160px;
+    margin-bottom: 80px;
 }
 .createContainer{
     bottom: -270px;
@@ -42,4 +42,7 @@
     font-size: 25px;
     position: absolute;
     opacity: .6;
+}
+dd{
+    text-transform: none;
 }

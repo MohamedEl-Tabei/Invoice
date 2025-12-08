@@ -1,5 +1,10 @@
 .navbar-brand{
     font-size: 24px;
     font-weight: bold;
+    font-family: logo;
     color: var(--color-1);
+}
+@font-face {
+    font-family:logo ;
+    src: url("/fonts/MysteryQuest-Regular.ttf");
 }

@@ -1,4 +1,3 @@
-import { TRole } from "../../Types/TRole"
 
 export interface UserSignup {
     userName: string
@@ -6,5 +5,4 @@ export interface UserSignup {
     phoneNumber: string
     password: string
     confirmPassword: string
-    role: TRole
 }

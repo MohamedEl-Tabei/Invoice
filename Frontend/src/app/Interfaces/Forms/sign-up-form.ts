@@ -1,5 +1,4 @@
 import { FormControl } from "@angular/forms";
-import { TRole } from "../../Types/TRole";
 
 export interface SignUpForm {
     userName: FormControl<string>;
@@ -7,5 +6,4 @@ export interface SignUpForm {
     phoneNumber: FormControl<string>;
     password: FormControl<string>;
     confirmPassword: FormControl<string>;
-    role: FormControl<TRole>;
 }

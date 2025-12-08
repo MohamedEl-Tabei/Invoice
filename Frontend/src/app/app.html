@@ -1,8 +1,5 @@
 <div class="page" [attr.data-bs-theme]="screenService.selectThemeSignal()">
-    <app-nav-bar-component />
     <router-outlet />
-
-
     @if (loaderService.isLoading()) {
     <div class="modal filter  d-flex "></div>
     <div class="modal d-flex justify-content-center align-items-center">

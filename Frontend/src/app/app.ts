@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from "./Components/nav-bar-component/nav-bar-component";
 import { ScreenService } from './Services/screen-service';
 import { UserService } from './Services/user-service';
 import { Constants } from './Constants';
@@ -10,14 +9,14 @@ import { LoaderComponent } from "./Components/loader-component/loader-component"
 import { LoaderService } from './Services/loader-service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, LoaderComponent],
+  imports: [RouterOutlet,  LoaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   constructor(public screenService: ScreenService, private userService: UserService, public loaderService: LoaderService) { }
   ngOnInit() {
-    //#region  Auto login
+    //#region Check for existing token in local or session storage
     const tokenFromLocal = localStorage.getItem(Constants.localStorageKey.token)
     const tokenFromSession = sessionStorage.getItem(Constants.localStorageKey.token)
     const token = tokenFromLocal ? tokenFromLocal : tokenFromSession;
@@ -28,7 +27,7 @@ export class App {
       if (isValidToken)
         this.userService.userSignal.set({
           isAuthenticated: true,
-          role: data.role,
+          roles: data.roles,
           token: token,
           userName: data.unique_name
         });

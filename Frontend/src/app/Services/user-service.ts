@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { UserLoginByEmail } from '../Interfaces/DTOs/user-login-by-email';
 import { Observable, tap } from 'rxjs';
 import { ApiResponse } from '../Interfaces/DTOs/api-response';
@@ -13,10 +13,12 @@ import { UserSignup } from '../Interfaces/DTOs/user-signup';
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+   
+  }
   public userSignal = signal<User>({
     userName: '',
-    role: Constants.Roles.Customer,
+    roles: [Constants.Roles.Guest],
     token: '',
     isAuthenticated: false
   })

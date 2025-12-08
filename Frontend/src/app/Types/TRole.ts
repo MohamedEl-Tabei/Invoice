@@ -1,1 +1,1 @@
-export type TRole = "Customer" | "Admin" | "Shop" | "Restaurant"
+export type TRole = "Customer" | "Admin" | "Shop" | "Brand" | "Guest";

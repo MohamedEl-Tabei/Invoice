@@ -9,7 +9,7 @@ namespace InvoiceBL.DTOs
     public class TokenDTOConfigurations
     {
         public string UserName { get; set; }
-        public string Role { get; set; }
+        public IList<string> Roles { get; set; }
         public string UserId { get; set; }
         public bool RememberMe { get; set; }
     }

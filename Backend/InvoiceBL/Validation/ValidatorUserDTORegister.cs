@@ -20,12 +20,7 @@ namespace InvoiceBL.Validation
                 .Matches(@"^(?:\+?2|002)?01[0125][0-9]{8}$")
                 .WithMessage("Invalid Phone number.");
             #endregion
-            #region Role Validation
-            RuleFor(x => x.Role)
-                .NotEmpty().WithMessage("Role is required.")
-                .Must(x => AppRoles.Roles.Exists(y => y == x.ToUpper()))
-                .WithMessage("Invalid role.");
-            #endregion
+           
             #region UserName Validation 
             RuleFor(x => x.UserName)
                  .NotEmpty().WithMessage("UserName is required.")

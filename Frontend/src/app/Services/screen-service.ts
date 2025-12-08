@@ -7,5 +7,4 @@ import { Constants } from '../Constants';
 })
 export class ScreenService {
   public selectThemeSignal = signal<TTheme>(localStorage.getItem('theme') as TTheme || Constants.Theme.light);
-  public hideNavbarSignal = signal<boolean>(false);
 }

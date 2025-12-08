@@ -13,9 +13,9 @@
         <section class="createContainer  static md:absolute ">
             <div class=" d-flex justify-content-center gap-3 flex-column flex-md-row w-100">
                 @for (card of cards; track $index) {
-                <div class="p-5 create rounded-xl shadow text-center d-flex  align-items-center gap-4 bg-{{card.color}}" (click)="clickCard()">
+                <div class="p-5 create rounded-xl  text-center d-flex  align-items-center gap-4 " (click)="clickCard()">
                     <div>
-                        <div class="item text-{{card.color}}">
+                        <div class="item ">
                             <i class="bi bi-{{card.icon}}"></i>
                         </div>
                     </div>
@@ -32,29 +32,19 @@
     </div>
 </section>
 
-<!-- Features Section -->
-<!-- <section id="features" class="py-20 mt-5">
-    <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="p-5 bg-white rounded-xl shadow text-center">
-                    <h3 class="text-xl font-semibold mb-3">Fast</h3>
-                    <p class="text-gray-600">Build responsive layouts quickly using modern tools.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-5 bg-white rounded-xl shadow text-center">
-                    <h3 class="text-xl font-semibold mb-3">Customizable</h3>
-                    <p class="text-gray-600">Easily customize the design to fit your branding.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-5 bg-white rounded-xl shadow text-center">
-                    <h3 class="text-xl font-semibold mb-3">Responsive</h3>
-                    <p class="text-gray-600">Works perfectly on all screen sizes.</p>
-                </div>
-            </div>
+
+<div class="mx-auto mt-16 pb-5  sm:mt-20 lg:mt-24 ">
+    <dl class="grid p-2 grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16  m-0">
+        @for (f of features; track $index) {
+        <div class="relative pl-16 shadow-xl rounded-5 p-3">
+            <dt class="text-base/7 font-semibold text-x">
+                {{f.title}}
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-400">{{f.desc}}</dd>
         </div>
-    </div>
-</section> -->
+        }
+
+
+
+    </dl>
+</div>

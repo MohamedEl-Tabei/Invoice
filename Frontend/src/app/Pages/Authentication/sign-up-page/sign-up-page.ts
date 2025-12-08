@@ -34,7 +34,6 @@ export class SignUpPage {
     phoneNumber: new FormControl<string>("", { validators: AppValidators.phone, nonNullable: true }),
     password: new FormControl<string>("", { validators: AppValidators.password, nonNullable: true }),
     confirmPassword: new FormControl<string>("", { validators: [Validators.required], nonNullable: true }),
-    role: new FormControl<TRole>(Constants.Roles.Customer, { nonNullable: true }),
   });
 
   //#endregion
@@ -65,11 +64,8 @@ export class SignUpPage {
   }
   //#endregion
   //#region Component Lifecycle
-  ngOnInit() {
-    this.screenServices.hideNavbarSignal.set(true);
-  }
+
   ngOnDestroy() {
-    this.screenServices.hideNavbarSignal.set(false);
     this.signUpSubscribtion?.unsubscribe();
   }
   //#endregion

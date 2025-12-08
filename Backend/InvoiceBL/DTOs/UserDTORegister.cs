@@ -19,8 +19,7 @@ namespace InvoiceBL.DTOs
         public string Password { get; set; }
         [Description("- Confirmation of the password.\n- Must match the password field exactly.")]
         public string ConfirmPassword { get; set; }
-        [Description($"- Required.\n - Must be one of the following roles: {AppRoles.StringRoles}")]
-        public string Role { get; set; }
+        
         [Description("- Unique.\n - Required.\n- Must be 11 digits.\n- Must start with 010, 011, 012, or 015 (Egyptian phone number format).")]
         public string PhoneNumber { get; set; }
 

@@ -274,7 +274,7 @@
       }
     ],
     "Description": "This endpoint retrieves all sub-categories that belong to a specific category by its ID.",
-    "Summary": "Get by category id"
+    "Summary": "Get all by category id"
   },
   {
     "ContainingType": "Invoice.Controllers.TestController",

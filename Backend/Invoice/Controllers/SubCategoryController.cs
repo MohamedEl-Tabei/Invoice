@@ -23,7 +23,7 @@ namespace Invoice.Controllers
         [HttpGet("getByCategoryId/{categoryId}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(Result<List<SubCategoryDTOGet>>), StatusCodes.Status200OK)]
-        [EndpointSummary("Get by category id")]
+        [EndpointSummary("Get all by category id")]
         [EndpointDescription("This endpoint retrieves all sub-categories that belong to a specific category by its ID.")]
 
         public async Task<ActionResult> GetByCategoryId(string categoryId)

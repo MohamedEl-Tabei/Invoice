@@ -27,9 +27,12 @@ namespace InvoiceBL.Managers
             List<Claim> claims = new List<Claim>()
             {
                 new(ClaimTypes.Name,tokenDTOConfigurations.UserName),
-                new(ClaimTypes.Role,tokenDTOConfigurations.Role),
                 new(ClaimTypes.NameIdentifier,tokenDTOConfigurations.UserId)
             };
+            foreach(string role in tokenDTOConfigurations.Roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
             var signingCredentials = new SigningCredentials(SecurityKey, SecurityAlgorithms.HmacSha256);
             var tokenDescriptor = new SecurityTokenDescriptor()
             {

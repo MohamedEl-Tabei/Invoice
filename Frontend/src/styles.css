@@ -23,7 +23,7 @@
     height: 100vh;
     background-color: var(--bs-body-bg);
     overflow-y: scroll;
-    scrollbar-color: var(--color-4) var(--color-4);
+    scrollbar-color: #c2bd9a var(--color-4);
 }
 
 * {

@@ -49,8 +49,9 @@ export class LoginPage {
   handleLoginError(response: any) {
     this.dataError = response.error.errors[0].message;
   }
-  handleLoginSuccess() {
-    this.router.navigateByUrl("/")
+  handleLoginSuccess(response: any) {
+    if (response.data.roles.includes(Constants.Roles.Admin)) this.router.navigateByUrl("/admin/category")
+    else this.router.navigateByUrl("/")
   }
   //#endregion
   //#region Login Method
@@ -61,7 +62,7 @@ export class LoginPage {
       //#region Login by Email
       if (this.selecteduserLoginIdentifier.id === 'email') {
         this.loinByEmailSubscription = this.userService.loginByEmail({ ...data, email: data.identifier }).subscribe({
-          next: (response) => this.handleLoginSuccess(),
+          next: (response) => this.handleLoginSuccess(response),
           error: (response) => this.handleLoginError(response)
         });
       }
@@ -69,7 +70,7 @@ export class LoginPage {
       //#region Login by Phone
       else if (this.selecteduserLoginIdentifier.id === 'phone') {
         this.loinByPhoneSubscription = this.userService.loginByPhone({ ...data, phoneNumber: data.identifier }).subscribe({
-          next: (response) => this.handleLoginSuccess(),
+          next: (response) => this.handleLoginSuccess(response),
           error: (response) => this.handleLoginError(response)
         });
       }
@@ -77,7 +78,7 @@ export class LoginPage {
       //#region Login by Name
       else if (this.selecteduserLoginIdentifier.id === 'name') {
         this.loinByUsernameSubscription = this.userService.loginByUsername({ ...data, userName: data.identifier }).subscribe({
-          next: (response) => this.handleLoginSuccess(),
+          next: (response) => this.handleLoginSuccess(response),
           error: (response) => this.handleLoginError(response)
         });
       }
@@ -89,11 +90,8 @@ export class LoginPage {
   }
   //#endregion
   //#region Component Lifecycle
-  ngOnInit() {
-    this.screenService.hideNavbarSignal.set(true);
-  }
+
   ngOnDestroy() {
-    this.screenService.hideNavbarSignal.set(false);
     this.loinByEmailSubscription?.unsubscribe();
     this.loinByPhoneSubscription?.unsubscribe();
     this.loinByUsernameSubscription?.unsubscribe();

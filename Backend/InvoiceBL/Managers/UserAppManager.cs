@@ -60,7 +60,7 @@ namespace InvoiceBL.Managers
             {
                 UserName = user.UserName,
                 RememberMe = userDTOLoginEmail.RememberMe,
-                Role = roles.FirstOrDefault(),
+                Roles = roles,
                 UserId = user.Id
             };
             var token = _tokenManager.CreateToken(tokenConfig);
@@ -69,7 +69,7 @@ namespace InvoiceBL.Managers
             {
                 Token = token,
                 UserName = user.UserName,
-                Role = roles.FirstOrDefault()
+                Roles = roles
             };
             result.Successed = true;
             return result;
@@ -106,7 +106,7 @@ namespace InvoiceBL.Managers
             {
                 UserName = user.UserName,
                 RememberMe = userDTOLoginPhoneNumber.RememberMe,
-                Role = roles.FirstOrDefault(),
+                Roles = roles,
                 UserId = user.Id
             };
             var token = _tokenManager.CreateToken(tokenConfig);
@@ -115,7 +115,7 @@ namespace InvoiceBL.Managers
             {
                 Token = token,
                 UserName = user.UserName,
-                Role = roles.FirstOrDefault()
+                Roles = roles
             };
             result.Successed = true;
             return result;
@@ -152,7 +152,7 @@ namespace InvoiceBL.Managers
             {
                 UserName = user.UserName,
                 RememberMe = userDTOLoginUserName.RememberMe,
-                Role = roles.FirstOrDefault(),
+                Roles = roles,
                 UserId = user.Id
             };
             var token = _tokenManager.CreateToken(tokenConfig);
@@ -161,7 +161,7 @@ namespace InvoiceBL.Managers
             {
                 Token = token,
                 UserName = user.UserName,
-                Role = roles.FirstOrDefault()
+                Roles = roles
             };
             result.Successed = true;
             return result;
@@ -204,7 +204,7 @@ namespace InvoiceBL.Managers
             }
             #endregion
             #region Add Role If User Created
-            var RoleResult = await _userManager.AddToRoleAsync(user, userDTORegister.Role);
+            var RoleResult = await _userManager.AddToRoleAsync(user, AppRoles.Customer);
             if (!RoleResult.Succeeded)
             {
                 await _userManager.DeleteAsync(user);
@@ -218,7 +218,7 @@ namespace InvoiceBL.Managers
             {
                 UserName = user.UserName,
                 RememberMe = false,
-                Role = userDTORegister.Role,
+                Roles = new List<string> { AppRoles.Customer },
                 UserId = user.Id
             };
             var token = _tokenManager.CreateToken(tokenConfig);
@@ -228,7 +228,7 @@ namespace InvoiceBL.Managers
             {
                 Token = token,
                 UserName = user.UserName,
-                Role = userDTORegister.Role
+                Roles = new List<string>() { AppRoles.Customer }
             };
             return result;
         }
