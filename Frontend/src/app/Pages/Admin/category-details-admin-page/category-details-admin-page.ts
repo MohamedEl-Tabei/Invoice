@@ -104,7 +104,7 @@ export class CategoryDetailsAdminPage {
   //#endregion
   //#region navigation
   back() {
-    this.router.navigateByUrl("admin/categories");
+    this.router.navigateByUrl(Constants.Routes.admin.category);
   }
   //#endregion
 

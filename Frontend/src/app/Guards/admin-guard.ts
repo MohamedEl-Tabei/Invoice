@@ -5,6 +5,5 @@ import { Constants } from '../Constants';
 
 export const adminGuard: CanActivateChildFn = (childRoute, state) => {
   const userService = inject(UserService)
-  return true
   return userService.userSignal().roles.includes(Constants.Roles.Admin);
 };

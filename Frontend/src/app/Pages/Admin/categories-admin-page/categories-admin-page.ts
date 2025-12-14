@@ -56,7 +56,7 @@ export class CategoriesAdminPage {
   //#endregion
   //#region navigation
   toCategoryDetails(category: Category) {
-    this.router.navigate([`/admin/categories/details`], { queryParams: { id: category.id } })
+    this.router.navigate([Constants.Routes.admin.categoryDetails], { queryParams: { id: category.id } })
   }
   //#endregion
 

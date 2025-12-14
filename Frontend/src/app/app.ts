@@ -9,7 +9,7 @@ import { LoaderComponent } from "./Components/loader-component/loader-component"
 import { LoaderService } from './Services/loader-service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,  LoaderComponent],
+  imports: [RouterOutlet, LoaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -27,10 +27,11 @@ export class App {
       if (isValidToken)
         this.userService.userSignal.set({
           isAuthenticated: true,
-          roles: data.roles,
+          roles: data.roles || [data.role],
           token: token,
           userName: data.unique_name
         });
+
     }
 
     //#endregion

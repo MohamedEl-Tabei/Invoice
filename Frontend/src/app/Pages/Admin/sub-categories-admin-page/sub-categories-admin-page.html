@@ -1,19 +1,18 @@
 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <form class="d-flex my-4" (submit)="create($event)">
+    <form class="d-flex my-4" [formGroup]="subcategoryForm" (submit)="create($event)">
         @if (mounted) {
-        <select name="category" appInput colorNumber="2" class="form-select me-2" [(ngModel)]="selectedCategoryId"
-            (change)="selectCategory()">
+        <select name="category" appInput colorNumber="2" [formControlName]="'categoryId'" (change)="selectCategory()" class="form-select me-2" required>
 
             @for (category of (categories$|async)?.data; track $index) {
-            <option [value]="category.id" [disabled]="category.id==selectedCategoryId"
-                [class.selected]="category.id==selectedCategoryId">{{category.name}}</option>
+            <option [value]="category.id" [disabled]="category.id==subcategoryForm.controls.categoryId.value"
+                [class.selected]="category.id==subcategoryForm.controls.categoryId.value">{{category.name}}</option>
             }
             <option value="" class="d-none" disabled>Select Category</option>
         </select>
         }
-        <input type="text" appInput colorNumber="2" [(ngModel)]="newSubcategoryName" (input)="checkSubcategoryName()"
+        <input type="text" appInput colorNumber="2" [formControlName]="'name'" 
             name="categoryname" id="category" placeholder="Category" required />
-        <app-button-component action="create" [type]="'submit'" [disabled]="disabled" 
+        <app-button-component action="create" [type]="'submit'" [disabled]="subcategoryForm.controls.name.value==''" 
             [class]="'px-4 ms-4 '" >Create</app-button-component>
     </form>
 

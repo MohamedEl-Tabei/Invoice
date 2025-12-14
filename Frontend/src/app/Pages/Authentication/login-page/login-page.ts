@@ -26,6 +26,7 @@ export class LoginPage {
   loinByPhoneSubscription: Subscription | null = null;
   loinByUsernameSubscription: Subscription | null = null;
   //#endregion
+  routes = Constants.Routes;
   showPassword: boolean = false
   dataError: string = '';
   userLoginIdentifiers: UserLoginIdentifier[] = Constants.userLoginIdentifiers;
@@ -50,7 +51,7 @@ export class LoginPage {
     this.dataError = response.error.errors[0].message;
   }
   handleLoginSuccess(response: any) {
-    if (response.data.roles.includes(Constants.Roles.Admin)) this.router.navigateByUrl("/admin/category")
+    if (response.data.roles.includes(Constants.Roles.Admin)) this.router.navigateByUrl(this.routes.admin.category)
     else this.router.navigateByUrl("/")
   }
   //#endregion

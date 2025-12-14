@@ -37,7 +37,7 @@ export class Constants {
   //#endregion
   //#region local storage keys
   public static readonly localStorageKey = {
-    token: "token", theme: "theme"
+    token: "token", theme: "theme",selectedCategoryId:"selectedCategoryId"
   }
   //#endregion
   //#region toastr config
@@ -48,5 +48,26 @@ export class Constants {
     messageClass: "text-light"
   }
   //#endregion
+  //#region Routes
+  public static readonly Routes = {
+    home: "/",
+    guest: {
+      login: "/login",
+      signUp: "/signUp",
+    },
+    admin: {
+      base: "/admin",
+      category: "/admin/category",
+      categoryDetails: "/admin/category/details",
+      subcategory: "/admin/subcategory",
+      subcategoryDetails: "/admin/subcategory/details",
+      history: "/admin/history",
+    },
+    error: {
+      notFound: "/not-found",
+    }
 
+
+  }
+  //#endregion
 }

@@ -2,7 +2,7 @@
     <div class="mb-3  ">
         <input type="date" [(ngModel)]="dateString" (change)="onDateChange()" appInput colorNumber="2" id="date" />
     </div>
-    <div class="md:shadow-xl  p-2 p-md-4">
+    <div class="md:shadow-xl text-x  p-2 p-md-4">
         <h5 class="mb-2">{{dateString|date:"EEEE dd MMMM yyyy"}}</h5>
         <hr>
         @if (loaderService.isLoading()) {

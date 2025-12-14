@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InputDirective } from "../../Directives/input-directive";
 import { ActivatedRoute, Router } from '@angular/router';
+import { Constants } from '../../Constants';
 
 @Component({
   selector: 'app-home-page',
@@ -26,6 +27,6 @@ export class HomePage {
     { icon: "person", head: "Create your invoices", body: "estimate your total expenses before shopping." }
   ]
   clickCard() {
-    this.router.navigateByUrl("/signUp")
+    this.router.navigateByUrl(Constants.Routes.guest.signUp)
   }
 }

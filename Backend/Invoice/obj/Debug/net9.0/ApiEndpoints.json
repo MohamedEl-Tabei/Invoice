@@ -241,6 +241,43 @@
   },
   {
     "ContainingType": "Invoice.Controllers.SubCategoryController",
+    "Method": "Create",
+    "RelativePath": "api/SubCategory/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subCategoryDTOCreate",
+        "Type": "InvoiceBL.DTOs.SubCategoryDTOCreate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "InvoiceBL.Result\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Description": "Allows only Admins to create a new subcategory.",
+    "Summary": "Create (Admin only)"
+  },
+  {
+    "ContainingType": "Invoice.Controllers.SubCategoryController",
     "Method": "GetByCategoryId",
     "RelativePath": "api/SubCategory/getByCategoryId/{categoryId}",
     "HttpMethod": "GET",

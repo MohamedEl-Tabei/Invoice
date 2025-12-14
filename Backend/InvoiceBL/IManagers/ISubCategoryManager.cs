@@ -10,5 +10,6 @@ namespace InvoiceBL.IManagers
     public interface ISubCategoryManager
     {
         Task<Result<List<SubCategoryDTOGet>>> GetSubCategoriesByCategoryIdAsync(string id);
+        Task<Result<string>> CreateAsync(SubCategoryDTOCreate subCategoryDTOCreate);
     }
 }

@@ -23,9 +23,9 @@ export class NavBarComponent {
     switch (this.role()) {
       case Constants.Roles.Admin:
         this.links = [
-          { href: "category", text: "Category" },
-          { href: "subcategory", text: "Subcategory" },
-          { href: "history", text: "History" }
+          { href: Constants.Routes.admin.category, text: "Category" },
+          { href: Constants.Routes.admin.subcategory, text: "Subcategory" },
+          { href: Constants.Routes.admin.history, text: "History" }
         ]
         break;
       default:

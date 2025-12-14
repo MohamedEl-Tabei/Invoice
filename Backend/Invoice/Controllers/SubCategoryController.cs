@@ -6,6 +6,7 @@ using InvoiceDAL.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Invoice.Controllers
 {
@@ -31,6 +32,23 @@ namespace Invoice.Controllers
             var result = await _subCategoryManager.GetSubCategoriesByCategoryIdAsync(categoryId);
             return this.HandleResponse(result);
         }
+        #endregion
+        #region Create  For Admin
+        [Authorize(Policy = AppRoles.Admin)]
+        [HttpPost("create")]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<string>), StatusCodes.Status400BadRequest)]
+        [EndpointSummary("Create (Admin only)")]
+        [EndpointDescription("Allows only Admins to create a new subcategory.")]
+
+        public async Task<ActionResult<Result<string>>> Create(SubCategoryDTOCreate subCategoryDTOCreate)
+        {
+            this.HttpContext.Items["NewData"] = subCategoryDTOCreate.Name;
+            var result =await _subCategoryManager.CreateAsync(subCategoryDTOCreate);
+            return this.HandleResponse(result);
+            
+        }
+
         #endregion
     }
 }

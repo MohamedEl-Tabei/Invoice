@@ -15,4 +15,8 @@ export class AppValidators {
     private static categoryNamePattern: RegExp = /^[a-zA-Z ]+$/;
     public static readonly categoryName: ValidatorFn[] = [Validators.required, Validators.pattern(this.categoryNamePattern)];
     //#endregion
+    //#region category
+    private static subcategoryNamePattern: RegExp = /^[a-zA-Z ]+$/;
+    public static readonly subcategoryName: ValidatorFn[] = [Validators.required, Validators.pattern(this.subcategoryNamePattern)];
+    //#endregion
 }

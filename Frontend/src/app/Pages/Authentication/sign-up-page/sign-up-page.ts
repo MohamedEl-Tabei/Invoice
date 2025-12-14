@@ -40,6 +40,7 @@ export class SignUpPage {
   roles = Constants.Roles.List;
   showPassword: boolean = false;
   signUpSubscribtion: Subscription | null = null;
+  routes = Constants.Routes;
   //#region Sign Up Method
   signUp(event: Event) {
     event.preventDefault()
