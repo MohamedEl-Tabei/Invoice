@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Backend.Core/Backend.Application.csproj" />
+  <Project Path="Backend.Data/Backend.Domain.csproj" />
+  <Project Path="Backend.Infrastructure/Backend.Infrastructure.csproj" />
+  <Project Path="Backend/Backend.csproj" />
+</Solution>
