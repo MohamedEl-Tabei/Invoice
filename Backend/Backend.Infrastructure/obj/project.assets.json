@@ -4248,13 +4248,13 @@
     },
     "Backend.Application/1.0.0": {
       "type": "project",
-      "path": "../Backend.Core/Backend.Application.csproj",
-      "msbuildProject": "../Backend.Core/Backend.Application.csproj"
+      "path": "../Backend.Application/Backend.Application.csproj",
+      "msbuildProject": "../Backend.Application/Backend.Application.csproj"
     },
     "Backend.Domain/1.0.0": {
       "type": "project",
-      "path": "../Backend.Data/Backend.Domain.csproj",
-      "msbuildProject": "../Backend.Data/Backend.Domain.csproj"
+      "path": "../Backend.Domain/Backend.Domain.csproj",
+      "msbuildProject": "../Backend.Domain/Backend.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4296,8 +4296,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj": {
-              "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj"
+            "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj": {
+              "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj"
             }
           }
         }

@@ -4,14 +4,14 @@
     "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Backend.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj": {
+    "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj",
+        "projectUniqueName": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj",
         "projectName": "Backend.Application",
-        "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj",
+        "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj",
         "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\obj\\",
+        "outputPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\Backend.Domain.csproj": {
-                "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\Backend.Domain.csproj"
+              "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\Backend.Domain.csproj": {
+                "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\Backend.Domain.csproj"
               }
             }
           }
@@ -357,14 +357,14 @@
         }
       }
     },
-    "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\Backend.Domain.csproj": {
+    "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\Backend.Domain.csproj",
+        "projectUniqueName": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\Backend.Domain.csproj",
         "projectName": "Backend.Domain",
-        "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\Backend.Domain.csproj",
+        "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Data\\obj\\",
+        "outputPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -730,8 +730,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj": {
-                "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Core\\Backend.Application.csproj"
+              "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj": {
+                "projectPath": "D:\\🚀 Projects\\Invoice\\Backend\\Backend.Application\\Backend.Application.csproj"
               }
             }
           }

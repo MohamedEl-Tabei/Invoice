@@ -1,0 +1,16 @@
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.csproj.AssemblyReference.cache
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.AssemblyInfoInputs.cache
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.AssemblyInfo.cs
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.csproj.CoreCompileInputs.cache
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.sourcelink.json
+D:\🚀 Projects\Invoice\Backend\Backend.Application\bin\Debug\net10.0\Backend.Application.deps.json
+D:\🚀 Projects\Invoice\Backend\Backend.Application\bin\Debug\net10.0\Backend.Application.dll
+D:\🚀 Projects\Invoice\Backend\Backend.Application\bin\Debug\net10.0\Backend.Application.pdb
+D:\🚀 Projects\Invoice\Backend\Backend.Application\bin\Debug\net10.0\Backend.Domain.dll
+D:\🚀 Projects\Invoice\Backend\Backend.Application\bin\Debug\net10.0\Backend.Domain.pdb
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend..65AE5655.Up2Date
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.dll
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\refint\Backend.Application.dll
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\Backend.Application.pdb
+D:\🚀 Projects\Invoice\Backend\Backend.Application\obj\Debug\net10.0\ref\Backend.Application.dll

@@ -15,12 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Backend.Core\Backend.Application.csproj" />
+    <ProjectReference Include="..\Backend.Application\Backend.Application.csproj" />
   </ItemGroup>
 
 </Project>
