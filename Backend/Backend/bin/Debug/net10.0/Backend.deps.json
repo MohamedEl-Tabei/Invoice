@@ -869,9 +869,6 @@
         }
       },
       "Backend.Domain/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5"
-        },
         "runtime": {
           "Backend.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -882,6 +879,7 @@
       "Backend.Infrastructure/1.0.0": {
         "dependencies": {
           "Backend.Application": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5"
         },
         "runtime": {

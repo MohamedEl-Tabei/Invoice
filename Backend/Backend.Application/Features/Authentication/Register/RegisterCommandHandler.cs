@@ -1,4 +1,6 @@
-﻿using Backend.Application.Common.Interfaces.Services;
+﻿using Backend.Application.Common.Contracts;
+using Backend.Application.Common.Interfaces.Services;
+using Backend.Application.Common.Result;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -6,11 +8,11 @@ using System.Text;
 
 namespace Backend.Application.Features.Authentication.Register
 {
-    public sealed class RegisterCommandHandler(IAuthService authService) : IRequestHandler<RegisterCommand>
+    public sealed class RegisterCommandHandler(IAuthService authService) : IRequestHandler<RegisterCommand, BaseResult>
     {
-        public async Task Handle(RegisterCommand request, CancellationToken cancellationToken)
+        public async Task<BaseResult> Handle(RegisterCommand command, CancellationToken cancellationToken)
         {
-            await authService.RegisterAsync(request);
+            return await authService.RegisterAsync(command.ToRegisterRequest());
         }
     }
 }

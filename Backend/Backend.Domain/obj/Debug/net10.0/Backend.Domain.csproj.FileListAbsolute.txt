@@ -1,7 +1,6 @@
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\bin\Debug\net10.0\Backend.Domain.deps.json
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\bin\Debug\net10.0\Backend.Domain.dll
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\bin\Debug\net10.0\Backend.Domain.pdb
-D:\🚀 Projects\Invoice\Backend\Backend.Domain\obj\Debug\net10.0\Backend.Domain.csproj.AssemblyReference.cache
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\obj\Debug\net10.0\Backend.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\obj\Debug\net10.0\Backend.Domain.AssemblyInfoInputs.cache
 D:\🚀 Projects\Invoice\Backend\Backend.Domain\obj\Debug\net10.0\Backend.Domain.AssemblyInfo.cs

@@ -11,8 +11,11 @@ namespace Backend.Application.Features.Authentication.Register
         public RegisterCommandValidator()
         {
 
-            RuleFor(x => x.FirstName).IsName("First Name");
-            RuleFor(x => x.LastName).IsName("Last Name");
+            RuleFor(x => x.Name).IsName("User Name");
+            RuleFor(x => x.Email).IsEmail();
+            RuleFor(x => x.PhoneNumber).IsEgyptianPhoneNumber();
+            RuleFor(x => x.Password).IsPassword();
+
 
 
         }

@@ -1,12 +1,56 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\services\\smsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\services\\smsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\interfaces\\services\\ismsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\interfaces\\services\\ismsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ISmsService .cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "RelativeToolTip": "Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:11:53.158Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SmsService .cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\SmsService .cs",
+              "RelativeDocumentMoniker": "Backend.Infrastructure\\Services\\SmsService .cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\SmsService .cs",
+              "RelativeToolTip": "Backend.Infrastructure\\Services\\SmsService .cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:10:22.316Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

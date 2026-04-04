@@ -1228,9 +1228,6 @@
       "Backend.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5"
-        },
         "compile": {
           "bin/placeholder/Backend.Domain.dll": {}
         },
@@ -1243,6 +1240,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Backend.Application": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5"
         },
         "compile": {

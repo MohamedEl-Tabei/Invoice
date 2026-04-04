@@ -1,7 +1,9 @@
 ﻿using Backend.Application.Common.Interfaces.Services;
-using Backend.Domain.Entities;
 using Backend.Infrastructure.Data;
+using Backend.Infrastructure.Identity.Models;
+using Backend.Infrastructure.Identity.Services;
 using Backend.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +19,7 @@ namespace Backend.Infrastructure.DependencyInjection
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Dev")));
-            services.AddIdentityCore<User>(options =>
+            services.AddIdentity<User, IdentityRole>(options =>
             {
                 #region Password settings
                 options.Password.RequireDigit = true;
@@ -37,8 +39,10 @@ namespace Backend.Infrastructure.DependencyInjection
                 options.SignIn.RequireConfirmedAccount = true;
                 #endregion
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ISmsService, SmsService>();
 
         }
     }

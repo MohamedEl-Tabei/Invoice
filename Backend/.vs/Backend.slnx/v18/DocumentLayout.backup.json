@@ -3,23 +3,24 @@
   "WorkspaceRootPath": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\identity\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\identity\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\endpoints\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\endpoints\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\AppData\\Roaming\\Microsoft\\UserSecrets\\795bf48d-2ca7-4ddb-b542-a4dec3da021c\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\interfaces\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\interfaces\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\services\\smsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\services\\smsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\interfaces\\services\\ismsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\interfaces\\services\\ismsservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,69 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Backend.Infrastructure\\Services\\AuthService.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\AuthService.cs",
-              "RelativeToolTip": "Backend.Infrastructure\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAgwBUAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T17:03:45.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthEndpoints.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Endpoints\\AuthEndpoints.cs",
-              "RelativeDocumentMoniker": "Backend\\Endpoints\\AuthEndpoints.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Endpoints\\AuthEndpoints.cs",
-              "RelativeToolTip": "Backend\\Endpoints\\AuthEndpoints.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T17:03:21.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\moham\\AppData\\Roaming\\Microsoft\\UserSecrets\\795bf48d-2ca7-4ddb-b542-a4dec3da021c\\secrets.json",
-              "ToolTip": "C:\\Users\\moham\\AppData\\Roaming\\Microsoft\\UserSecrets\\795bf48d-2ca7-4ddb-b542-a4dec3da021c\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-02T17:02:31.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Backend.http",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Backend.http",
-              "RelativeDocumentMoniker": "Backend\\Backend.http",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Backend.http",
-              "RelativeToolTip": "Backend\\Backend.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-04-02T16:27:05.519Z",
+              "Title": "ISmsService .cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "RelativeToolTip": "Backend.Application\\Common\\Interfaces\\Services\\ISmsService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:11:53.158Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Backend\\Program.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Program.cs",
-              "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Title": "SmsService .cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\SmsService .cs",
+              "RelativeDocumentMoniker": "Backend.Infrastructure\\Services\\SmsService .cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\SmsService .cs",
+              "RelativeToolTip": "Backend.Infrastructure\\Services\\SmsService .cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T16:13:33.748Z",
+              "WhenOpened": "2026-04-04T17:10:22.316Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\IEmailService.cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Common\\Interfaces\\Services\\IEmailService.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\IEmailService.cs",
+              "RelativeToolTip": "Backend.Application\\Common\\Interfaces\\Services\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:28:10.021Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Backend.Infrastructure\\Services\\EmailService.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\EmailService.cs",
+              "RelativeToolTip": "Backend.Infrastructure\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:28:55.201Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
+              "RelativeToolTip": "Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T17:33:14.382Z",
               "EditorCaption": ""
             }
           ]

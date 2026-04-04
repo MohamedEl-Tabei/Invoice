@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Backend.Domain.Entities
+namespace Backend.Infrastructure.Identity.Models
 {
-    public class User:IdentityUser
+    public class User : IdentityUser
     {
     }
 }

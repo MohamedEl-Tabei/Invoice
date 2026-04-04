@@ -34,11 +34,7 @@
       "RegisterCommand": {
         "type": "object",
         "properties": {
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
+          "name": {
             "type": "string",
             "nullable": true
           },
