@@ -42,10 +42,6 @@
             "type": "string",
             "nullable": true
           },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
           "password": {
             "type": "string",
             "nullable": true

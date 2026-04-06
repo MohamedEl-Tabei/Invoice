@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Backend.Application.Common.Result
+namespace Backend.Application.Common.Result.Base
 {
     public abstract class BaseResult
     {

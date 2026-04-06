@@ -11,6 +11,7 @@ namespace Backend.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
+            builder.ToTable("users");
             builder.HasIndex(u => u.Email).IsUnique();
             builder.HasIndex(u => u.PhoneNumber).IsUnique();
             builder.HasIndex(u => u.UserName).IsUnique();

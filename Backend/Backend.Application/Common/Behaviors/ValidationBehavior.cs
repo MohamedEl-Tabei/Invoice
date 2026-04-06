@@ -1,5 +1,6 @@
-﻿using Backend.Application.Common.Enums;
-using Backend.Application.Common.Result;
+﻿using Backend.Application.Common.Errors.Factory;
+using Backend.Application.Common.Result.Base;
+using Backend.Application.Common.Result.Factory;
 using FluentValidation;
 using MediatR;
 using System;
@@ -25,10 +26,10 @@ namespace Backend.Application.Common.Behaviors
                 var failures = results.SelectMany(r => r.Errors).Where(f => f != null).ToList();
                 if (failures.Any())
                 {
-                    var errors = failures.Select(f => f.ErrorMessage).ToList();
+                    var errors = failures.Select(f => ErrorFactory.Create(f.ErrorCode, f.PropertyName)).ToList();
                     if (typeof(TResponse) == typeof(BaseResult))
                     {
-                        return ResultFactory.Failure(ErrorsType.BadRequest, errors) as TResponse;
+                        return ResultFactory.ValidationFailure(errors) as TResponse;
                     }
                     throw new Exception("Handler must return Result");
 

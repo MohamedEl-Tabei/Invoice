@@ -16,6 +16,11 @@
         },
         "runtime": {
           "Backend.dll": {}
+        },
+        "resources": {
+          "en/Backend.resources.dll": {
+            "locale": "en"
+          }
         }
       },
       "Azure.Core/1.47.1": {

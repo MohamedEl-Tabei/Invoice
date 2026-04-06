@@ -1,6 +1,6 @@
 ﻿using Backend.Application.Common.Contracts;
 using Backend.Application.Common.Interfaces.Services;
-using Backend.Application.Common.Result;
+using Backend.Application.Common.Result.Base;
 using MediatR;
 using System;
 using System.Collections.Generic;

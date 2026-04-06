@@ -14,7 +14,6 @@ namespace Backend.Application.Features.Authentication.Register
                 Email = command.Email,
                 Name = command.Name,
                 Password = command.Password,
-                PhoneNumber = command.PhoneNumber
             };
         }
 

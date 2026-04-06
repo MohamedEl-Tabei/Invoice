@@ -1,4 +1,5 @@
 ﻿using Backend.Application.Features.Authentication.Register;
+using Backend.Extension;
 using MediatR;
 
 namespace Backend.Endpoints
@@ -10,12 +11,8 @@ namespace Backend.Endpoints
             #region register
             app.MapPost("/api/auth/register", async (RegisterCommand command, IMediator mediator) =>
             {
-                var result= await mediator.Send(command);
-                if (!result.IsSuccess)
-                {
-                    return Results.BadRequest(result);
-                }
-                return Results.Ok(result);
+                var result = await mediator.Send(command);
+                return result.ToHToHttpResult();
             }).WithTags("Authentication").WithName("Register");
             #endregion
         }

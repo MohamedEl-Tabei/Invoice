@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Backend.Application.Common.Errors.Codes;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,22 +10,23 @@ namespace Backend.Application.Common.Validation.Rules
     {
         /// <summary>
         /// Defines a set of validation rules to ensure that a string property represents a valid name, requiring it to
-        /// be non-empty, within specified length limits, and composed only of letters.
+        /// be non-empty, between 3 and 50 characters in length, and composed only of letters, numbers, or underscores.
         /// </summary>
-        /// <remarks>This method applies multiple validation constraints, including non-emptiness, minimum
-        /// and maximum length, and character restrictions, to help ensure that the property value is a valid name. The
-        /// error messages use the provided property name for clarity in validation feedback.</remarks>
+        /// <remarks>Use this extension method with FluentValidation to enforce consistent naming
+        /// conventions on string properties, such as user names or identifiers. The method applies multiple constraints
+        /// and customizes error messages using the provided property name.</remarks>
         /// <typeparam name="T">The type of the object containing the property to be validated.</typeparam>
         /// <param name="ruleBuilder">The rule builder used to construct validation rules for the specified string property.</param>
         /// <param name="propertyName">The display name of the property being validated. Defaults to "Name" if not specified.</param>
-        /// <returns>An options builder that enables further configuration of the validation rules for the property.</returns>
+        /// <returns>An options builder that can be used to further configure the validation rules for the property.</returns>
         public static IRuleBuilderOptions<T, string> IsName<T>(this IRuleBuilder<T, string> ruleBuilder, string propertyName = "Name")
         {
             return ruleBuilder
-                .NotEmpty().WithMessage($"{propertyName} is required.")
-                .MinimumLength(3).WithMessage($"{propertyName} must be at least 2 characters long.")
-                .MaximumLength(50).WithMessage($"{propertyName} must not exceed 20 characters.")
-                .Matches(@"^[a-zA-Z]+$").WithMessage($"{propertyName} must contain only letters");
+                .NotEmpty().WithErrorCode(ErrorCodes.IsRequired)
+                .MinimumLength(3).WithErrorCode(ErrorCodes.MinimumLength3)
+                .MaximumLength(50).WithErrorCode(ErrorCodes.MaximumLength20)
+                .Matches(@"^[a-zA-Z0-9\s]+$").WithErrorCode(ErrorCodes.LetterNumberSpaceOnly)
+                .Configure(options => options.PropertyName = propertyName);
         }
         /// <summary>
         /// Defines a validation rule that ensures the specified string property is a valid email address.
@@ -37,8 +39,9 @@ namespace Backend.Application.Common.Validation.Rules
         public static IRuleBuilderOptions<T, string> IsEmail<T>(this IRuleBuilder<T, string> ruleBuilder)
         {
             return ruleBuilder
-                .NotEmpty().WithMessage("Email is required.")
-                .Matches(@"^(?!.*\.\.)(?!\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$").WithMessage("Invalid email format.");
+                .NotEmpty().WithErrorCode(ErrorCodes.IsRequired)
+                .Matches(@"^(?!.*\.\.)(?!\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$").WithErrorCode(ErrorCodes.InvalidFormat)
+                .Configure(options => options.PropertyName = "Email");
         }
         /// <summary>
         /// Defines a validation rule that ensures the input string is a valid Egyptian phone number.
@@ -52,9 +55,9 @@ namespace Backend.Application.Common.Validation.Rules
         public static IRuleBuilderOptions<T, string> IsEgyptianPhoneNumber<T>(this IRuleBuilder<T, string> ruleBuilder)
         {
             return ruleBuilder
-                .NotEmpty().WithMessage("Phone number is required.")
-                .Matches(@"^(?:\+20|0)?1[0125]\d{8}$")
-                .WithMessage("Invalid Egyptian phone number.");
+                .NotEmpty().WithErrorCode(ErrorCodes.IsRequired)
+                .Matches(@"^(?:\+20|0)?1[0125]\d{8}$").WithErrorCode(ErrorCodes.InvalidFormat)
+                .Configure(options => options.PropertyName = "Egyptian phone number");
         }
         /// <summary>
         /// Defines a set of validation rules to ensure that a string meets common password security requirements.
@@ -68,20 +71,16 @@ namespace Backend.Application.Common.Validation.Rules
         public static IRuleBuilderOptions<T, string> IsPassword<T>(this IRuleBuilder<T, string> ruleBuilder)
         {
             return ruleBuilder
-                .NotEmpty()
-                .WithMessage("Password is required.")
-                .MinimumLength(8)
-                .WithMessage("Password must be at least 8 characters long.")
-                .Matches(@"^\S+$")
-                .WithMessage("Password must not contain spaces.")
-                .Matches(@"[A-Z]")
-                .WithMessage("Password must contain at least one uppercase letter (A-Z).")
-                .Matches(@"[a-z]")
-                .WithMessage("Password must contain at least one lowercase letter (a-z).")
-                .Matches(@"\d")
-                .WithMessage("Password must contain at least one digit (0-9).")
-                .Matches(@"[@$!%*?&]")
-                .WithMessage("Password must contain at least one special character (@, $, !, %, *, ?, &).");
+                .NotEmpty().WithErrorCode(ErrorCodes.IsRequired)
+
+                .MinimumLength(8).WithErrorCode(ErrorCodes.MinimumLength8)
+
+                .Matches(@"^\S+$").WithErrorCode(ErrorCodes.PasswordMustNotContainWhitespace)
+                .Matches(@"[A-Z]").WithErrorCode(ErrorCodes.PasswordMustContainUppercase)
+                .Matches(@"[a-z]").WithErrorCode(ErrorCodes.PasswordMustContainLowercase)
+                .Matches(@"\d").WithErrorCode(ErrorCodes.PasswordMustContainDigit)
+                .Matches(@"[@$!%*?&]").WithErrorCode(ErrorCodes.PasswordMustContainSpecialCharacter)
+                .Configure(options => options.PropertyName = "Password");
 
 
         }

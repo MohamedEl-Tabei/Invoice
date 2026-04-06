@@ -172,3 +172,7 @@ D:\🚀 Projects\Invoice\Backend\Backend\bin\Debug\net10.0\ru\Microsoft.CodeAnal
 D:\🚀 Projects\Invoice\Backend\Backend\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\🚀 Projects\Invoice\Backend\Backend\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\🚀 Projects\Invoice\Backend\Backend\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\🚀 Projects\Invoice\Backend\Backend\bin\Debug\net10.0\en\Backend.resources.dll
+D:\🚀 Projects\Invoice\Backend\Backend\obj\Debug\net10.0\Backend.Resources.Resource.en.resources
+D:\🚀 Projects\Invoice\Backend\Backend\obj\Debug\net10.0\Backend.csproj.GenerateResource.cache
+D:\🚀 Projects\Invoice\Backend\Backend\obj\Debug\net10.0\en\Backend.resources.dll

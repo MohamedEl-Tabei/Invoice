@@ -29,3 +29,7 @@ build_property.MSBuildProjectDirectory = D:\🚀 Projects\Invoice\Backend\Backen
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
+
+[D:/🚀 Projects/Invoice/Backend/Backend/Resources/Resource.en.resx]
+build_metadata.AdditionalFiles.TargetPath = Resources\Resource.en.resx
+build_metadata.AdditionalFiles.CssScope = 

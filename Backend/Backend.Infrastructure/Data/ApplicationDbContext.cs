@@ -13,8 +13,8 @@ namespace Backend.Infrastructure.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         override protected void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfigurationsFromAssembly(typeof(IConfigurationsAssembly).Assembly);
             base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(IConfigurationsAssembly).Assembly);
 
         }
     }
