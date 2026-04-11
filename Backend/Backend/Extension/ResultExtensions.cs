@@ -17,6 +17,7 @@ namespace Backend.Extension
             {
                 case ValidationFailure: return Results.BadRequest(result);
                 case DuplecatedFailure: return Results.Conflict(result);
+                case NotFoundFailure: return Results.NotFound(result);
                 default: return Results.InternalServerError(result);
             }
 

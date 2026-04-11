@@ -27,6 +27,37 @@
           }
         }
       }
+    },
+    "/api/auth/confirm-email": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "Confirm Email",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

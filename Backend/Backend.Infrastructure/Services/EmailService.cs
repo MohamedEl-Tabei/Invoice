@@ -16,18 +16,11 @@ namespace Backend.Infrastructure.Services
         {
             baseUrl = options.Value.BaseURL;
         }
-        public async Task SendConfirmationAsync(string email, string token)
+        public async Task SendConfirmationAsync(string email, string userId, string token)
         {
             var title = "Confirm Your Email";
-            var message = $"Please confirm your email by clicking this link: <a href='{baseUrl}confirm-email?token={token}'>Confirm Email</a>";
-            await Task.Factory.StartNew(() =>
-            {
-                // Simulate sending email
-                Console.WriteLine($"Sending email to {email} with title: {title} and message: {message}");
-                // Simulate delay
-                Task.Delay(2000).Wait();
-                Console.WriteLine($"Email sent to {email}");
-            });
+            var message = $"Please confirm your email by clicking this link: <a href='{baseUrl}auth/confirm-email?userId={userId}&token={token}'>Confirm Email</a>";
+
 
         }
     }

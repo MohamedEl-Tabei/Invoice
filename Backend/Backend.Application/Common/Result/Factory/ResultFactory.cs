@@ -25,6 +25,11 @@ namespace Backend.Application.Common.Result.Factory
         {
             return new ValidationFailure { IsSuccess = false, Errors = errors };
         }
+        public static NotFoundFailure NotFoundFailure(Error error)
+        {
+            var errors = new List<Error>() { error };
+            return new NotFoundFailure { IsSuccess = false, Errors = errors };
+        }
 
     }
 }

@@ -12,7 +12,7 @@ namespace Backend.Middlewares
                 await next(context);
             }
             catch (Exception ex) {
-                
+                Console.WriteLine(ex.Message);
             }
         }
     }

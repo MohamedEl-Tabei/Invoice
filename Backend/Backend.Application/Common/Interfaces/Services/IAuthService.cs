@@ -10,5 +10,6 @@ namespace Backend.Application.Common.Interfaces.Services
     public interface IAuthService
     {
         Task<BaseResult> RegisterAsync(RegisterRequest registerRequest);
+        Task<BaseResult> ConfirmEmailAsync(ConfirmEmailRequest confirmEmailRequest);
     }
 }

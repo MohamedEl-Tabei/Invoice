@@ -7,36 +7,28 @@
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\endpoints\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\resources\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\resources\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\behaviors\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\behaviors\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\errors\\factory\\errorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\errors\\factory\\errorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\errors\\codes\\errorcodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\errors\\codes\\errorcodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\identity\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\identity\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend\\resources\\resource.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\resources\\resource.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\features\\authentication\\confirmemail\\confirmemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\features\\authentication\\confirmemail\\confirmemailvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.infrastructure\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112EF685-C7DB-5437-C2AF-6B9D0D08D529}|Backend.Infrastructure\\Backend.Infrastructure.csproj|solutionrelative:backend.infrastructure\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\features\\authentication\\confirmemail\\confirmemailcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\features\\authentication\\confirmemail\\confirmemailcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\features\\authentication\\confirmemail\\confirmemailcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\features\\authentication\\confirmemail\\confirmemailcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|d:\\\uD83D\uDE80 projects\\invoice\\backend\\backend.application\\common\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{361848B7-4A80-491C-BB9A-773C91DAF863}|Backend.Application\\Backend.Application.csproj|solutionrelative:backend.application\\common\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,88 +38,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Common\\Interfaces\\Services\\IAuthService.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Interfaces\\Services\\IAuthService.cs",
+              "RelativeToolTip": "Backend.Application\\Common\\Interfaces\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T16:35:15.046Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
               "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
               "RelativeToolTip": "Backend.Infrastructure\\Identity\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T16:25:47.889Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Resource.en.resx",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Resources\\Resource.en.resx",
-              "RelativeDocumentMoniker": "Backend\\Resources\\Resource.en.resx",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Resources\\Resource.en.resx",
-              "RelativeToolTip": "Backend\\Resources\\Resource.en.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-04-06T13:45:22.489Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Resource.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Resources\\Resource.cs",
-              "RelativeDocumentMoniker": "Backend\\Resources\\Resource.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Resources\\Resource.cs",
-              "RelativeToolTip": "Backend\\Resources\\Resource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T13:43:25.028Z",
+              "WhenOpened": "2026-04-11T16:58:45.231Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ValidationBehavior.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Behaviors\\ValidationBehavior.cs",
-              "RelativeDocumentMoniker": "Backend.Application\\Common\\Behaviors\\ValidationBehavior.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Behaviors\\ValidationBehavior.cs",
-              "RelativeToolTip": "Backend.Application\\Common\\Behaviors\\ValidationBehavior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Title": "ConfirmEmailCommandHandler.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommandHandler.cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommandHandler.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommandHandler.cs",
+              "RelativeToolTip": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T13:58:07.583Z",
+              "WhenOpened": "2026-04-11T17:01:46.988Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ErrorCodes.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Errors\\Codes\\ErrorCodes.cs",
-              "RelativeDocumentMoniker": "Backend.Application\\Common\\Errors\\Codes\\ErrorCodes.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Errors\\Codes\\ErrorCodes.cs",
-              "RelativeToolTip": "Backend.Application\\Common\\Errors\\Codes\\ErrorCodes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ConfirmEmailCommand.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommand.cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommand.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommand.cs",
+              "RelativeToolTip": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T14:35:05.918Z",
+              "WhenOpened": "2026-04-11T16:59:16.617Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Backend\\Program.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Program.cs",
-              "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAawCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T15:36:10.249Z",
               "EditorCaption": ""
             },
             {
@@ -138,35 +104,37 @@
               "RelativeDocumentMoniker": "Backend\\Endpoints\\AuthEndpoints.cs",
               "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Endpoints\\AuthEndpoints.cs",
               "RelativeToolTip": "Backend\\Endpoints\\AuthEndpoints.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBgAAAB1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T15:27:36.304Z",
+              "WhenOpened": "2026-04-11T17:23:31.25Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ErrorHandlerMiddleware.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Middlewares\\ErrorHandlerMiddleware.cs",
-              "RelativeDocumentMoniker": "Backend\\Middlewares\\ErrorHandlerMiddleware.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend\\Middlewares\\ErrorHandlerMiddleware.cs",
-              "RelativeToolTip": "Backend\\Middlewares\\ErrorHandlerMiddleware.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ConfirmEmailValidator.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailValidator.cs",
+              "RelativeDocumentMoniker": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailValidator.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailValidator.cs",
+              "RelativeToolTip": "Backend.Application\\Features\\Authentication\\ConfirmEmail\\ConfirmEmailValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T15:17:49.45Z",
+              "WhenOpened": "2026-04-11T17:31:37.883Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ErrorFactory.cs",
-              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Errors\\Factory\\ErrorFactory.cs",
-              "RelativeDocumentMoniker": "Backend.Application\\Common\\Errors\\Factory\\ErrorFactory.cs",
-              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Application\\Common\\Errors\\Factory\\ErrorFactory.cs",
-              "RelativeToolTip": "Backend.Application\\Common\\Errors\\Factory\\ErrorFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Backend.Infrastructure\\Services\\EmailService.cs",
+              "ToolTip": "D:\\\uD83D\uDE80 Projects\\Invoice\\Backend\\Backend.Infrastructure\\Services\\EmailService.cs",
+              "RelativeToolTip": "Backend.Infrastructure\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T16:30:34.077Z",
+              "WhenOpened": "2026-04-11T18:21:20.849Z",
               "EditorCaption": ""
             }
           ]

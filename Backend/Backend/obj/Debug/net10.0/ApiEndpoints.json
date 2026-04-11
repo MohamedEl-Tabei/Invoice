@@ -1,6 +1,37 @@
 [
   {
     "ContainingType": "Backend.Endpoints.AuthEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthEndpoints\u003Eb__0_1",
+    "RelativePath": "api/auth/confirm-email",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ],
+    "EndpointName": "Confirm Email"
+  },
+  {
+    "ContainingType": "Backend.Endpoints.AuthEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthEndpoints\u003Eb__0_0",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
